@@ -7,15 +7,22 @@ using TMPro;
 public class BattleHUD : MonoBehaviour
 {
     public Slider hpSlider;
+    public Slider[] hpSliders;
+    public GameObject[] characters;
 
-    public void SetHUD(Unit unit)
+    public void SetHUD()
     {
-        hpSlider.maxValue = unit.maxHP;
-        hpSlider.value = unit.currentHP;
+        for(int i = 0; i < hpSliders.Length; i++)
+        {
+            hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
+            hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
+        }
+        //hpSliders[index].maxValue = unit.maxHP;
+        //hpSliders[index].value = unit.currentHP;
     }
 
-    public void SetHP(int hp)
+    public void SetHP(int hp, int index)
     {
-        hpSlider.value = hp;
+        hpSliders[index].value = hp;
     }
 }

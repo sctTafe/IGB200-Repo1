@@ -14,8 +14,8 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
-    Unit playerUnit;
-    Unit enemyUnit;
+    public Unit playerUnit;
+    public Unit enemyUnit;
 
     public TMP_Text dialogueText;
 
@@ -34,7 +34,8 @@ public class BattleSystem : MonoBehaviour
     //player and enemy spawn into battle
     IEnumerator SetUpBattle() 
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        GameObject playerGO = playerPrefab;
         playerUnit = playerGO.GetComponent<Unit>();
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
@@ -42,8 +43,8 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = "A wild " + enemyUnit.unitName + " approaches.";
 
-        playerHUD.SetHUD(playerUnit);
-        enemyHUD.SetHUD(enemyUnit);
+        playerHUD.SetHUD();
+        enemyHUD.SetHUD();
 
         yield return new WaitForSeconds(2f);
 
@@ -55,7 +56,7 @@ public class BattleSystem : MonoBehaviour
     {
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
-        enemyHUD.SetHP(enemyUnit.currentHP);
+        enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
         dialogueText.text = "The attack is successful";
 
         yield return new WaitForSeconds(2f);
@@ -84,7 +85,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-        playerHUD.SetHP(playerUnit.currentHP);
+        playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
 
         yield return new WaitForSeconds(1f);
 
@@ -114,14 +115,14 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
-        dialogueText.text = "Choose an action";
+        dialogueText.text = "Choose an action for " + playerUnit.unitName;
     }
 
     IEnumerator PlayerHeal()
     {
         playerUnit.Heal(5);
 
-        playerHUD.SetHP(playerUnit.currentHP);
+        playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
         dialogueText.text = "You feel renewed strength!";
 
         yield return new WaitForSeconds(2f);

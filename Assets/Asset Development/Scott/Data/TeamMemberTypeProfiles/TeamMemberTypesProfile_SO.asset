@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e2e98fa0d56eb47b3c91d8660e2754, type: 3}
+  m_Name: TeamMemberTypesProfile_SO
+  m_EditorClassIdentifier: 
+  _teamMemberTypeProfiles:
+  - _TeamMemberType: 1
+    _damageBasic: 6
+    _damageSpecial: 9
+    _damageStrongAgainst: 1
+    _damageWeakAgainst: 2
+  - _TeamMemberType: 2
+    _damageBasic: 4
+    _damageSpecial: 12
+    _damageStrongAgainst: 1
+    _damageWeakAgainst: 2
+  - _TeamMemberType: 3
+    _damageBasic: 6
+    _damageSpecial: 9
+    _damageStrongAgainst: 2
+    _damageWeakAgainst: 1
+  - _TeamMemberType: 4
+    _damageBasic: 4
+    _damageSpecial: 12
+    _damageStrongAgainst: 2
+    _damageWeakAgainst: 1

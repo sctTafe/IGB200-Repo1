@@ -9,6 +9,8 @@ public class BattleHUD : MonoBehaviour
     public Slider hpSlider;
     public Slider[] hpSliders;
     public GameObject[] characters;
+    public GameObject healButton;
+    public GameObject specialAttackButton;
 
     public void SetHUD()
     {
@@ -16,13 +18,25 @@ public class BattleHUD : MonoBehaviour
         {
             hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
             hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
-        }
-        //hpSliders[index].maxValue = unit.maxHP;
-        //hpSliders[index].value = unit.currentHP;
+        }        
     }
 
     public void SetHP(int hp, int index)
     {
         hpSliders[index].value = hp;
+    }
+
+    public void SetButtons(Unit player)
+    {
+        if(player.isHealer)
+        {
+            healButton.SetActive(true);
+            specialAttackButton.SetActive(false);
+        }
+        else
+        {
+            healButton.SetActive(false);
+            specialAttackButton.SetActive(true);
+        }
     }
 }

@@ -8,6 +8,7 @@ public class CharacterSelection : MonoBehaviour
     public int selectedCharacter = 0;
 
     public BattleSystem battleSystem;
+    public BattleHUD playerHUD;
 
     public void NextCharacter()
     {
@@ -15,7 +16,9 @@ public class CharacterSelection : MonoBehaviour
         selectedCharacter = (selectedCharacter + 1) % characters.Length;
         characters[selectedCharacter].SetActive(true);
 
+        //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
+        playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
     }
 
     public void PreviousCharacter()
@@ -28,6 +31,19 @@ public class CharacterSelection : MonoBehaviour
         }
         characters[selectedCharacter].SetActive(true);
 
+        //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
+        playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
+    }
+
+    public bool AllDead()
+    {
+        foreach(GameObject character in characters)
+        {
+            int hp = character.GetComponent<Unit>().currentHP;
+            if(hp > 0)
+                return false;
+        }
+        return true;
     }
 }

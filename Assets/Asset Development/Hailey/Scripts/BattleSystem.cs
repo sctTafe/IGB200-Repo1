@@ -24,6 +24,10 @@ public class BattleSystem : MonoBehaviour
 
     public BattleState state;
 
+    public bool hasActed = false;
+
+    public CharacterSelection players;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +56,16 @@ public class BattleSystem : MonoBehaviour
         PlayerTurn();
     }
 
-    IEnumerator PlayerAttack()
+    IEnumerator PlayerAttack(bool isSpecial)
     {
+        int damage;
+        if(isSpecial)
+            damage = playerUnit.specialDamage;
+        else    
+            damage = playerUnit.damage;
+
         //Damage enemy
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
         dialogueText.text = "The attack is successful";
 
@@ -71,7 +81,7 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            //enemy turn
+            //enemy turn            
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }     
@@ -84,19 +94,20 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        playerUnit.TakeDamage(enemyUnit.damage);
+        bool allDead = players.AllDead();
         playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
 
         yield return new WaitForSeconds(1f);
 
-        if(isDead)
+        if(allDead)
         {
             state = BattleState.LOST;
             EndBattle();
         }
         else
         {
-            state = BattleState.PLAYERTURN;
+            state = BattleState.PLAYERTURN;            
             PlayerTurn();
         }
     }
@@ -115,6 +126,7 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
+        hasActed = false;
         dialogueText.text = "Choose an action for " + playerUnit.unitName;
     }
 
@@ -134,20 +146,51 @@ public class BattleSystem : MonoBehaviour
     //execute player attack
     public void OnAttackButton()
     {
-        if(state != BattleState.PLAYERTURN)
+        if(state != BattleState.PLAYERTURN || hasActed)
             return;
-        
-        StartCoroutine(PlayerAttack());
-
+   
+        //if player dead, choose another player
+        if(playerUnit.currentHP == 0)
+        {
+            dialogueText.text = "Team member is exhausted. Choose another";
+            return;
+        }
+        //Change button colour 
+        hasActed = !hasActed;   
+        StartCoroutine(PlayerAttack(false));
     }
 
     //execute healing action
     public void OnHealButton()
     {
-        if(state != BattleState.PLAYERTURN)
+        if(state != BattleState.PLAYERTURN || hasActed)
             return;
-        
-        StartCoroutine(PlayerHeal());
 
+        //if player is dead choose another player
+        if(playerUnit.currentHP == 0)
+        {
+            dialogueText.text = "Team member is exhausted. Choose another";
+            return;
+        }
+        //change button colour 
+        hasActed = true;         
+        StartCoroutine(PlayerHeal());
+    }
+
+    //execute player special attack
+    public void OnSpecialAttackButton()
+    {
+        if(state != BattleState.PLAYERTURN || hasActed)
+            return;
+   
+        //if player dead, choose another player
+        if(playerUnit.currentHP == 0)
+        {
+            dialogueText.text = "Team member is exhausted. Choose another";
+            return;
+        }
+        //Change button colour 
+        hasActed = !hasActed;   
+        StartCoroutine(PlayerAttack(true));
     }
 }

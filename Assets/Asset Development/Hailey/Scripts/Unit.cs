@@ -12,6 +12,10 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+    public int specialDamage;
+
+    public bool isHealer;
+
     //apply damage to unit
     public bool TakeDamage(int dmg)
     {

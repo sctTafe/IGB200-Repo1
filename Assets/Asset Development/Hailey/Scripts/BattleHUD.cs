@@ -6,7 +6,6 @@ using TMPro;
 
 public class BattleHUD : MonoBehaviour
 {
-    public Slider hpSlider;
     public Slider[] hpSliders;
     public GameObject[] characters;
     public GameObject healButton;

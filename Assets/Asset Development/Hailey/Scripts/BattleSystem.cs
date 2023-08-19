@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class BattleSystem : MonoBehaviour
     public BattleState state;
 
     public bool hasActed = false;
+    public bool isHealing = false;
 
     public CharacterSelection players;
 
@@ -35,15 +37,22 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetUpBattle());
     }
 
+    void Update()
+    {
+
+    }
+
     //player and enemy spawn into battle
     IEnumerator SetUpBattle() 
-    {
-        //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+    {       
         GameObject playerGO = playerPrefab;
         playerUnit = playerGO.GetComponent<Unit>();
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+
+        playerHUD.characters = players.characters;
+        enemyHUD.characters = new GameObject[] {enemyPrefab};
 
         dialogueText.text = "A wild " + enemyUnit.unitName + " approaches.";
 
@@ -58,14 +67,21 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack(bool isSpecial)
     {
+        //determine amount of damage
+        var rnd = new System.Random();
+        int rndDamage = rnd.Next(-10, 10);
+
+        Debug.Log(rndDamage);
+        
         int damage;
         if(isSpecial)
             damage = playerUnit.specialDamage;
         else    
             damage = playerUnit.damage;
 
+
         //Damage enemy
-        bool isDead = enemyUnit.TakeDamage(damage);
+        bool isDead = enemyUnit.TakeDamage(damage + rndDamage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
         dialogueText.text = "The attack is successful";
 
@@ -94,9 +110,9 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        playerUnit.TakeDamage(enemyUnit.damage);
+        AttackAPlayer();
+
         bool allDead = players.AllDead();
-        playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
 
         yield return new WaitForSeconds(1f);
 
@@ -110,6 +126,15 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.PLAYERTURN;            
             PlayerTurn();
         }
+    }
+
+    void AttackAPlayer()
+    {
+        var rnd = new System.Random();
+        int i = rnd.Next(0, players.characters.Length - 1);
+        Unit tempPlayer = players.characters[i].GetComponent<Unit>();
+        tempPlayer.TakeDamage(enemyUnit.damage);
+        playerHUD.SetHP(tempPlayer.currentHP, tempPlayer.unitLevel);
     }
 
     void EndBattle()
@@ -130,11 +155,11 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "Choose an action for " + playerUnit.unitName;
     }
 
-    IEnumerator PlayerHeal()
+    public IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(5);
+        //playerUnit.Heal(5);
 
-        playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
+        //playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
         dialogueText.text = "You feel renewed strength!";
 
         yield return new WaitForSeconds(2f);
@@ -173,8 +198,10 @@ public class BattleSystem : MonoBehaviour
             return;
         }
         //change button colour 
-        hasActed = true;         
-        StartCoroutine(PlayerHeal());
+        hasActed = true;  
+        isHealing = true;
+        dialogueText.text = "Choose a team member to heal";       
+        //StartCoroutine(PlayerHeal());
     }
 
     //execute player special attack

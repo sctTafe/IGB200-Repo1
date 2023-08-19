@@ -10,11 +10,15 @@ public class CharacterSelection : MonoBehaviour
     public BattleSystem battleSystem;
     public BattleHUD playerHUD;
 
+    public GameObject pointLight;
+
     public void NextCharacter()
-    {
-        characters[selectedCharacter].SetActive(false);
+    {        
         selectedCharacter = (selectedCharacter + 1) % characters.Length;
-        characters[selectedCharacter].SetActive(true);
+        pointLight.transform.position = new Vector3(
+            characters[selectedCharacter].transform.position.x, 
+            pointLight.transform.position.y, 
+            pointLight.transform.position.z);
 
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
@@ -23,13 +27,15 @@ public class CharacterSelection : MonoBehaviour
 
     public void PreviousCharacter()
     {
-        characters[selectedCharacter].SetActive(false);
         selectedCharacter--;
         if(selectedCharacter < 0)
         {
             selectedCharacter += characters.Length;
         }
-        characters[selectedCharacter].SetActive(true);
+        pointLight.transform.position = new Vector3(
+            characters[selectedCharacter].transform.position.x, 
+            pointLight.transform.position.y, 
+            pointLight.transform.position.z);
 
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();

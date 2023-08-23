@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 /// <summary>
 ///
@@ -22,7 +23,8 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
 
         Debuging_CreateTestPool(_avalibleTeamMemberPool,3);
         Debuging_CreateTestPool(_selectedMissionTeam,2);
-        //Debugging_ListLengths();
+        Debugging_ListLengths(_avalibleTeamMemberPool);
+        Debugging_ListLengths(_selectedMissionTeam);
     }
     void Update()
     {
@@ -32,9 +34,9 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
 
 
     private void Setup_CreateGroups() {
-        _avalibleTeamMemberPool = new TeamMember_SelectionGroup_Data();
-        _selectedMissionTeam = new TeamMember_SelectionGroup_Data();
-        _newTeamMemberPool = new TeamMember_SelectionGroup_Data();
+        _avalibleTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Available);
+        _selectedMissionTeam = new TeamMember_SelectionGroup_Data(SelectionGroupType.Mission);
+        _newTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Purchase);
     }
 
 
@@ -45,14 +47,14 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
             TeamMember_Data tm = new TeamMember_Data();
             tm._name = Debugging_RandomString(5);
             tm._uID = GetNewUID();
-            tGD._teamMembersGroup.TryAdd(tm._uID, tm);
+            tGD.fn_TryAddTeamMember(tm);
         }
     }
 
-    private void Debugging_ListLengths()
+    private void Debugging_ListLengths(TeamMember_SelectionGroup_Data tMSGD)
     {
-        int lenght = _avalibleTeamMemberPool._teamMembersGroup.Count;
-        Debug.Log("_avalibleTeamMemberPool List lenght = " + lenght);
+        int length = tMSGD._teamMembersGroup.Count;
+        Debug.Log("TeamMember_SelectionGroup_Data: List length = " + length);
     }
 
     private string Debugging_RandomString(int length)
@@ -72,4 +74,13 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
         currentUID++;
         return currentUID;
     }
+
+    #region Debugging
+    [ContextMenu("Testing - Get Current Dictionary Lengths")]
+    private void Testing_CurrentDictionaryLengths() {
+        Debugging_ListLengths(_avalibleTeamMemberPool);
+        Debugging_ListLengths(_selectedMissionTeam);
+    }
+    #endregion
+
 }

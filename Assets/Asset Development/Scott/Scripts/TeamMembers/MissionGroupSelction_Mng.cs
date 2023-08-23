@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -23,11 +24,21 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     private TeamMember_SelectionGroup_Data _selectedMissionTeam;
 
 
+
+
     void Start() {
         _TeamMemberMissionSelection_root.SetActive(false);
-        _availableTeamMemberPool = groupsHolder._avalibleTeamMemberPool;
-        _selectedMissionTeam = groupsHolder._selectedMissionTeam;
+        //_availableTeamMemberPool = groupsHolder._avalibleTeamMemberPool;
+        //_selectedMissionTeam = groupsHolder._selectedMissionTeam;
 
+    }
+
+    private void OnDestroy()
+    {
+        //_avaliblePool_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
+        //_selectedTeam_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
+        //_avaliblePool_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
+        //_selectedTeam_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
     }
 
     public void fn_OpenTeamMemberSelectionWindow()
@@ -39,8 +50,8 @@ public class MissionGroupSelction_Mng : MonoBehaviour
 
     private void BindToTeamMemberElementMngs()
     {
-        _avaliblePool_UIEMng.fn_Bind(_availableTeamMemberPool);
-        _selectedTeam_UIEMng.fn_Bind(_selectedMissionTeam);
+        _avaliblePool_UIEMng.fn_Bind(groupsHolder._avalibleTeamMemberPool);
+        _selectedTeam_UIEMng.fn_Bind(groupsHolder._selectedMissionTeam);
         _SelectedBigInfo_UIEMng.fn_Bind(_currentBigInfo_groupData);
 
         // Bind the two pool display elements to the event
@@ -63,15 +74,15 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     {
         bool itworked = false;
         //Request is to add to selected pool
-        if (tMSGD == _availableTeamMemberPool)
+        if (tMSGD._groupType == SelectionGroupType.Available)
         {
-            itworked = _availableTeamMemberPool.fn_TryRemoveTeamMember(tMD);
-            itworked = _selectedMissionTeam.fn_TryAddTeamMember(tMD);
+            itworked = groupsHolder._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
+            itworked = groupsHolder._selectedMissionTeam.fn_TryAddTeamMember(tMD);
         }
-        if (tMSGD == _selectedMissionTeam)
-        {
-            itworked = _selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
-            itworked = _availableTeamMemberPool.fn_TryAddTeamMember(tMD);
+        if (tMSGD._groupType == SelectionGroupType.Mission) {
+
+            itworked = groupsHolder._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
+            itworked = groupsHolder._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD);
         }
         Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);
 

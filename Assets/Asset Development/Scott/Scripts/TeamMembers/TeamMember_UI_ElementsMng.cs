@@ -35,7 +35,7 @@ public class TeamMember_UI_ElementsMng : MonoBehaviour
         if (_boundSelectionGroup != null)
         {
             _boundSelectionGroup.OnChange += HandleOnSelectionGroupChange;
-            RefreshUIElements();
+            RefreshUiElements();
             _panelRoot.gameObject.SetActive(true);
         }
         else
@@ -62,22 +62,13 @@ public class TeamMember_UI_ElementsMng : MonoBehaviour
             _boundSelectionGroup.OnChange -= HandleOnSelectionGroupChange;
     }
 
-    private void RefreshUIElements()
+    private void RefreshUiElements()
     {
         ClearUiElements();
         foreach (var teamMemberData in _boundSelectionGroup._teamMembersGroup.Values) {
             UISlot_CreateSelectableUIElement(teamMemberData);
         }
     }
-
-
-    private void UISlot_CreateSelectableUIElement(TeamMember_Data teamMemberData) {
-        TeamMember_UI_Element newTeamMemberUIElement = Instantiate(_templateUIElement, _panelRootTransform);
-        newTeamMemberUIElement.fn_Bind(teamMemberData, this);
-        newTeamMemberUIElement.gameObject.SetActive(true);
-        _UIElementsHolder_Dic.Add(teamMemberData._uID, newTeamMemberUIElement);
-    }
-
     private void ClearUiElements()
     {
         foreach (var uiElement in _UIElementsHolder_Dic.Values)
@@ -87,9 +78,18 @@ public class TeamMember_UI_ElementsMng : MonoBehaviour
         _UIElementsHolder_Dic.Clear();
     }
 
+    private void UISlot_CreateSelectableUIElement(TeamMember_Data teamMemberData) {
+        TeamMember_UI_Element newTeamMemberUIElement = Instantiate(_templateUIElement, _panelRootTransform);
+        newTeamMemberUIElement.fn_Bind(teamMemberData, this);
+        newTeamMemberUIElement.gameObject.SetActive(true);
+        _UIElementsHolder_Dic.Add(teamMemberData._uID, newTeamMemberUIElement);
+    }
+
+
+
     private void HandleOnSelectionGroupChange()
     {
-        RefreshUIElements();
+        RefreshUiElements();
     }
 
 

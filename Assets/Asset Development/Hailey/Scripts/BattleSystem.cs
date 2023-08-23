@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 
@@ -29,6 +30,8 @@ public class BattleSystem : MonoBehaviour
     public bool isHealing = false;
 
     public CharacterSelection players;
+
+    public string scene;
 
     // Start is called before the first frame update
     void Start()
@@ -68,10 +71,10 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack(bool isSpecial)
     {
         //determine amount of damage
-        var rnd = new System.Random();
-        int rndDamage = rnd.Next(-10, 10);
+        //var rnd = new System.Random();
+        //int rndDamage = rnd.Next(-10, 10);
 
-        Debug.Log(rndDamage);
+        //Debug.Log(rndDamage);
         
         int damage;
         if(isSpecial)
@@ -81,7 +84,7 @@ public class BattleSystem : MonoBehaviour
 
 
         //Damage enemy
-        bool isDead = enemyUnit.TakeDamage(damage + rndDamage);
+        bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
         dialogueText.text = "The attack is successful";
 
@@ -93,7 +96,7 @@ public class BattleSystem : MonoBehaviour
         {
             //End the battle
             state = BattleState.WON;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -119,7 +122,7 @@ public class BattleSystem : MonoBehaviour
         if(allDead)
         {
             state = BattleState.LOST;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -137,7 +140,7 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHP(tempPlayer.currentHP, tempPlayer.unitLevel);
     }
 
-    void EndBattle()
+    IEnumerator EndBattle()
     {
         if(state == BattleState.WON)
         {
@@ -147,6 +150,8 @@ public class BattleSystem : MonoBehaviour
         {
             dialogueText.text = "You were defeated. ";
         }
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(scene);
     }
 
     void PlayerTurn()

@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Selection_UI : MonoBehaviour
+public class Selectable_UI : MonoBehaviour
 {
     public TMP_Text _nameText;
-    
+
+    private Selectable_Mng _currentMng;
     private Selectable _selectableCurrent;
+    
 
     private void OnDestroy()
     {
         Unsubscribe();
     }
 
-    public void fn_TrySelect()
+    public void fn_HandleOnSelectionButton()
     {
-
+        _currentMng.fn_SelectToAddToTeam(_selectableCurrent);
     }
 
     public void fn_UnSeclect()
@@ -24,7 +26,7 @@ public class Selection_UI : MonoBehaviour
 
     }
 
-    public void fn_Bind(Selectable selectable)
+    public void fn_Bind(Selectable selectable, Selectable_Mng mng)
     {
         // UnBind from Old
         Unsubscribe();
@@ -32,6 +34,7 @@ public class Selection_UI : MonoBehaviour
 
         // Bind New
         _selectableCurrent = selectable;
+        _currentMng = mng;
 
         if (_selectableCurrent != null)
         {

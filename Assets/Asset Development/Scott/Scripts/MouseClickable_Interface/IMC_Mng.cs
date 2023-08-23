@@ -18,16 +18,23 @@ public class IMC_Mng : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            bool mouseIsOverUI = EventSystem.current.IsPointerOverGameObject();
+
             if (Physics.Raycast(ray, out hit))
             {
                 IMouseClickable[] iClickables = hit.transform.GetComponents<IMouseClickable>();
-                if (iClickables != null) {
-                    foreach (var clickable in iClickables)
-                    {
-                        clickable.OnCMouseClick();
+
+                // DOSE: If mouse not over UI & is over a iClickable Object trigger event
+                if (!mouseIsOverUI)
+                {
+                    if (iClickables != null) {
+                        foreach (var clickable in iClickables) {
+                            clickable.OnCMouseClick();
+                        }
                     }
                 }
 
+                // DOSE: If mouse not over UI, and player is clicking but not on a IClickable Object
                 if (iClickables == null || iClickables.Length == 0)
                 {
                     // only work if mouse not over UI element 

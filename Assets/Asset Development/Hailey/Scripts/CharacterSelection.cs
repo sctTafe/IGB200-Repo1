@@ -6,6 +6,7 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] characters;
     public int selectedCharacter = 0;
+    public GameObject[] lightLocations;
 
     public BattleSystem battleSystem;
     public BattleHUD playerHUD;
@@ -15,11 +16,8 @@ public class CharacterSelection : MonoBehaviour
     public void NextCharacter()
     {        
         selectedCharacter = (selectedCharacter + 1) % characters.Length;
-        pointLight.transform.position = new Vector3(
-            characters[selectedCharacter].transform.position.x, 
-            pointLight.transform.position.y, 
-            pointLight.transform.position.z);
-
+        pointLight.transform.position = lightLocations[selectedCharacter].transform.position;
+  
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
         playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
@@ -32,10 +30,7 @@ public class CharacterSelection : MonoBehaviour
         {
             selectedCharacter += characters.Length;
         }
-        pointLight.transform.position = new Vector3(
-            characters[selectedCharacter].transform.position.x, 
-            pointLight.transform.position.y, 
-            pointLight.transform.position.z);
+        pointLight.transform.position = lightLocations[selectedCharacter].transform.position;       
 
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();

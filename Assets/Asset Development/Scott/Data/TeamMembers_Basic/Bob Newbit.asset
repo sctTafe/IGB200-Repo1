@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
+  m_Name: Bob Newbit
+  m_EditorClassIdentifier: 
+  _name: Bob Newbit
+  _profilePic: {fileID: 21300000, guid: cfd0b70123bf3f747bce9f510ef3cfd8, type: 3}
+  _toolPic: {fileID: 21300000, guid: 939e01b63c4b54143aa03c0bc640605f, type: 3}
+  _bio: Bob Newbit is a seasoned heavy machinery operator, transforming construction
+    sites into masterpieces. With years of experience in the cab, he's the driving
+    force behind projects big and small. Bob's precision and dedication ensure that
+    every job is handled with expertise, making him an indispensable asset to the
+    industry.

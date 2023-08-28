@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class TeamMember_Basic_SO : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[CreateAssetMenu(fileName = "TeamMember_Basic_SO", menuName = "SO/TeamMember_Basic_SO")]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class TeamMember_Basic_SO : ScriptableObject
+{
+    [SerializeField] public String _name;
+    [SerializeField] public Sprite _profilePic;
+    [SerializeField] public Sprite _toolPic;
+    [SerializeField] public String _bio;
 }

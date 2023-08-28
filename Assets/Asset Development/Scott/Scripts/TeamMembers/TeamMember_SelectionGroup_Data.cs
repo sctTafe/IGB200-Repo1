@@ -57,11 +57,3 @@ public class TeamMember_SelectionGroup_Data
     }
 }
 
-public enum SelectionGroupType
-{
-    error,
-    Available,
-    Mission,
-    Purchase,
-    Other
-}

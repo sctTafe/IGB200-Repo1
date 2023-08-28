@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TeamMember_UI_Element : MonoBehaviour
 {
     public TMP_Text _nameText;
+    public TMP_Text _bioText;
+    public Image _profileImg;
+    public Image _toolImg;
 
     private TeamMember_UI_ElementsMng _currentMng;
     private TeamMember_Data _currentTeamMemberData;
@@ -24,7 +28,7 @@ public class TeamMember_UI_Element : MonoBehaviour
         _currentMng = mng;
 
         if (_currentTeamMemberData != null) {
-            _currentTeamMemberData.OnChange += HandleChange_UpdateValues;
+            _currentTeamMemberData._OnChange += HandleChange_UpdateValues;
             HandleChange_UpdateValues();
             this.gameObject.SetActive(true);
         }
@@ -52,11 +56,17 @@ public class TeamMember_UI_Element : MonoBehaviour
     #region Private Functions
     private void HandleChange_UpdateValues() {
         _nameText?.SetText(_currentTeamMemberData._name);
+        _bioText?.SetText(_currentTeamMemberData._bio);
+        if(_profileImg != null) 
+            _profileImg.sprite = _currentTeamMemberData._profileSprite;
+        if (_toolImg != null)
+            _toolImg.sprite = _currentTeamMemberData._toolSprite;
+
     }
 
     private void Unsubscribe() {
         if (_currentTeamMemberData != null) {
-            _currentTeamMemberData.OnChange -= HandleChange_UpdateValues;
+            _currentTeamMemberData._OnChange -= HandleChange_UpdateValues;
         }
     }
     private void UnbindValues() {

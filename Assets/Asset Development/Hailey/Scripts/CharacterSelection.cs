@@ -13,6 +13,25 @@ public class CharacterSelection : MonoBehaviour
 
     public GameObject pointLight;
 
+    public GameObject[] sleepy;    
+
+    void Update()
+    {
+        for(int i = 0; i < characters.Length; i++)
+        {
+            if(characters[i].GetComponent<Unit>().currentHP <= 0 && !characters[i].GetComponent<Unit>().isSleeping)
+            {
+                sleepy[i].SetActive(true);
+                characters[i].GetComponent<Unit>().isSleeping = true;
+            }
+            else if(characters[i].GetComponent<Unit>().currentHP > 0 && characters[i].GetComponent<Unit>().isSleeping)
+            {
+                sleepy[i].SetActive(false);
+                characters[i].GetComponent<Unit>().isSleeping = false;
+            }
+        }
+    }
+
     public void NextCharacter()
     {        
         selectedCharacter = (selectedCharacter + 1) % characters.Length;

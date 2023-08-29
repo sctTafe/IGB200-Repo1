@@ -15,6 +15,7 @@ public class Unit : MonoBehaviour
     public int specialDamage;
 
     public bool isHealer;
+    public bool isSleeping = false;
 
     //apply damage to unit
     public bool TakeDamage(int dmg)

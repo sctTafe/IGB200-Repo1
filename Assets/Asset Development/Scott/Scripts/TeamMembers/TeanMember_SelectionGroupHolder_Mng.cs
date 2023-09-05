@@ -17,12 +17,42 @@ public enum SelectionGroupType
 
 /// <summary>
 ///
-/// Sets up all the TeamMember Groups & holds their references for others to call
+/// Dose:
+///     Sets up all the TeamMember Groups & holds their references for others to call
 /// 
+/// Notes:
+///     Is an Singelton
 /// </summary>
 /// 
 public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
 {
+    #region Singelton Setup
+    private static TeanMember_SelectionGroupHolder_Mng _instance;
+    public static TeanMember_SelectionGroupHolder_Mng Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("TeanMember_SelectionGroupHolder_Mng instance is not found.");
+            }
+            return _instance;
+        }
+    }
+    private void SingeltonSetup()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    #endregion
+
+
     public bool isLoadingTestMembers;
 
     public Action _OnSetupComplete;
@@ -33,6 +63,11 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
 
     private int currentUID = 0;
 
+
+    private void Awake()
+    {
+        SingeltonSetup();
+    }
     void Start()
     {
         Setup_CreateGroups();
@@ -43,7 +78,6 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
             Debugging_ListLengths(_avalibleTeamMemberPool);
             Debugging_ListLengths(_selectedMissionTeam);
         }
-
         _OnSetupComplete?.Invoke();
     }
     void Update()
@@ -51,8 +85,11 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
     }
 
     private void Setup_CreateGroups() {
+        // mission team limited to group size of 4
+        _selectedMissionTeam = new TeamMember_SelectionGroup_Data(SelectionGroupType.Mission, 4);
+        
+        // all other groups unlimited group size
         _avalibleTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Available);
-        _selectedMissionTeam = new TeamMember_SelectionGroup_Data(SelectionGroupType.Mission);
         _newTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Purchase);
     }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class MissionGroupSelction_Mng : MonoBehaviour
 {
-
+    [SerializeField] private bool isDebuggingOn = false;
     [SerializeField] private TeanMember_SelectionGroupHolder_Mng groupsHolder;
     [SerializeField] private GameObject _TeamMemberMissionSelection_root;
     [SerializeField] private TeamMember_UI_ElementsMng _selectedTeam_UIEMng;
@@ -27,18 +27,16 @@ public class MissionGroupSelction_Mng : MonoBehaviour
 
 
     void Start() {
+        // Disable Mission UI Panel Root
         _TeamMemberMissionSelection_root.SetActive(false);
-        //_availableTeamMemberPool = groupsHolder._avalibleTeamMemberPool;
-        //_selectedMissionTeam = groupsHolder._selectedMissionTeam;
-
     }
 
     private void OnDestroy()
     {
-        //_avaliblePool_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
-        //_selectedTeam_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
-        //_avaliblePool_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
-        //_selectedTeam_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
+        _avaliblePool_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
+        _selectedTeam_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
+        _avaliblePool_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
+        _selectedTeam_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
     }
 
     public void fn_OpenTeamMemberSelectionWindow()
@@ -74,26 +72,29 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     {
         bool itworked = false;
         //Request is to add to selected pool
-        if (tMSGD._groupType == SelectionGroupType.Available)
+        if (tMSGD._groupType == SelectionGroupType.Available) //check if current teamMember Group is part of the 'Avalible Pool' i.e. trying to add it to the 'Mission pool' group
         {
-            itworked = groupsHolder._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
-            itworked = groupsHolder._selectedMissionTeam.fn_TryAddTeamMember(tMD);
+            if (groupsHolder._selectedMissionTeam.fn_TryAddTeamMember(tMD)) // try add to group, if i can be added to the group, remove it from the 'Avalible Pool'
+            {
+                itworked = groupsHolder._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
+            }           
         }
         if (tMSGD._groupType == SelectionGroupType.Mission) {
 
-            itworked = groupsHolder._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
-            itworked = groupsHolder._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD);
+            if (groupsHolder._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD))
+            {
+                itworked = groupsHolder._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
+            }         
         }
-        Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);
-
+        if(isDebuggingOn) Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);
     }
 
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         
-    }
+    //}
 
 
 

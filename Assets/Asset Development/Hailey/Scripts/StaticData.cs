@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class StaticData : MonoBehaviour
 {
-    public static List<GameObject> team;
+    public static List<GameObject> team = new();
     public static GameObject playerOne;
 }

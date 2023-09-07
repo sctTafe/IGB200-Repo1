@@ -17064,6 +17064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f99640171312343b8b82fd2c0fc9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebuggingOn: 0
   groupsHolder: {fileID: 6558939324264839347}
   _TeamMemberMissionSelection_root: {fileID: 1869386335740195302}
   _selectedTeam_UIEMng: {fileID: 35173930357929879}

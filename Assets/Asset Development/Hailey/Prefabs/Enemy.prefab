@@ -123,11 +123,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Enemy
   unitLevel: 0
+  type: 2
+  weakness: 2
   damage: 5
   maxHP: 30
   currentHP: 30
   specialDamage: 0
   isHealer: 0
+  isSleeping: 0
 --- !u!1001 &1066688359616248602
 PrefabInstance:
   m_ObjectHideFlags: 0

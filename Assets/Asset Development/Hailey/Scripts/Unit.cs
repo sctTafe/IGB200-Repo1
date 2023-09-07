@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UnitType { Electric, Structual, Water, Design}
+
 public class Unit : MonoBehaviour
 {
     public string unitName;
     public int unitLevel;
+    public UnitType type;
+    public UnitType weakness;
 
     public int damage;
 

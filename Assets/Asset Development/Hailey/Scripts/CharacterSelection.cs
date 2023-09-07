@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public GameObject[] characters;
+    public List<GameObject> characters;
+    //public List<GameObject> characters = StaticData.team;
     public int selectedCharacter = 0;
     public GameObject[] lightLocations;
     public GameObject[] selected;
@@ -18,7 +19,7 @@ public class CharacterSelection : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i < characters.Length; i++)
+        for(int i = 0; i < characters.Count; i++)
         {
             if(characters[i].GetComponent<Unit>().currentHP <= 0 && !characters[i].GetComponent<Unit>().isSleeping)
             {
@@ -36,7 +37,7 @@ public class CharacterSelection : MonoBehaviour
     public void NextCharacter()
     {   
         selected[selectedCharacter].SetActive(false);     
-        selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        selectedCharacter = (selectedCharacter + 1) % characters.Count;
         pointLight.transform.position = lightLocations[selectedCharacter].transform.position;
         selected[selectedCharacter].SetActive(true);
   
@@ -51,7 +52,7 @@ public class CharacterSelection : MonoBehaviour
         selectedCharacter--;
         if(selectedCharacter < 0)
         {
-            selectedCharacter += characters.Length;
+            selectedCharacter += characters.Count;
         }
         pointLight.transform.position = lightLocations[selectedCharacter].transform.position;
         selected[selectedCharacter].SetActive(true);        

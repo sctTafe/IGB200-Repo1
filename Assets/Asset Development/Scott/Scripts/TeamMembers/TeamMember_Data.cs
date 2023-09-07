@@ -13,6 +13,7 @@ public class TeamMember_Data
     [SerializeField] public string _bio;
     [SerializeField] public Sprite _profileSprite;
     [SerializeField] public Sprite _toolSprite;
+    [SerializeField] public TeamMemberClassType _classType;
 
     // Dynamic Information
     [SerializeField] public int _level;
@@ -34,3 +35,13 @@ public class TeamMember_Data
         _currentEnergy = _maxEnergy;
     }
 }
+public enum TeamMemberClassType
+{
+    error,
+    Water,
+    Electric,
+    Planning,
+    Practical,
+    Management
+}
+

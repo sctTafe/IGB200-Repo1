@@ -692,13 +692,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1203811932270017390, guid: 6a4c7a8d3eba20b44a5a70ff2f042b0d,
         type: 3}
+      propertyPath: damage
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203811932270017390, guid: 6a4c7a8d3eba20b44a5a70ff2f042b0d,
+        type: 3}
       propertyPath: unitLevel
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1203811932270017390, guid: 6a4c7a8d3eba20b44a5a70ff2f042b0d,
         type: 3}
       propertyPath: specialDamage
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4832077726921632514, guid: 6a4c7a8d3eba20b44a5a70ff2f042b0d,
         type: 3}
@@ -3193,7 +3198,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1002674132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1809880050}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1002674132
 MonoBehaviour:
   m_ObjectHideFlags: 0

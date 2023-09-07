@@ -11,9 +11,10 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 public class BattleSystem : MonoBehaviour
 {
     public GameObject playerPrefab;
+    //public GameObject playerOne = StaticData.playerOne;
     public GameObject enemyPrefab;
 
-    public Transform playerBattleStation;
+    public Transform[] playerBattleStations;
     public Transform enemyBattleStation;
 
     public Unit playerUnit;
@@ -49,13 +50,19 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetUpBattle() 
     {       
         GameObject playerGO = playerPrefab;
+        //GameObject playerGo = playerPrefab;
         playerUnit = playerGO.GetComponent<Unit>();
+
+        /*for(int i=0; i < players.characters.Count; i++)
+        {
+            Instantiate(players.characters[i], playerBattleStations[i]);
+        }*/
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         playerHUD.characters = players.characters;
-        enemyHUD.characters = new GameObject[] {enemyPrefab};
+        enemyHUD.characters = new List<GameObject> {enemyPrefab};
 
         dialogueText.text = "A wild " + enemyUnit.unitName + " approaches.";
 
@@ -77,16 +84,32 @@ public class BattleSystem : MonoBehaviour
         //Debug.Log(rndDamage);
         
         int damage;
-        if(isSpecial)
-            damage = playerUnit.specialDamage;
-        else    
+        if (isSpecial)
+        {
+            if (playerUnit.type == enemyUnit.type)
+            {
+                damage = playerUnit.specialDamage;
+                Debug.Log("special attack! very effective");
+                dialogueText.text = "The attack is super successful!";
+            }
+            else
+            {
+                damage = 1;
+                Debug.Log("not very effective");
+                dialogueText.text = "The attack is not very effective";
+            }
+        }
+        else
+        {
             damage = playerUnit.damage;
-
+            Debug.Log("normal");
+            dialogueText.text = "The attack is successful";
+        }
 
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
-        dialogueText.text = "The attack is successful";
+        
 
         yield return new WaitForSeconds(2f);
 
@@ -134,9 +157,15 @@ public class BattleSystem : MonoBehaviour
     void AttackAPlayer()
     {
         var rnd = new System.Random();
-        int i = rnd.Next(0, players.characters.Length - 1);
+        int extraDamage = 0;
+        int i = rnd.Next(0, players.characters.Count - 1);
         Unit tempPlayer = players.characters[i].GetComponent<Unit>();
-        tempPlayer.TakeDamage(enemyUnit.damage);
+        if(tempPlayer.weakness == enemyUnit.type) 
+        {
+            Debug.Log("weakened");
+            extraDamage = 5;
+        }
+        tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
         playerHUD.SetHP(tempPlayer.currentHP, tempPlayer.unitLevel);
     }
 

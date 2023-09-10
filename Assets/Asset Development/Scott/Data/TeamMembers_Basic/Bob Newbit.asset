@@ -15,8 +15,9 @@ MonoBehaviour:
   _name: Bob Newbit
   _profilePic: {fileID: 21300000, guid: cfd0b70123bf3f747bce9f510ef3cfd8, type: 3}
   _toolPic: {fileID: 21300000, guid: 939e01b63c4b54143aa03c0bc640605f, type: 3}
-  _bio: Bob Newbit is a seasoned heavy machinery operator, transforming construction
-    sites into masterpieces. With years of experience in the cab, he's the driving
-    force behind projects big and small. Bob's precision and dedication ensure that
-    every job is handled with expertise, making him an indispensable asset to the
-    industry.
+  _bio: (practical) Bob Newbit is a seasoned heavy machinery operator, transforming
+    construction sites into masterpieces. With years of experience in the cab, he's
+    the driving force behind projects big and small. Bob's precision and dedication
+    ensure that every job is handled with expertise, making him an indispensable
+    asset to the industry.
+  _teamMemberClass: 4

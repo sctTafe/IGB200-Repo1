@@ -9,4 +9,5 @@ public class TeamMember_Basic_SO : ScriptableObject
     [SerializeField] public Sprite _profilePic;
     [SerializeField] public Sprite _toolPic;
     [SerializeField] public String _bio;
+    [SerializeField] public TeamMemberClassType _teamMemberClass;
 }

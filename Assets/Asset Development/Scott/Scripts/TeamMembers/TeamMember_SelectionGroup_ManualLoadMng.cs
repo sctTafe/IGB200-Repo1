@@ -42,7 +42,8 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
                     _name = teamMemberBasicSO._name,
                     _profileSprite = teamMemberBasicSO._profilePic,
                     _toolSprite = teamMemberBasicSO._toolPic,
-                    _bio = teamMemberBasicSO._bio                 
+                    _bio = teamMemberBasicSO._bio,
+                    _classType = teamMemberBasicSO._teamMemberClass
                 });
             }
         }

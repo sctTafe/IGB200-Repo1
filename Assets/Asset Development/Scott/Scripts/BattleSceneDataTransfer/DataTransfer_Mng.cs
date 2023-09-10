@@ -36,13 +36,6 @@ public class DataTransfer_Mng : MonoBehaviour
             }
         }
     }
-
-    private void connectToSelectionGroupHolder()
-    {
-        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
-
-    }
-
     private GameObject InstantiateTeamMemberTransfereHolder(int _uID, TeamMemberClassType _classType, float _maxEnergy, float _currentEnergy)
     {
         TeamMemberTransfer_Data newTeamMemberTransfereData = Instantiate(_Prefab, this.transform);
@@ -52,6 +45,9 @@ public class DataTransfer_Mng : MonoBehaviour
         newTeamMemberTransfereData._currentEnergy = _currentEnergy;
         return newTeamMemberTransfereData.gameObject;
     }
+    private void connectToSelectionGroupHolder()
+    {
+        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
 
-
+    }
 }

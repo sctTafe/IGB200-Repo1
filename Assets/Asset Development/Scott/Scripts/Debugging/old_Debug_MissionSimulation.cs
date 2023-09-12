@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Debug_MissionSimulation : MonoBehaviour
+public class old_Debug_MissionSimulation : MonoBehaviour
 {
     private TeamMember_SelectionGroup_Data _currentMissionTeam;
     // Start is called before the first frame update

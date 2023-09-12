@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Asset Development/Hailey/BattleScene.unity
     guid: 0cdf6485b65122244841ee1e545db6ed
   - enabled: 1
-    path: Assets/Asset Development/Scott/Dev_ProgressionSystem.unity
+    path: Assets/Asset Development/Scott/Scenes/_old/Dev_ProgressionSystem.unity
     guid: 895476d02738a9f4fa9a77d731702b6d
   - enabled: 1
     path: Assets/Scenes/WinLose.unity

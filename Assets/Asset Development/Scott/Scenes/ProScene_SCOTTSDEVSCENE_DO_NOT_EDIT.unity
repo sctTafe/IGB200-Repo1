@@ -609,9 +609,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf39d26ff0f071848b0ca9fc17af4e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnMissionSelectionBtn:
+    m_PersistentCalls:
+      m_Calls: []
   ThisProgressionSelectionItem:
     _name: Mission 1 - Setup Site
     _upgradeCost: 0
+    _isPurchasable: 0
     _isPurchased: 1
     _isVisable: 1
   _ghostTransform: {fileID: 0}
@@ -5049,7 +5053,7 @@ GameObject:
   - component: {fileID: 413061141}
   - component: {fileID: 413061140}
   m_Layer: 5
-  m_Name: '{SelectionInfomation_Panel}'
+  m_Name: '{MouseSelectionInfomation_Panel}'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8863,7 +8867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &806173134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9278,6 +9282,7 @@ MonoBehaviour:
   ThisProgressionSelectionItem:
     _name: Bridge Road Middle
     _upgradeCost: 400
+    _isPurchasable: 1
     _isPurchased: 0
     _isVisable: 0
   _ghostTransform: {fileID: 644966428}
@@ -10664,6 +10669,7 @@ MonoBehaviour:
   ThisProgressionSelectionItem:
     _name: Bridge Tower Right
     _upgradeCost: 500
+    _isPurchasable: 1
     _isPurchased: 0
     _isVisable: 0
   _ghostTransform: {fileID: 644344470}
@@ -10954,6 +10960,7 @@ MonoBehaviour:
   ThisProgressionSelectionItem:
     _name: Bridge Tower Left
     _upgradeCost: 500
+    _isPurchasable: 1
     _isPurchased: 0
     _isVisable: 0
   _ghostTransform: {fileID: 324344921}
@@ -14025,6 +14032,7 @@ MonoBehaviour:
   ThisProgressionSelectionItem:
     _name: Bridge Road Left
     _upgradeCost: 400
+    _isPurchasable: 1
     _isPurchased: 0
     _isVisable: 0
   _ghostTransform: {fileID: 916654417}
@@ -14364,6 +14372,7 @@ MonoBehaviour:
   ThisProgressionSelectionItem:
     _name: Bridge Road Right
     _upgradeCost: 400
+    _isPurchasable: 1
     _isPurchased: 0
     _isVisable: 0
   _ghostTransform: {fileID: 839702415}
@@ -14534,7 +14543,7 @@ GameObject:
   - component: {fileID: 1635302550}
   - component: {fileID: 1635302549}
   m_Layer: 0
-  m_Name: '[Selection_Mng]'
+  m_Name: '[MouseSelectionInformation_Mng]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14567,8 +14576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370b73b7a967bc94b87877ab03cd3008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ProgressionSelectionUI_Pannel: {fileID: 413061139}
-  _PurchaseInfo_Pannel: {fileID: 160584730}
+  _MouseSelectionInfoUI_Panel: {fileID: 413061139}
+  _PurchaseInfo_Panel: {fileID: 160584730}
   _nameTMP: {fileID: 564539876}
   _costTMP: {fileID: 1126002739}
 --- !u!114 &1635302550

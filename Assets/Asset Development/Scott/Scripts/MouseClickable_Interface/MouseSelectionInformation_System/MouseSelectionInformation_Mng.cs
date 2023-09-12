@@ -11,11 +11,11 @@ using UnityEngine.Events;
 ///     ProjectPoints_Mng Instance - used for Try Buy Upgrade
 /// 
 /// </summary>
-public class ProgressionSelection_Mng : MonoBehaviour
+public class MouseSelectionInformation_Mng : MonoBehaviour
 {
     #region Singelton Setup
-    private static ProgressionSelection_Mng _instance;
-    public static ProgressionSelection_Mng Instance {
+    private static MouseSelectionInformation_Mng _instance;
+    public static MouseSelectionInformation_Mng Instance {
         get {
             if (_instance == null) {
                 Debug.LogError("ProgressionSelection_Mng instance is not found.");
@@ -36,7 +36,7 @@ public class ProgressionSelection_Mng : MonoBehaviour
 
 
     public UnityEvent OnUpdateOfPSI;
-    public ProgressionSelectionItem _currentPSI { get; private set; }
+    public MouseSelectionInformation_Item _currentMouseSelectionItem { get; private set; }
     private ProjectPoints_Mng _PPMng;
     private void Awake()
     {
@@ -44,9 +44,9 @@ public class ProgressionSelection_Mng : MonoBehaviour
     }
 
 
-    public void fn_Bind_CurrentlySelected(ProgressionSelectionItem psi)
+    public void fn_Bind_CurrentlySelected(MouseSelectionInformation_Item mouseSelectionItem)
     {
-        _currentPSI = psi;
+        _currentMouseSelectionItem = mouseSelectionItem;
         OnUpdateOfPSI?.Invoke();
     }
 
@@ -56,12 +56,12 @@ public class ProgressionSelection_Mng : MonoBehaviour
 
         _PPMng ??= ProjectPoints_Mng.Instance;
         // check is not already purchased
-        if (!_currentPSI._isPurchased)
+        if (!_currentMouseSelectionItem._isPurchased)
         {
             // check is there are enough Project Points to purchase & deduct them if true
-            if (_PPMng.fn_TrySubtractPoints(_currentPSI._upgradeCost)) {
+            if (_PPMng.fn_TrySubtractPoints(_currentMouseSelectionItem._upgradeCost)) {
                 // set the item to purchased 
-                _currentPSI.fn_Purchase();
+                _currentMouseSelectionItem.fn_Purchase();
                 OnUpdateOfPSI?.Invoke();
             }
         }
@@ -69,18 +69,4 @@ public class ProgressionSelection_Mng : MonoBehaviour
 
 }
 
-[Serializable]
-public class ProgressionSelectionItem
-{
-    public Action OnChange; 
-    public string _name;
-    public int _upgradeCost;
-    public bool _isPurchased;
-    public bool _isVisable;
 
-    public void fn_Purchase()
-    {
-        _isPurchased = true;
-        OnChange?.Invoke();
-    }
-}

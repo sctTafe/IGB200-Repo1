@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinLose.unity
     guid: a2f2a8335290ab1409abbf13692e00e9
+  - enabled: 1
+    path: Assets/Asset Development/Scott/Scenes/ProScene_SCOTTSDEVSCENE_DO_NOT_EDIT.unity
+    guid: 46717eb7fc2f9c1489beb4a4fc87c146
+  - enabled: 1
+    path: Assets/Asset Development/Scott/Scenes/BtlTestScene_SCOTSDEVSCENE_DO_NOT_EDIT.unity
+    guid: 2fa6c8d22a257974c9d80bcb61221cb1
   m_configObjects: {}

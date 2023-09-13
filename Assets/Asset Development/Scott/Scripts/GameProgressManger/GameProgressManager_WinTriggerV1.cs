@@ -8,7 +8,7 @@ using UnityEngine.Events;
 /// Handles Progress To the Completion of the Game
 /// 
 /// </summary>
-public class GameProgressManager : MonoBehaviour
+public class GameProgressManager_WinTriggerV1 : MonoBehaviour
 {
     public UnityEvent _OnBridgeIsComplete;
     public int _numberOfBridgeBitsToBuildToWin = 5;

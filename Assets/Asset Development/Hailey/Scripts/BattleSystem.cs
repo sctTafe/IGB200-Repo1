@@ -38,6 +38,8 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+        players.characters = GameManager.instance.battleTeam;
+
         StartCoroutine(SetUpBattle());
     }
 
@@ -53,10 +55,11 @@ public class BattleSystem : MonoBehaviour
         //GameObject playerGo = playerPrefab;
         playerUnit = playerGO.GetComponent<Unit>();
 
-        /*for(int i=0; i < players.characters.Count; i++)
+        for(int i=0; i < players.characters.Count; i++)
         {
+            //Debug.Log("instantiate team member" + players.characters[i].GetComponent<Unit>().type);
             Instantiate(players.characters[i], playerBattleStations[i]);
-        }*/
+        }
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();

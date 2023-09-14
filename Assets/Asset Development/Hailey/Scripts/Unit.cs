@@ -2,7 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UnitType { Electric, Structual, Water, Design}
+public enum UnitType 
+{ 
+    error,
+    Water,
+    Electric,
+    Planning,
+    Practical,
+    Management
+}
 
 public class Unit : MonoBehaviour
 {

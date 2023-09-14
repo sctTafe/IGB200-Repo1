@@ -15,7 +15,12 @@ public class CharacterSelection : MonoBehaviour
 
     public GameObject pointLight;
 
-    public GameObject[] sleepy;    
+    public GameObject[] sleepy;  
+
+    void Start()
+    {
+        
+    }  
 
     void Update()
     {

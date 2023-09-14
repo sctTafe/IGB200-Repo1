@@ -13,7 +13,7 @@ using UnityEngine;
 /// 
 /// </summary>
 
-public class DataTransfer_Mng : MonoBehaviour
+public class DataTransfer_Mng_Copy : MonoBehaviour
 {
     public bool _isDebuggingOn = false;
     public TeamMemberTransfer_Data _Prefab;
@@ -36,6 +36,13 @@ public class DataTransfer_Mng : MonoBehaviour
             }
         }
     }
+
+    private void connectToSelectionGroupHolder()
+    {
+        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
+
+    }
+
     private TeamMemberTransfer_Data InstantiateTeamMemberTransfereHolder(int _uID, TeamMemberClassType _classType, float _maxEnergy, float _currentEnergy)
     {
         TeamMemberTransfer_Data newTeamMemberTransfereData = Instantiate(_Prefab, this.transform);
@@ -45,9 +52,6 @@ public class DataTransfer_Mng : MonoBehaviour
         newTeamMemberTransfereData._currentEnergy = _currentEnergy;
         return newTeamMemberTransfereData;
     }
-    private void connectToSelectionGroupHolder()
-    {
-        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
 
-    }
+
 }

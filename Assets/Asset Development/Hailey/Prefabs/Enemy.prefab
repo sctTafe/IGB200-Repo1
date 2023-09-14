@@ -123,8 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Enemy
   unitLevel: 0
-  type: 2
-  weakness: 2
+  type: 1
+  weakness: 1
   damage: 5
   maxHP: 30
   currentHP: 30

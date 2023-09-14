@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Asset Development/Scott/Scenes/BtlTestScene_SCOTSDEVSCENE_DO_NOT_EDIT.unity
     guid: 2fa6c8d22a257974c9d80bcb61221cb1
+  - enabled: 1
+    path: Assets/Scenes/Version2_WIP/ProjectManagmentScene v3.unity
+    guid: debba4919c2e26e43aa84131a70f2439
   m_configObjects: {}

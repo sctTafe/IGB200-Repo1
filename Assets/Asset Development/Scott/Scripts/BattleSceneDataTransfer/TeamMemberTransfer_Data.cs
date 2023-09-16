@@ -9,5 +9,7 @@ public class TeamMemberTransfer_Data : MonoBehaviour
     [SerializeField] public TeamMemberClassType _classType;   
     [SerializeField] public float _maxEnergy;
     [SerializeField] public float _currentEnergy;
-
+    
+    //Post battle information
+    [SerializeField] public int _numDeaths;
 }

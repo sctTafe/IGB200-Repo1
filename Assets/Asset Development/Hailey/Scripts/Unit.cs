@@ -29,13 +29,18 @@ public class Unit : MonoBehaviour
     public bool isHealer;
     public bool isSleeping = false;
 
+    public int numDeaths = 0;
+
     //apply damage to unit
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
 
-        if(currentHP <= 0)
+        if (currentHP <= 0)
+        {
+            numDeaths++;
             return true;
+        }
         else
             return false;
     }

@@ -177,13 +177,31 @@ public class BattleSystem : MonoBehaviour
         if(state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            StaticData.isBattleWon = true;
         }
         else if(state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated. ";
+            StaticData.isBattleWon = false;
         }
+
+        UpdateTeamInformation();
+        
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(scene);
+    }
+
+    void UpdateTeamInformation()
+    {
+        bool condition = StaticData.team.Count == players.characters.Count;
+        if (condition)
+        {
+            for (int i = 0; i < players.characters.Count; i++)
+            {
+                StaticData.team[i]._currentEnergy = players.characters[i].GetComponent<Unit>().currentHP;
+                StaticData.team[i]._numDeaths = players.characters[i].GetComponent<Unit>().numDeaths;
+            }
+        }
     }
 
     void PlayerTurn()

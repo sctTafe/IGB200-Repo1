@@ -20,6 +20,8 @@ public class BattleSystem : MonoBehaviour
     public Unit playerUnit;
     public Unit enemyUnit;
 
+    public GameObject enemyGO;
+
     public TMP_Text dialogueText;
 
     public BattleHUD playerHUD;
@@ -33,12 +35,15 @@ public class BattleSystem : MonoBehaviour
     public CharacterSelection players;
 
     public string scene;
+    
+    //battle animations
+    private Animator enemyAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
-        players.characters = GameManager.instance.battleTeam;
+        players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer
 
         StartCoroutine(SetUpBattle());
     }
@@ -61,8 +66,9 @@ public class BattleSystem : MonoBehaviour
             Instantiate(players.characters[i], playerBattleStations[i]);
         }
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+        enemyAnimator = enemyGO.GetComponent<Animator>();
 
         playerHUD.characters = players.characters;
         enemyHUD.characters = new List<GameObject> {enemyPrefab};
@@ -78,6 +84,7 @@ public class BattleSystem : MonoBehaviour
         PlayerTurn();
     }
 
+    //handles player's attack
     IEnumerator PlayerAttack(bool isSpecial)
     {
         //determine amount of damage
@@ -136,14 +143,20 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = enemyUnit.unitName + " attacks!";
+        enemyAnimator.SetBool("IsAttacking", true);
+        
+        
+        Debug.Log("enemy's turn and it has attacked");
 
         yield return new WaitForSeconds(1f);
-
+        
         AttackAPlayer();
 
         bool allDead = players.AllDead();
 
         yield return new WaitForSeconds(1f);
+        
+        enemyAnimator.SetBool("IsAttacking", false);
 
         if(allDead)
         {

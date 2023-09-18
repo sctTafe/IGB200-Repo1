@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: SetUpCamp
+  m_Name: Mission 3 - Temp
   m_EditorClassIdentifier: 
-  _name: Set Up Camp
-  _info: 'Setup Work Site: site clearing, grading, excavation, and utility installations.
-    Fence off area and establish erosion control area, ensuring a secure and compliant
-    foundation for construction activities to commence.'
+  _missionUID: 3
+  _name: Mission 3 - Doing Something
+  _info: Mission 3 - Doing other mission'ie stuff
   _missionPic: {fileID: 0}
+  _daysToComplete: 0
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

@@ -17,7 +17,7 @@ public class MouseSelectionInformation_BridgeSection : MonoBehaviour
         ThisProgressionSelectionItem.OnChange += HandlePSIChange;
     }
 
-    // Called Externally 
+    // Called Externally ( to bind to UI Side of things )
     public void fn_BindToProgressionSelectionMng()
     {
         MouseSelectionInformation_Mng.Instance.fn_Bind_CurrentlySelected(ThisProgressionSelectionItem);

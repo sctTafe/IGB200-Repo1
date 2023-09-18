@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
+  m_Name: Mission 1 - SetUpCamp
+  m_EditorClassIdentifier: 
+  _missionUID: 1
+  _name: Set Up Camp
+  _info: 'Setup Work Site: site clearing, grading, excavation, and utility installations.
+    Fence off area and establish erosion control area, ensuring a secure and compliant
+    foundation for construction activities to commence.'
+  _missionPic: {fileID: 0}
+  _daysToComplete: 0
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

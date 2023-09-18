@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: SetUpPillarFoundation
+  m_Name: Mission 2 - SetUpPillarFoundation
   m_EditorClassIdentifier: 
+  _missionUID: 2
   _name: Set Up Pillar Foundation
   _info: Establishing bridge pylon foundations in a river involves initial riverbed
     excavation, followed by drilling or pile driving for foundation support. Precise
@@ -19,3 +20,6 @@ MonoBehaviour:
     measures like cofferdams or sheet piles create a dry workspace, enabling construction
     of stable, secure pylon foundations.
   _missionPic: {fileID: 0}
+  _daysToComplete: 0
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

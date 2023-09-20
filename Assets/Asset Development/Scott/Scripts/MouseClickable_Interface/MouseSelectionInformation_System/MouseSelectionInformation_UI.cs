@@ -10,6 +10,7 @@ using TMPro;
 
 public class MouseSelectionInformation_UI : MonoBehaviour
 {
+
     // - Public - 
     [SerializeField] private RectTransform _MouseSelectionInfoUI_Panel; 
     [SerializeField] private TMP_Text _nameTMP;
@@ -87,4 +88,9 @@ public class MouseSelectionInformation_UI : MonoBehaviour
         _MouseSelectionInfo_Mng.fn_TryBuyUpgrade();
     } 
 
+    public void fn_HandleMissionSelectBtn()
+    {
+        _MouseSelectionInfo_Mng ??= MouseSelectionInformation_Mng.Instance;
+        _MouseSelectionInfo_Mng.fn_TrySelectMission();
+    }
 }

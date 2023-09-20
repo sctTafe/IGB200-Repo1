@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: Mission 3 - Temp
+  m_Name: Mission 3 - Erect the Arch
   m_EditorClassIdentifier: 
   _missionUID: 3
-  _name: Mission 3 - Doing Something
-  _info: Mission 3 - Doing other mission'ie stuff
+  _missionName: 'Erect the Arch '
+  _missionShortBrife: Erect the Arch  somthing somthing (Short Brief)
+  _missionDescription: Erect the Arch  somthing somthing somthing somthing (Mission
+    Description)
   _missionPic: {fileID: 0}
-  _daysToComplete: 0
+  _missionDifficultyRating: 3
+  _completionBonusPoints: 500
+  _daysToComplete: 64
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}

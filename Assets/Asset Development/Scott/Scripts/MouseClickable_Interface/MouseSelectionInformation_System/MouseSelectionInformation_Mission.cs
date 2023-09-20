@@ -28,15 +28,8 @@ public class MouseSelectionInformation_Mission : MonoBehaviour
 
     private void HandleOnChange()
     {
-        // check if the 'ProgressionSelectionItem', _isPurchased is true, OnChange Event
-        if (_MouseSelectionInfoItem._isPurchased)
-        {
-            // Switch which game object (visual) version is active / showing
-            _ghostTransform.gameObject.SetActive(false);
-            _finTransform.gameObject.SetActive(true);
-        }
-
-
+        // NOTE: Messy Work Aound -  triggers when the '_OnMissionSelectionBtn' when the OnChange Event is called - this is a messy and bad work around & should all be refactored
+        _OnMissionSelectionBtn?.Invoke();
     }
 
 }

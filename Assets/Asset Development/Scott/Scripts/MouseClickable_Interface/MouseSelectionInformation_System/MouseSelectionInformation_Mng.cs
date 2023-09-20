@@ -36,6 +36,7 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
 
 
     public UnityEvent OnUpdateOfPSI;
+
     public MouseSelectionInformation_Item _currentMouseSelectionItem { get; private set; }
     private ProjectPoints_Mng _PPMng;
     private void Awake()
@@ -66,6 +67,14 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
             }
         }
     }
+
+    public void fn_TrySelectMission()
+    {
+        // NOTE: this is a bad way of doing this -> this just triggers the action on the '_currentMouseSelectionItem'
+        _currentMouseSelectionItem.fn_MissionSelect();
+    }
+
+
 
 }
 

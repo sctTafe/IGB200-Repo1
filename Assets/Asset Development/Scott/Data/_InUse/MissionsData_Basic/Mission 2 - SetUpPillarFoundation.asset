@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Mission 2 - SetUpPillarFoundation
   m_EditorClassIdentifier: 
   _missionUID: 2
-  _name: Set Up Pillar Foundation
-  _info: Establishing bridge pylon foundations in a river involves initial riverbed
-    excavation, followed by drilling or pile driving for foundation support. Precise
-    measurements and underwater concrete placement are crucial. Then, protective
-    measures like cofferdams or sheet piles create a dry workspace, enabling construction
-    of stable, secure pylon foundations.
+  _missionName: Set Up Bridge Foundations
+  _missionShortBrife: Drill into the ..... Achoring somthing somthing (Short Brief)
+  _missionDescription: Drill into the ..... Achoring somthing somthing .... set up
+    foundations that will stand the test of time (Mission Description)
   _missionPic: {fileID: 0}
-  _daysToComplete: 0
+  _missionDifficultyRating: 2
+  _completionBonusPoints: 200
+  _daysToComplete: 32
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}

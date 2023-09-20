@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// DOSE: Populates Mission Team Selection Window with 'bound' mission info
+/// </summary>
 public class MissionTeamSelection_UI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // - UI Panel Root -
+    [SerializeField] private RectTransform _missionTeamSelection_Root;
+    // - Mission Info -
+    [SerializeField] private TMP_Text _missionNameTMP;
 
-    // Update is called once per frame
-    void Update()
+    private MissionDataHolder _currentBoundMissionDataHolder;
+
+    public void fn_BindMissionDataHolder(MissionDataHolder newBoundMissionDataHolder)
     {
-        
+        if (newBoundMissionDataHolder != null)
+        {
+            _currentBoundMissionDataHolder = newBoundMissionDataHolder;
+
+            // - Mission Info - 
+            _missionNameTMP.SetText(_currentBoundMissionDataHolder._MissionSO._missionName.ToString());
+        }
+    }
+    public void fn_EnableMissionTeamSelectionWindow(bool isEnabled = true)
+    {
+        _missionTeamSelection_Root.gameObject.SetActive(isEnabled);
     }
 }

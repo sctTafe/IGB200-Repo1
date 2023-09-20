@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Mission 1 - SetUpCamp
   m_EditorClassIdentifier: 
   _missionUID: 1
-  _name: Set Up Camp
-  _info: 'Setup Work Site: site clearing, grading, excavation, and utility installations.
-    Fence off area and establish erosion control area, ensuring a secure and compliant
-    foundation for construction activities to commence.'
+  _missionName: 'Set Up Work Site '
+  _missionShortBrife: 'Clear the base camp are & Set Up Work Site... etc. (Short
+    Brife) '
+  _missionDescription: 'Clear the base camp are & Set Up Work Site... etc. (Long
+    Mission Descript) '
   _missionPic: {fileID: 0}
-  _daysToComplete: 0
+  _missionDifficultyRating: 1
+  _completionBonusPoints: 100
+  _daysToComplete: 8
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}

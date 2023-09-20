@@ -29,4 +29,10 @@ public class MouseSelectionInformation_Item
         _isPurchased = true;
         OnChange?.Invoke();
     }
+    // NOTE: this is a messy work around below, relying on the 'MouseSelectionInformation_Mission' to work out its talking to it
+    public void fn_MissionSelect()
+    {
+        OnChange?.Invoke();
+    }
+
 }

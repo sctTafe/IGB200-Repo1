@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoHome()
     {
+        StaticData.team.Clear();
         SceneManager.LoadScene(menuScene);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;

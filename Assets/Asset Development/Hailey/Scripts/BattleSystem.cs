@@ -45,6 +45,15 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.START;
         players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer
 
+        foreach (GameObject character in players.characters)
+        {
+            Debug.Log("character is: " + character.GetComponent<Unit>().type);
+        }
+        
+        foreach (GameObject character in GameManager.instance.battleTeam)
+        {
+            Debug.Log("battle character is: " + character.GetComponent<Unit>().type);
+        }
         StartCoroutine(SetUpBattle());
     }
 
@@ -62,7 +71,7 @@ public class BattleSystem : MonoBehaviour
 
         for(int i=0; i < players.characters.Count; i++)
         {
-            //Debug.Log("instantiate team member" + players.characters[i].GetComponent<Unit>().type);
+            Debug.Log("instantiate team member" + players.characters[i].GetComponent<Unit>().type);
             Instantiate(players.characters[i], playerBattleStations[i]);
         }
 
@@ -198,7 +207,8 @@ public class BattleSystem : MonoBehaviour
             StaticData.isBattleWon = false;
         }
 
-        UpdateTeamInformation();
+        //UpdateTeamInformation();
+        StaticData.team.Clear(); //reset the team list
         
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(scene);

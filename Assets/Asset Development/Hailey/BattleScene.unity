@@ -6921,6 +6921,7 @@ MonoBehaviour:
   enemyBattleStation: {fileID: 898528684}
   playerUnit: {fileID: 0}
   enemyUnit: {fileID: 0}
+  enemyGO: {fileID: 0}
   dialogueText: {fileID: 763727897}
   playerHUD: {fileID: 1256669576}
   enemyHUD: {fileID: 1484210268}
@@ -7210,6 +7211,7 @@ MonoBehaviour:
   - {fileID: 272199529087502221, guid: 44ced5a720368c248b2acb2afdc1c388, type: 3}
   - {fileID: 272199529087502221, guid: 4d39927eef969f1458ee63f63035ce55, type: 3}
   - {fileID: 272199529087502221, guid: b1121c2782aa8224ba55a0541d0cc2e2, type: 3}
+  - {fileID: 272199529087502221, guid: e8abc61de111938488870672891afa05, type: 3}
 --- !u!1 &2084429891
 GameObject:
   m_ObjectHideFlags: 0

@@ -844,10 +844,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834906956}
-        m_TargetAssemblyTypeName: ProjectPoints_Mng, Assembly-CSharp
-        m_MethodName: fn_AddPoints
-        m_Mode: 3
+      - m_Target: {fileID: 248349795}
+        m_TargetAssemblyTypeName: DebugTestPanel_UIAndMng, Assembly-CSharp
+        m_MethodName: fn_ProjectPoints_AddPoints
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1124,9 +1124,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1485389700}
-        m_TargetAssemblyTypeName: DayCounter_Mng, Assembly-CSharp
-        m_MethodName: fn_updateToNextDay
+      - m_Target: {fileID: 248349795}
+        m_TargetAssemblyTypeName: DebugTestPanel_UIAndMng, Assembly-CSharp
+        m_MethodName: fn_Days_AddDay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3659,8 +3659,9 @@ GameObject:
   - component: {fileID: 248349792}
   - component: {fileID: 248349794}
   - component: {fileID: 248349793}
+  - component: {fileID: 248349795}
   m_Layer: 5
-  m_Name: Testing_Panel
+  m_Name: '[DebugTesting_UIAndMng]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3725,6 +3726,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248349791}
   m_CullTransparentMesh: 1
+--- !u!114 &248349795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248349791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7b45ae84357504e8f01fc941121df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &249388535
 GameObject:
   m_ObjectHideFlags: 0
@@ -9288,6 +9301,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722995185}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &727151452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727151453}
+  - component: {fileID: 727151454}
+  m_Layer: 0
+  m_Name: '[ProjectPoints_Mng]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &727151453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727151452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833877966}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &727151454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727151452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c3d97e466db9141a45859a7fd10fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnProjectPointsChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &738988240
 GameObject:
   m_ObjectHideFlags: 0
@@ -10432,7 +10492,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 987341810}
+  - {fileID: 727151453}
   m_Father: {fileID: 216289947}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11908,6 +11970,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7399875246712289915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &987341809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987341810}
+  - component: {fileID: 987341811}
+  m_Layer: 0
+  m_Name: '[Days_Mng]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &987341810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987341809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833877966}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &987341811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987341809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92396985027b43649ad18a27dd6a2c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnDayChange_UnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1070978304
 GameObject:
   m_ObjectHideFlags: 0
@@ -15542,10 +15651,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1485389698}
-  - component: {fileID: 1485389700}
   - component: {fileID: 1485389699}
   m_Layer: 0
-  m_Name: '[Days_Mng]'
+  m_Name: '[Days_UI]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15579,22 +15687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dayTMP: {fileID: 1919140724}
---- !u!114 &1485389700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485389697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92396985027b43649ad18a27dd6a2c4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _OnDayChange:
-    m_PersistentCalls:
-      m_Calls: []
-  _DayCounterUI: {fileID: 1485389699}
 --- !u!1001 &1491142953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17469,8 +17561,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1485389698}
-  - {fileID: 765976350}
   - {fileID: 1834906954}
+  - {fileID: 765976350}
   m_Father: {fileID: 424849163}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18533,7 +18625,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1834906954}
-  - component: {fileID: 1834906956}
   - component: {fileID: 1834906955}
   m_Layer: 0
   m_Name: '[ProjectPoints_Mng]'
@@ -18570,34 +18661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectPointsTMP: {fileID: 97380550}
---- !u!114 &1834906956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834906953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33c3d97e466db9141a45859a7fd10fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnProjectPointsChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1834906955}
-        m_TargetAssemblyTypeName: ProjectPoints_UI, Assembly-CSharp
-        m_MethodName: fn_UpdateProjectPointsText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _projectPoints: 0
 --- !u!1 &1835038734
 GameObject:
   m_ObjectHideFlags: 0

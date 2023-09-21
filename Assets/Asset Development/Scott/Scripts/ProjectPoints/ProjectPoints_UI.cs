@@ -1,18 +1,51 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// 
+/// Description:
+///     Connects to 'ProjectPoints Persistent Singleton' on Awake, and updated based on event triggers from it
+///     
+/// </summary>
 public class ProjectPoints_UI : MonoBehaviour
 {
 
     [SerializeField] private TMP_Text _projectPointsTMP;
-    void Start()
+
+    ProjectPoints_PersistentSingletonMng _ProjectPointsManager;
+
+    void Awake()
     {
-        _projectPointsTMP.SetText("00000");
+        ConnectToProjectPointsMng();
+        if (_ProjectPointsManager != null)
+        {
+            // set to current day on start
+            fn_UpdateCurrentPoints(_ProjectPointsManager.fn_GetCurrentPoints());
+        }
+    }
+    private void OnDestroy()
+    {
+        if (_ProjectPointsManager != null)
+            _ProjectPointsManager._OnProjectPointsChange_CurrentPoints -= HandleOnProjectPointsChange;
     }
 
-    public void fn_UpdateProjectPointsText(int newValue)
+    void fn_UpdateCurrentPoints(int day)
     {
-        _projectPointsTMP.SetText(newValue.ToString());
+        _projectPointsTMP.SetText(day.ToString());
+    }
+
+    private void ConnectToProjectPointsMng()
+    {
+        _ProjectPointsManager ??= ProjectPoints_PersistentSingletonMng.Instance;
+        if (_ProjectPointsManager != null)
+        {
+            _ProjectPointsManager._OnProjectPointsChange_CurrentPoints += HandleOnProjectPointsChange;
+        }
+    }
+
+    private void HandleOnProjectPointsChange(int day)
+    {
+        fn_UpdateCurrentPoints(day);
     }
 
 }

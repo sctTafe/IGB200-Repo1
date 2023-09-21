@@ -38,7 +38,7 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
     public UnityEvent OnUpdateOfPSI;
 
     public MouseSelectionInformation_Item _currentMouseSelectionItem { get; private set; }
-    private ProjectPoints_Mng _PPMng;
+    private ProjectPoints_PersistentSingletonMng _PPMng;
     private void Awake()
     {
         SingeltonSetup();
@@ -55,7 +55,7 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
     {
         // DOSE: Try to buy the upgrade for its cost from the Project Points Mng Instance, If it returns true, action the purchase
 
-        _PPMng ??= ProjectPoints_Mng.Instance;
+        _PPMng ??= ProjectPoints_PersistentSingletonMng.Instance;
         // check is not already purchased
         if (!_currentMouseSelectionItem._isPurchased)
         {

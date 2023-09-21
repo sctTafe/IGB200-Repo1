@@ -144,6 +144,7 @@ public class BattleSystem : MonoBehaviour
         {
             //enemy turn            
             state = BattleState.ENEMYTURN;
+            enemyAnimator.SetBool("IsAttacking", true);
             StartCoroutine(EnemyTurn());
         }     
 
@@ -152,8 +153,6 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = enemyUnit.unitName + " attacks!";
-        enemyAnimator.SetBool("IsAttacking", true);
-        
         
         Debug.Log("enemy's turn and it has attacked");
 

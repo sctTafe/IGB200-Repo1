@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
         //Get Team from the progress scene through the StaticData class
         team = StaticData.team;
         player1 = StaticData.playerOne;
+        
+        //clear previous battleTeam
+        battleTeam.Clear();
 
         //Debug.Log("type: " + team[0]._classType.ToString());
         //Based on the team member's class types, construct the battle team
@@ -46,20 +49,20 @@ public class GameManager : MonoBehaviour
         }
 
         //Stand in code until classType is an error
-        // for (int j = 0; j < prefab.Count; j++)
-        // {
-        //     battleTeam.Add(prefab[j]);
-        // }
+        /*for (int j = 0; j < prefab.Count; j++)
+        {
+            battleTeam.Add(prefab[j]);
+        }*/
     }
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("The team has " + team.Count + " team members");
+        /*Debug.Log("The team has " + team.Count + " team members");
         foreach(TeamMemberTransfer_Data role in team)
         {            
             Debug.Log(role._classType);
             //teamObjects.Add(role.gameObject)
-        }
+        }*/
     }
 
     // Update is called once per frame

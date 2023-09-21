@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scenes/Tutorial/ProjectManagmentSceneTutorial.unity.meta
 guid: 1a0eeaa0fd5a010419be87b2a2484269
+========
+guid: 350322436009948418ff28047a705487
+>>>>>>>> Stashed changes:Assets/Scenes/Tutorial/BattleSceneTutorial.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

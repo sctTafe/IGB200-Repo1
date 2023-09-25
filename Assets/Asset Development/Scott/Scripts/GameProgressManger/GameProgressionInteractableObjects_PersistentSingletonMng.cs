@@ -5,7 +5,7 @@ using UnityEngine;
 
 /// <summary>
 /// 
-/// DOSE: Manages which progression gameobjects are active
+/// DOSE: Manages which progression gameobjects are active/disabled - Works with Mission_Basic_SO (they are just relays) 
 /// 
 /// 
 /// </summary>
@@ -62,12 +62,21 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
 
 
     // - Mission Progression Functions - 
-    public void fn_SetMissionGOToEnabled(int _missionUID)
+    public void fn_CompleteMission(int _missionUID)
     {
+        
         foreach (var missionSO in _AllMissionArray)
         {
             if (missionSO._missionUID == _missionUID)
-                missionSO.fn_SetEnabledState(true);
+            {
+                // Enable Objects
+                foreach (var missionSOToEnable in missionSO._EnabledOnCompletion_Array)
+                {
+                    missionSOToEnable.fn_SetEnabledState(true);
+                }
+                // Disable Current Mission Object 
+                missionSO.fn_SetEnabledState(false);
+            }      
         }
     }
 
@@ -125,10 +134,15 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
 
 
     #region Debugging
-    [ContextMenu("Testing - Mission Observer Relay")]
-    private void Testing_SetMissionActiveAndDIsableCurrent()
+    [ContextMenu("Testing - Mission Observer Relay - Complete 1")]
+    private void Testing_SetMissionActiveAndDIsableCurrent1()
     {
-        fn_SetMissionGOToEnabled(2);
+        fn_CompleteMission(1);
+    }
+    [ContextMenu("Testing - Mission Observer Relay - Complete 2")]
+    private void Testing_SetMissionActiveAndDIsableCurrent2()
+    {
+        fn_CompleteMission(2);
     }
     #endregion
 }

@@ -78,7 +78,8 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     public void fn_HandleMissionFinished()
     {
         // Update Mission Outcomes
-
+        // 1) retrived mission ID from staticData
+        // 2) with the ID get what ID will be enabled
 
         // Update Project Points Outcomes
 

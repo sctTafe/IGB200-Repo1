@@ -23,3 +23,6 @@ MonoBehaviour:
   _daysToComplete: 32
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
+  _EnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: 980497ba10ed12b4b85d3ec45a85a04b, type: 2}
+  _isEnabledFromGameStart: 0

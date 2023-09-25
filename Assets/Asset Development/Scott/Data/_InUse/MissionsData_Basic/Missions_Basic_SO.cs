@@ -6,7 +6,9 @@ using UnityEngine;
 public class Missions_Basic_SO : ScriptableObject
 {
     public Action <bool> _OnStateChange_isEnabled;
-    
+
+
+
     [SerializeField] public int _missionUID; 
     [SerializeField] public String _missionName;
     
@@ -22,6 +24,9 @@ public class Missions_Basic_SO : ScriptableObject
      
     [SerializeField] public GameObject _unfinishedPrefab;
     [SerializeField] public GameObject _finishedPrefab;
+
+    // - Missions & Interaction Objects Enabled On Mission Completion -
+    [SerializeField] public Missions_Basic_SO[] _EnabledOnCompletion_Array;
 
     // - Other - 
     [SerializeField] public bool _isEnabledFromGameStart = false;

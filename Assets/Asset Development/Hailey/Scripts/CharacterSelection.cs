@@ -48,6 +48,7 @@ public class CharacterSelection : MonoBehaviour
   
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
+        battleSystem.playerAnimator = characters[selectedCharacter].GetComponent<Animator>();
         playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
     }
 

@@ -2903,7 +2903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.15286, y: 1.3509521}
+  m_AnchoredPosition: {x: -122.55753, y: 1.3509521}
   m_SizeDelta: {x: 81.5731, y: 81.5731}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422989130
@@ -7384,7 +7384,7 @@ MonoBehaviour:
   characters:
   - {fileID: 272199529087502221, guid: 6a4c7a8d3eba20b44a5a70ff2f042b0d, type: 3}
   - {fileID: 272199529087502221, guid: 44ced5a720368c248b2acb2afdc1c388, type: 3}
-  - {fileID: 272199529087502221, guid: 4d39927eef969f1458ee63f63035ce55, type: 3}
+  - {fileID: 272199529087502221, guid: 573a04a5a6e4c314d81a0143b1a8133a, type: 3}
   - {fileID: 272199529087502221, guid: b1121c2782aa8224ba55a0541d0cc2e2, type: 3}
   selectedCharacter: 0
   lightLocations:
@@ -12363,7 +12363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92.49533, y: 1.3509521}
+  m_AnchoredPosition: {x: -86.9, y: 1.3509521}
   m_SizeDelta: {x: 81.5731, y: 81.573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870388345
@@ -13303,23 +13303,26 @@ MonoBehaviour:
     type: 3}
   enemyPrefab: {fileID: 6994579144079665197, guid: 8701f822972aa1d4bb8116de1c14884d,
     type: 3}
+  playerUnit: {fileID: 0}
+  enemyUnit: {fileID: 0}
+  enemyGO: {fileID: 0}
+  players: {fileID: 1140921857}
   playerBattleStations:
   - {fileID: 1786364873}
   - {fileID: 1549741338}
   - {fileID: 1618159331}
   - {fileID: 233205026}
   enemyBattleStation: {fileID: 898528684}
-  playerUnit: {fileID: 0}
-  enemyUnit: {fileID: 0}
-  enemyGO: {fileID: 0}
   dialogueText: {fileID: 345950857}
   playerHUD: {fileID: 1441060804}
   enemyHUD: {fileID: 2087261713}
   state: 0
   hasActed: 0
   isHealing: 0
-  players: {fileID: 1140921857}
   scene: ProjectManagmentScene v3
+  waterEffect: {fileID: 0}
+  playerAnimator: {fileID: 8621025673172777780, guid: 6a4c7a8d3eba20b44a5a70ff2f042b0d,
+    type: 3}
 --- !u!4 &1955290729
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3524540076776182451}
   - component: {fileID: 1203811932270017390}
   - component: {fileID: 7584774772658344415}
+  - component: {fileID: 8621025673172777780}
   m_Layer: 0
   m_Name: Electrician
   m_TagString: Untagged
@@ -123,12 +124,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Player
-  unitLevel: 999
+  unitLevel: 0
   type: 2
   weakness: 1
   damage: 10
   maxHP: 25
-  currentHP: 20
+  currentHP: 10
   specialDamage: 0
   isHealer: 0
   isSleeping: 0
@@ -145,6 +146,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093a9bd71ff02c94faa2d331fc457ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8621025673172777780
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272199529087502221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5e2f5a19f12e9fc48aabd3a4c6000ff0, type: 3}
+  m_Controller: {fileID: 9100000, guid: 89aaced761f708040b3b5072ddd02e5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &457836697602482547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,7 +275,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2e951489d511e2a428230f955a123f84, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7857350340933624321, guid: 51a43f08d303ee643b15f94c113c2404, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

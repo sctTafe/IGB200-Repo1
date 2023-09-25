@@ -10,40 +10,46 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 
 public class BattleSystem : MonoBehaviour
 {
+    [Header("Characters")]
     public GameObject playerPrefab;
     //public GameObject playerOne = StaticData.playerOne;
     public GameObject enemyPrefab;
-
-    public Transform[] playerBattleStations;
-    public Transform enemyBattleStation;
 
     public Unit playerUnit;
     public Unit enemyUnit;
 
     public GameObject enemyGO;
+    
+    public CharacterSelection players;
 
+    [Header("BattleHUD")]
+    public Transform[] playerBattleStations;
+    public Transform enemyBattleStation;
+    
     public TMP_Text dialogueText;
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
 
+    [Header("Battle States")]
     public BattleState state;
 
     public bool hasActed = false;
     public bool isHealing = false;
 
-    public CharacterSelection players;
-
     public string scene;
     
-    //battle animations
+    [Header("Battle Animations")]
+    [SerializeField] private GameObject waterEffect;
+    
     private Animator enemyAnimator;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
-        players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer
+        //players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer
 
         foreach (GameObject character in players.characters)
         {
@@ -78,6 +84,7 @@ public class BattleSystem : MonoBehaviour
         enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
         enemyAnimator = enemyGO.GetComponent<Animator>();
+        waterEffect = enemyGO.transform.GetChild(0).gameObject;
 
         playerHUD.characters = players.characters;
         enemyHUD.characters = new List<GameObject> {enemyPrefab};
@@ -129,8 +136,11 @@ public class BattleSystem : MonoBehaviour
         bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
         
+        playerAnimator.SetBool("IsAttacking", true);
 
         yield return new WaitForSeconds(2f);
+        
+        playerAnimator.SetBool("IsAttacking", false);
 
         //Check if the enemy is dead
         //Change state based on what happened
@@ -145,6 +155,7 @@ public class BattleSystem : MonoBehaviour
             //enemy turn            
             state = BattleState.ENEMYTURN;
             enemyAnimator.SetBool("IsAttacking", true);
+            waterEffect.SetActive(true);
             StartCoroutine(EnemyTurn());
         }     
 
@@ -165,6 +176,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         enemyAnimator.SetBool("IsAttacking", false);
+        waterEffect.SetActive(false);
 
         if(allDead)
         {
@@ -238,9 +250,11 @@ public class BattleSystem : MonoBehaviour
 
         //playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
         dialogueText.text = "You feel renewed strength!";
+        playerAnimator.SetBool("IsHealing", true);
 
         yield return new WaitForSeconds(2f);
-
+        
+        playerAnimator.SetBool("IsHealing", false);
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }

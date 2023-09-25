@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3524540076776182451}
   - component: {fileID: 1203811932270017390}
   - component: {fileID: 9182456170344926669}
+  - component: {fileID: 5172970540665592803}
   m_Layer: 0
   m_Name: Foreman
   m_TagString: Untagged
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Player
-  unitLevel: 999
+  unitLevel: 1
   type: 3
   weakness: 4
   damage: 10
@@ -145,6 +146,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093a9bd71ff02c94faa2d331fc457ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5172970540665592803
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272199529087502221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5e2f5a19f12e9fc48aabd3a4c6000ff0, type: 3}
+  m_Controller: {fileID: 9100000, guid: 89aaced761f708040b3b5072ddd02e5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3161101838201405996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -243,7 +265,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e9d5ba4b16c2001408f0f3e11dd0f7b9, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5117277248231428351, guid: dfbacc8cdae7217409703f2259e02fcc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

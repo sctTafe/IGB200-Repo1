@@ -1634,6 +1634,11 @@ PrefabInstance:
       propertyPath: _OnMissionSelectionBtn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5395616199705413400, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
+        type: 3}
+      propertyPath: _localMissionDataHolder
+      value: 
+      objectReference: {fileID: 358529049}
     - target: {fileID: 7430543296515574119, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
       propertyPath: m_RootOrder
@@ -2244,7 +2249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMissionID: 0
-  _missionCompletedSuccessfully: 0
+  _isMissionCompletedSuccessfully: 0
 --- !u!1001 &146702165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2667,12 +2672,6 @@ Transform:
   m_Father: {fileID: 336613475}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &194482707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
-    type: 3}
-  m_PrefabInstance: {fileID: 1630018780}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &194482708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7430543296515574119, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
@@ -2685,7 +2684,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1630018780}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194482707}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ed03b8856590464795f4f29075378e6, type: 3}
@@ -5777,12 +5776,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353435175}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &358529047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
-    type: 3}
-  m_PrefabInstance: {fileID: 101552432}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &358529048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7430543296515574119, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
@@ -5795,7 +5788,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 101552432}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358529047}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ed03b8856590464795f4f29075378e6, type: 3}
@@ -6594,7 +6587,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 460224640}
-  - component: {fileID: 460224641}
   m_Layer: 0
   m_Name: '[Test_GPIOs_Mng]'
   m_TagString: Untagged
@@ -6618,22 +6610,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &460224641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460224639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efeb16e09e699f42a7ca4951a0812fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _InteractableProgressionGameObjects:
-  - {fileID: 194482707}
-  - {fileID: 358529047}
-  - {fileID: 2056675198}
 --- !u!1 &474136504
 GameObject:
   m_ObjectHideFlags: 0
@@ -6815,6 +6791,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474722582}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &486794440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486794441}
+  - component: {fileID: 486794442}
+  m_Layer: 0
+  m_Name: '[ProgressionGOs_Mng]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486794441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486794440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833877966}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486794442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486794440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efeb16e09e699f42a7ca4951a0812fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AllMissionArray:
+  - {fileID: 11400000, guid: c8f8c93f3bce35148aa3a84f52ba02d4, type: 2}
+  - {fileID: 11400000, guid: 3b779cccdfcef35408349cd0172289dc, type: 2}
+  - {fileID: 11400000, guid: 980497ba10ed12b4b85d3ec45a85a04b, type: 2}
+  _currentlyEnabaledGPIOs_IDs_List: 
 --- !u!1 &505738416
 GameObject:
   m_ObjectHideFlags: 0
@@ -9578,7 +9603,7 @@ GameObject:
   - component: {fileID: 765976352}
   - component: {fileID: 765976351}
   m_Layer: 0
-  m_Name: '[GameProgressManager]'
+  m_Name: '[GameProgressManager - Win Game V1]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10495,6 +10520,7 @@ Transform:
   m_Children:
   - {fileID: 987341810}
   - {fileID: 727151453}
+  - {fileID: 486794441}
   m_Father: {fileID: 216289947}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16790,6 +16816,11 @@ PrefabInstance:
       propertyPath: _OnMissionSelectionBtn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5395616199705413400, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
+        type: 3}
+      propertyPath: _localMissionDataHolder
+      value: 
+      objectReference: {fileID: 194482709}
     - target: {fileID: 7430543296515574119, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
       propertyPath: m_RootOrder
@@ -20388,12 +20419,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037168566}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2056675198 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
-    type: 3}
-  m_PrefabInstance: {fileID: 4003049127517944859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2056675199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7430543296515574119, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
@@ -20406,7 +20431,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4003049127517944859}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056675198}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ed03b8856590464795f4f29075378e6, type: 3}
@@ -22503,6 +22528,11 @@ PrefabInstance:
       propertyPath: _OnMissionSelectionBtn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5395616199705413400, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
+        type: 3}
+      propertyPath: _localMissionDataHolder
+      value: 
+      objectReference: {fileID: 2056675200}
     - target: {fileID: 7430543296515574119, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
       propertyPath: m_RootOrder

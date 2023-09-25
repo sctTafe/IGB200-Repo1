@@ -5,6 +5,9 @@ using UnityEngine;
 public class StaticData_v2 : MonoBehaviour
 {
     public static List<GameObject> missionTeam = new();
+
     public int _currentMissionID;
-    public bool _missionCompletedSuccessfully;
+    public bool _isMissionCompletedSuccessfully;
+
+
 }

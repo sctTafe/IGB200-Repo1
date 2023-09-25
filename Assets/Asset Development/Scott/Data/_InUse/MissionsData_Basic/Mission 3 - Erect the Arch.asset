@@ -23,3 +23,4 @@ MonoBehaviour:
   _daysToComplete: 64
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
+  _isEnabledFromGameStart: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissionDataHolder : MonoBehaviour
 {
     [SerializeField] public Missions_Basic_SO _MissionSO;
-
+   
     // - Needs Cleaning UP - 
     [SerializeField] private MissionSelection_Mng _MissionSelection_Mng;
 
@@ -21,4 +21,16 @@ public class MissionDataHolder : MonoBehaviour
             Debug.LogError("MissionDataHolder: fn_BindToMissionSelection_Mng; _MissionSelection_Mng is null!");
         }
     }
+    public int fn_GetMissionUID()
+    {
+        return _MissionSO._missionUID;
+    }
+    public bool fn_GetIsMissionEnabledFromStart()
+    {
+        return _MissionSO._isEnabledFromGameStart;
+    }
+
+
+
+
 }

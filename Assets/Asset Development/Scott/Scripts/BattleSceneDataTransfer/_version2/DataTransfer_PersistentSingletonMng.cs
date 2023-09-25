@@ -13,12 +13,49 @@ using UnityEngine;
 /// 
 /// </summary>
 
-public class DataTransfer_Mng_v2 : MonoBehaviour
+public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 {
+
+    #region Singelton Setup
+    private static DataTransfer_PersistentSingletonMng _instance;
+    public static DataTransfer_PersistentSingletonMng Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("DayCounter_Mng instance is not found.");
+            }
+            return _instance;
+        }
+    }
+    private void SingeltonSetup()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    #endregion
+
+
     public bool _isDebuggingOn = false;
     public TeamMemberTransfer_Data _Prefab;
     private TeanMember_SelectionGroupHolder_Mng _TeamMemberSelectionGroupHolder_Mng;
 
+
+    void Awake()
+    {
+        SingeltonSetup();
+    }
+
+
+    #region Public Functions
+    // - Passing Data In -
     public void fn_LoadMissionTeam()
     {
         if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam Called, "); }
@@ -36,6 +73,25 @@ public class DataTransfer_Mng_v2 : MonoBehaviour
             }
         }
     }
+    // - Returning Data Back - 
+
+    public void fn_HandleMissionFinished()
+    {
+        // Update Mission Outcomes
+
+
+        // Update Project Points Outcomes
+
+
+    }
+
+
+
+
+    // - 
+    #endregion
+
+    #region Private Functions
     private GameObject InstantiateTeamMemberTransfereHolder(int _uID, TeamMemberClassType _classType, float _maxEnergy, float _currentEnergy)
     {
         TeamMemberTransfer_Data newTeamMemberTransfereData = Instantiate(_Prefab, this.transform);
@@ -50,4 +106,8 @@ public class DataTransfer_Mng_v2 : MonoBehaviour
         _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
 
     }
+    #endregion
+
+
+
 }

@@ -9,12 +9,14 @@ using UnityEngine;
 /// </summary>
 public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
 {
-    [SerializeReference] private bool _isManuleLoadingEnabled;
-    public TeanMember_SelectionGroupHolder_Mng _TeanMemberSelectionGroupHolderMng;
+    [SerializeReference] private bool _isManuleLoadingEnabled;   
     public TeamMember_Basic_SO[] _AvalibleTeamMembers;
+
+    private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeanMemberSelectionGroupHolderMng;
 
     private void Awake()
     {
+        _TeanMemberSelectionGroupHolderMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
         _TeanMemberSelectionGroupHolderMng._OnSetupComplete += HandleResponseToSetUpComplete;
     }
     private void OnDestroy()

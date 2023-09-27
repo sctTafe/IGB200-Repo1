@@ -24,11 +24,11 @@ public enum SelectionGroupType
 ///     Is an Singelton
 /// </summary>
 /// 
-public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
+public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehaviour
 {
     #region Singelton Setup
-    private static TeanMember_SelectionGroupHolder_Mng _instance;
-    public static TeanMember_SelectionGroupHolder_Mng Instance
+    private static TeanMember_SelectionGroupHolder_PersistentSingletonMng _instance;
+    public static TeanMember_SelectionGroupHolder_PersistentSingletonMng Instance
     {
         get
         {
@@ -53,7 +53,7 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
     #endregion
 
 
-    public bool isLoadingTestMembers;
+    public bool Debugging_LoadingTestTeamMembers;
 
     public Action _OnSetupComplete;
 
@@ -71,7 +71,7 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
     void Start()
     {
         Setup_CreateGroups();
-        if (isLoadingTestMembers)
+        if (Debugging_LoadingTestTeamMembers)
         {
             Debuging_CreateTestPool(_avalibleTeamMemberPool, 3);
             Debuging_CreateTestPool(_selectedMissionTeam, 2);
@@ -80,9 +80,9 @@ public class TeanMember_SelectionGroupHolder_Mng : MonoBehaviour
         }
         _OnSetupComplete?.Invoke();
     }
-    void Update()
-    {      
-    }
+    //void Update()
+    //{      
+    //}
 
     private void Setup_CreateGroups() {
         // mission team limited to group size of 4

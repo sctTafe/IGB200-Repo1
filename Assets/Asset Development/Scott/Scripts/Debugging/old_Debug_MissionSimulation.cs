@@ -36,6 +36,6 @@ public class old_Debug_MissionSimulation : MonoBehaviour
 
     private void retriveCurrentMissionTeam()
     {
-        _currentMissionTeam = TeanMember_SelectionGroupHolder_Mng.Instance._selectedMissionTeam;
+        _currentMissionTeam = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance._selectedMissionTeam;
     }
 }

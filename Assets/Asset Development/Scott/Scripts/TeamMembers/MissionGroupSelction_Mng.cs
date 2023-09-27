@@ -11,7 +11,7 @@ using UnityEngine;
 public class MissionGroupSelction_Mng : MonoBehaviour
 {
     [SerializeField] private bool isDebuggingOn = false;
-    [SerializeField] private TeanMember_SelectionGroupHolder_Mng groupsHolder;
+    
     [SerializeField] private GameObject _TeamMemberMissionSelection_root;
     [SerializeField] private TeamMember_UI_ElementsMng _selectedTeam_UIEMng;
     [SerializeField] private TeamMember_UI_ElementsMng _avaliblePool_UIEMng;
@@ -23,9 +23,13 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     private TeamMember_SelectionGroup_Data _availableTeamMemberPool;
     private TeamMember_SelectionGroup_Data _selectedMissionTeam;
 
+    // external dependency
+    private TeanMember_SelectionGroupHolder_PersistentSingletonMng TeamMemberGroupsMng;
 
-
-
+    private void Awake()
+    {
+        TeamMemberGroupsMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+    }
     void Start() {
         // Disable Mission UI Panel Root
         _TeamMemberMissionSelection_root.SetActive(false);
@@ -48,8 +52,8 @@ public class MissionGroupSelction_Mng : MonoBehaviour
 
     private void BindToTeamMemberElementMngs()
     {
-        _avaliblePool_UIEMng.fn_Bind(groupsHolder._avalibleTeamMemberPool);
-        _selectedTeam_UIEMng.fn_Bind(groupsHolder._selectedMissionTeam);
+        _avaliblePool_UIEMng.fn_Bind(TeamMemberGroupsMng._avalibleTeamMemberPool);
+        _selectedTeam_UIEMng.fn_Bind(TeamMemberGroupsMng._selectedMissionTeam);
         _SelectedBigInfo_UIEMng.fn_Bind(_currentBigInfo_groupData);
 
         // Bind the two pool display elements to the event
@@ -74,16 +78,16 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         //Request is to add to selected pool
         if (tMSGD._groupType == SelectionGroupType.Available) //check if current teamMember Group is part of the 'Avalible Pool' i.e. trying to add it to the 'Mission pool' group
         {
-            if (groupsHolder._selectedMissionTeam.fn_TryAddTeamMember(tMD)) // try add to group, if i can be added to the group, remove it from the 'Avalible Pool'
+            if (TeamMemberGroupsMng._selectedMissionTeam.fn_TryAddTeamMember(tMD)) // try add to group, if i can be added to the group, remove it from the 'Avalible Pool'
             {
-                itworked = groupsHolder._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
+                itworked = TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
             }           
         }
         if (tMSGD._groupType == SelectionGroupType.Mission) {
 
-            if (groupsHolder._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD))
+            if (TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD))
             {
-                itworked = groupsHolder._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
+                itworked = TeamMemberGroupsMng._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
             }         
         }
         if(isDebuggingOn) Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);

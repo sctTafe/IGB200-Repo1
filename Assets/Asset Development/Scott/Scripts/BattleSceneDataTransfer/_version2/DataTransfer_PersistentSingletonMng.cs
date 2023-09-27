@@ -43,9 +43,9 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     #endregion
 
 
-    public bool _isDebuggingOn = false;
+    private bool _isDebuggingOn = true;
     public TeamMemberTransfer_Data _Prefab;
-    private TeanMember_SelectionGroupHolder_Mng _TeamMemberSelectionGroupHolder_Mng;
+    private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberSelectionGroupHolder_Mng;
 
 
     void Awake()
@@ -69,17 +69,40 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
                  GameObject teamMember = InstantiateTeamMemberTransfereHolder(item._uID, item._classType, item._maxEnergy, item._currentEnergy);
                 
                 // Add to StaticData List
-                StaticData_v2.missionTeam.Add(teamMember);
+                BattleTransferData_PersistentSingleton.missionTeam.Add(teamMember);
             }
         }
     }
+
+    // - Pass in the Data From the Mission - 
+    public void fn_LoadIn_MissionData(int missionID)
+    {
+        BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID;
+    }
+
+
+
     // - Returning Data Back - 
 
+    /// <summary>
+    ///  Called on Completion of the Battle, pulls data from 'BattleTransferData_PersistentSingleton' to update outcomes
+    /// </summary>
     public void fn_HandleMissionFinished()
     {
+        if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Called");
         // Update Mission Outcomes
         // 1) retrived mission ID from staticData
-        // 2) with the ID get what ID will be enabled
+        BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
+        if (battleTransferData != null)
+        {
+            if (battleTransferData._isMissionCompletedSuccessfully)
+            {
+                if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Mission Was Successful");
+                // 2) with the ID get what ID will be enabled
+                GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_CompleteMission(battleTransferData._currentMissionID);
+            }
+        }
+        
 
         // Update Project Points Outcomes
 
@@ -104,7 +127,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     }
     private void connectToSelectionGroupHolder()
     {
-        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
+        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
     }
     #endregion

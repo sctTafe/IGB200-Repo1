@@ -17,7 +17,7 @@ public class DataTransfer_Mng : MonoBehaviour
 {
     public bool _isDebuggingOn = false;
     public TeamMemberTransfer_Data _Prefab;
-    private TeanMember_SelectionGroupHolder_Mng _TeamMemberSelectionGroupHolder_Mng;
+    private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberSelectionGroupHolder_Mng;
 
     public void fn_LoadMissionTeam()
     {
@@ -47,7 +47,7 @@ public class DataTransfer_Mng : MonoBehaviour
     }
     private void connectToSelectionGroupHolder()
     {
-        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_Mng.Instance;
+        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
     }
 }

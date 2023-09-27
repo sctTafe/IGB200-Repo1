@@ -978,9 +978,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823705946}
-        m_TargetAssemblyTypeName: DataTransfer_Mng_v2, Assembly-CSharp
-        m_MethodName: fn_LoadMissionTeam
+      - m_Target: {fileID: 1329550146}
+        m_TargetAssemblyTypeName: MissionSelection_Mng, Assembly-CSharp
+        m_MethodName: fn_HandleStartMissionBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -988,18 +988,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 304584817}
-        m_TargetAssemblyTypeName: ScottBarley.IGB200.V1.UI_SceneSwitch, Assembly-CSharp
-        m_MethodName: fn_ChangeToScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BtlTestScene_SCOTSDEVSCENE_DO_NOT_EDIT
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &77638131
@@ -6839,7 +6827,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8f8c93f3bce35148aa3a84f52ba02d4, type: 2}
   - {fileID: 11400000, guid: 3b779cccdfcef35408349cd0172289dc, type: 2}
   - {fileID: 11400000, guid: 980497ba10ed12b4b85d3ec45a85a04b, type: 2}
-  _currentlyEnabaledGPIOs_IDs_List: 
+  _currentlyEnabaledMissionUIDs_List: 
 --- !u!1 &505738416
 GameObject:
   m_ObjectHideFlags: 0
@@ -10521,6 +10509,7 @@ Transform:
   - {fileID: 987341810}
   - {fileID: 727151453}
   - {fileID: 486794441}
+  - {fileID: 1932723628}
   m_Father: {fileID: 216289947}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14320,6 +14309,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a17f87fc85a6a49a21f9b3af3d2fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnHandleStartMissionBtn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 304584817}
+        m_TargetAssemblyTypeName: ScottBarley.IGB200.V1.UI_SceneSwitch, Assembly-CSharp
+        m_MethodName: fn_ChangeToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BtlTestScene_SCOTSDEVSCENE_DO_NOT_EDIT
+          m_BoolArgument: 0
+        m_CallState: 2
   _MissionBrife_UI: {fileID: 1329550145}
   _MissionTeamSelection_UI: {fileID: 1329550144}
 --- !u!4 &1330470824 stripped
@@ -18403,7 +18407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569236ce0d7ea184fae0a9032dc2d577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebuggingOn: 0
   _Prefab: {fileID: 1269415954}
 --- !u!1 &1823741202
 GameObject:
@@ -19740,6 +19743,51 @@ Transform:
   m_Father: {fileID: 2070009934}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 47.175, z: 0}
+--- !u!1 &1932723627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1932723628}
+  - component: {fileID: 1932723629}
+  m_Layer: 0
+  m_Name: '[TeamMember_Mng]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1932723628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932723627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833877966}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932723629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932723627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb09042255b56b48ace443642b7dc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLoadingTestMembers: 0
 --- !u!1 &1938523601
 GameObject:
   m_ObjectHideFlags: 0
@@ -21300,10 +21348,10 @@ RectTransform:
   m_Father: {fileID: 5206048244534432299}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -60}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701964422226092880
 MonoBehaviour:
@@ -21739,7 +21787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1873773125095885151
 Transform:
   m_ObjectHideFlags: 0
@@ -22183,7 +22231,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873773125095885151}
-  - component: {fileID: 6558939324264839347}
   - component: {fileID: 6558939324264839348}
   m_Layer: 0
   m_Name: '[TeamMemberGroupsHolder_Mng]'
@@ -23412,10 +23459,10 @@ RectTransform:
   m_Father: {fileID: 2018232855359224024}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160, y: -110}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &6419246071211252822
 PrefabInstance:
@@ -23576,19 +23623,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6558939324264839347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3066980914422921544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3c63bcbb92d6447b978b0eba9c7490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLoadingTestMembers: 0
 --- !u!114 &6558939324264839348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23602,7 +23636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isManuleLoadingEnabled: 1
-  _TeanMemberSelectionGroupHolderMng: {fileID: 6558939324264839347}
   _AvalibleTeamMembers:
   - {fileID: 11400000, guid: ed3a5f2a8ee55154f899f1fef3259a21, type: 2}
   - {fileID: 11400000, guid: 7da381e3cad70fe4fb496122015a7374, type: 2}
@@ -24075,7 +24108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebuggingOn: 0
-  groupsHolder: {fileID: 6558939324264839347}
   _TeamMemberMissionSelection_root: {fileID: 1869386335740195302}
   _selectedTeam_UIEMng: {fileID: 35173930357929879}
   _avaliblePool_UIEMng: {fileID: 9015351545892950463}

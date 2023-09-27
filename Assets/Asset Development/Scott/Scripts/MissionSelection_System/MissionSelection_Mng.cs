@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MissionSelection_Mng : MonoBehaviour
 {
+    public UnityEvent _OnHandleStartMissionBtn;
     private bool _isDebugging = false;
     [SerializeField] private MissionBrife_UI _MissionBrife_UI;
     [SerializeField] private MissionTeamSelection_UI _MissionTeamSelection_UI;
@@ -11,6 +13,16 @@ public class MissionSelection_Mng : MonoBehaviour
     // Bound Mission
     MissionDataHolder _currentBound_MissionDataHolder;
 
+    /// <summary>
+    ///  Loads the relevant data to the Transfer System and starts the Mission
+    /// </summary>
+    public void fn_HandleStartMissionBtn()
+    {
+        DataTransfer_PersistentSingletonMng dataTransMng = DataTransfer_PersistentSingletonMng.Instance;
+        dataTransMng.fn_LoadMissionTeam();
+        dataTransMng.fn_LoadIn_MissionData(_currentBound_MissionDataHolder.fn_GetMissionUID());
+        _OnHandleStartMissionBtn?.Invoke();
+    }
 
 
     public void fn_BindMissionDataHolder(MissionDataHolder newMissionDataHolder)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -41,12 +42,15 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
     // - Events - 
     public Action _OnChange_UpdateOfActiveList;
 
+    // - Debugging -
+    private bool _isDebuggingOn = true;
+
     // - For Foward Calls -
     public Missions_Basic_SO[] _AllMissionArray;
 
 
     // public for testing
-    public List<int> _currentlyEnabaledGPIOs_IDs_List = new List<int>();
+    public List<int> _currentlyEnabaledMissionUIDs_List = new List<int>();
     private bool _isSetUpComplete = false;
 
 
@@ -62,20 +66,25 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
 
 
     // - Mission Progression Functions - 
-    public void fn_CompleteMission(int _missionUID)
+    public void fn_CompleteMission(int missionUID)
     {
-        
+        if (_isDebuggingOn) Debug.Log("GameProgressionInteractableObjects_PersistentSingletonMng: fn_CompleteMission - Called, with ID: [ " + missionUID + "]");
         foreach (var missionSO in _AllMissionArray)
         {
-            if (missionSO._missionUID == _missionUID)
+            if (missionSO._missionUID == missionUID)
             {
                 // Enable Objects
                 foreach (var missionSOToEnable in missionSO._EnabledOnCompletion_Array)
                 {
                     missionSOToEnable.fn_SetEnabledState(true);
+                    // if ID not in list add the ID to the list - Uses both Push Method & a List update for if the event listener is not around
+                    if (!_currentlyEnabaledMissionUIDs_List.Contains(missionSOToEnable._missionUID))
+                        fn_SetObjectToEnabled(missionSOToEnable._missionUID);
                 }
-                // Disable Current Mission Object 
+                // Disable Current Mission Object - Uses both Push Method & a List update for if the event listener is not around
                 missionSO.fn_SetEnabledState(false);
+                if (_currentlyEnabaledMissionUIDs_List.Contains(missionSO._missionUID))
+                    fn_SetObjectToDisabled(missionSO._missionUID);
             }      
         }
     }
@@ -85,13 +94,13 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
     // - Object Enable / Disable Functions -
     public void fn_SetObjectToDisabled(int uID)
     {
-        _currentlyEnabaledGPIOs_IDs_List.Remove(uID);
+        _currentlyEnabaledMissionUIDs_List.Remove(uID);
         _OnChange_UpdateOfActiveList?.Invoke();
     }
 
     public void fn_SetObjectToEnabled(int uID)
     {
-        _currentlyEnabaledGPIOs_IDs_List.Add(uID);
+        _currentlyEnabaledMissionUIDs_List.Add(uID);
         _OnChange_UpdateOfActiveList?.Invoke();
     }
 
@@ -102,16 +111,11 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
             fn_SetObjectToEnabled(uID);
     }
 
-    //
-
-
-
-
     public bool fn_Get_IsGOEnabled(int id)
     {
-        if (_currentlyEnabaledGPIOs_IDs_List != null && id != null)
+        if (_currentlyEnabaledMissionUIDs_List != null && id != null)
         {
-            return _currentlyEnabaledGPIOs_IDs_List.Contains(id);
+            return _currentlyEnabaledMissionUIDs_List.Contains(id);
         }
         else
         {

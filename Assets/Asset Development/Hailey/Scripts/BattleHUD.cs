@@ -7,6 +7,7 @@ using TMPro;
 public class BattleHUD : MonoBehaviour
 {
     public Slider[] hpSliders;
+    public TMP_Text[] names;
     public List<GameObject> characters;
     public GameObject[] specialAttackButtons;
 
@@ -21,6 +22,7 @@ public class BattleHUD : MonoBehaviour
               //  characters[i].GetComponent<Unit>().color;
             hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
             hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
+            names[i].text = characters[i].GetComponent<Unit>().unitName;
         }
 
         for (int i = 0; i < icons.Length; i++)

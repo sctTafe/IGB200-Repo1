@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: Foreman
   unitLevel: 1
   type: 3
   weakness: 4
@@ -134,6 +134,7 @@ MonoBehaviour:
   isHealer: 0
   isSleeping: 0
   numDeaths: 0
+  color: {r: 0.7490196, g: 0.43137258, b: 0.89019614, a: 0}
 --- !u!114 &9182456170344926669
 MonoBehaviour:
   m_ObjectHideFlags: 0

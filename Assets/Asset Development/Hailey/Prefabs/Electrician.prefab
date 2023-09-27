@@ -123,17 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: Electrician
   unitLevel: 0
   type: 2
   weakness: 1
   damage: 10
   maxHP: 25
-  currentHP: 10
+  currentHP: 25
   specialDamage: 0
   isHealer: 0
   isSleeping: 0
   numDeaths: 0
+  color: {r: 0.86666673, g: 0.4901961, b: 0.23137257, a: 0}
 --- !u!114 &7584774772658344415
 MonoBehaviour:
   m_ObjectHideFlags: 0

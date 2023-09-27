@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
@@ -15,11 +16,13 @@ public class CharacterSelection : MonoBehaviour
 
     public GameObject pointLight;
 
-    public GameObject[] sleepy;  
+    public GameObject[] sleepy;
+
+    public TMP_Text selectionText;
 
     void Start()
     {
-        
+        selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
     }  
 
     void Update()
@@ -48,8 +51,10 @@ public class CharacterSelection : MonoBehaviour
   
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
-        battleSystem.playerAnimator = characters[selectedCharacter].GetComponent<Animator>();
         playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
+        
+        //Update text
+        selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
     }
 
     public void PreviousCharacter()
@@ -66,6 +71,9 @@ public class CharacterSelection : MonoBehaviour
         //Update Battle System and HUD
         battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
         playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
+        
+        //Update text
+        selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
     }
 
     public bool AllDead()

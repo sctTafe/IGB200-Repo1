@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: Plumber
   unitLevel: 3
   type: 1
   weakness: 2
@@ -134,6 +134,7 @@ MonoBehaviour:
   isHealer: 0
   isSleeping: 0
   numDeaths: 0
+  color: {r: 0.2784314, g: 0.37647063, b: 0.7411765, a: 0}
 --- !u!114 &7755960060403284403
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5021,6 +5021,7 @@ MonoBehaviour:
   isHealer: 0
   isSleeping: 0
   numDeaths: 0
+  color: {r: 0.990566, g: 0.080989614, b: 0.080989614, a: 0}
 --- !u!95 &9206532999788274847
 Animator:
   serializedVersion: 5

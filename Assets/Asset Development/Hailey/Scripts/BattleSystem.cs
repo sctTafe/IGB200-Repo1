@@ -92,6 +92,7 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "A wild " + enemyUnit.unitName + " approaches.";
 
         playerHUD.SetHUD();
+        playerHUD.SetButtons(playerUnit);
         enemyHUD.SetHUD();
 
         yield return new WaitForSeconds(2f);
@@ -108,6 +109,8 @@ public class BattleSystem : MonoBehaviour
         //int rndDamage = rnd.Next(-10, 10);
 
         //Debug.Log(rndDamage);
+
+        playerAnimator = playerUnit.gameObject.GetComponent<Animator>();
         
         int damage;
         if (isSpecial)
@@ -116,31 +119,36 @@ public class BattleSystem : MonoBehaviour
             {
                 damage = playerUnit.specialDamage;
                 Debug.Log("special attack! very effective");
-                dialogueText.text = "The attack is super successful!";
+                dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
+                                    ". " + " It is super successful!";
             }
             else
             {
                 damage = 1;
                 Debug.Log("not very effective");
-                dialogueText.text = "The attack is not very effective";
+                dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
+                                    ". " + " It is not very effective!";
             }
         }
         else
         {
             damage = playerUnit.damage;
             Debug.Log("normal");
-            dialogueText.text = "The attack is successful";
+            dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
+                                ". " + " It is somewhat successful!";
         }
 
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
-        
+
+        Debug.Log("player attack animation start");
         playerAnimator.SetBool("IsAttacking", true);
 
         yield return new WaitForSeconds(2f);
         
         playerAnimator.SetBool("IsAttacking", false);
+        Debug.Log("player attack animation end");
 
         //Check if the enemy is dead
         //Change state based on what happened
@@ -196,6 +204,7 @@ public class BattleSystem : MonoBehaviour
         int extraDamage = 0;
         int i = rnd.Next(0, players.characters.Count - 1);
         Unit tempPlayer = players.characters[i].GetComponent<Unit>();
+        dialogueText.text = enemyUnit.unitName + " attacks " + tempPlayer.unitName + "!";
         if(tempPlayer.weakness == enemyUnit.type) 
         {
             Debug.Log("weakened");
@@ -214,7 +223,7 @@ public class BattleSystem : MonoBehaviour
         }
         else if(state == BattleState.LOST)
         {
-            dialogueText.text = "You were defeated. ";
+            dialogueText.text = "You were defeated.";
             StaticData.isBattleWon = false;
         }
 
@@ -234,6 +243,11 @@ public class BattleSystem : MonoBehaviour
             {
                 StaticData.team[i]._currentEnergy = players.characters[i].GetComponent<Unit>().currentHP;
                 StaticData.team[i]._numDeaths = players.characters[i].GetComponent<Unit>().numDeaths;
+                StaticData.team[i].moraleCount++;
+                if (StaticData.team[i].moraleCount >= 2)
+                {
+                    StaticData.team[i].isExhausted = true;
+                }
             }
         }
     }
@@ -241,12 +255,13 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         hasActed = false;
-        dialogueText.text = "Choose an action for " + playerUnit.unitName;
+        dialogueText.text = "Choose an action for your team";
     }
 
     public IEnumerator PlayerHeal()
     {
         //playerUnit.Heal(5);
+        playerAnimator = playerUnit.gameObject.GetComponent<Animator>();
 
         //playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
         dialogueText.text = "You feel renewed strength!";
@@ -268,7 +283,7 @@ public class BattleSystem : MonoBehaviour
         //if player dead, choose another player
         if(playerUnit.currentHP == 0)
         {
-            dialogueText.text = "Team member is exhausted. Choose another";
+            dialogueText.text = "The " + playerUnit.unitName +" exhausted. Choose another role";
             return;
         }
         //Change button colour 
@@ -285,7 +300,7 @@ public class BattleSystem : MonoBehaviour
         //if player is dead choose another player
         if(playerUnit.currentHP == 0)
         {
-            dialogueText.text = "Team member is exhausted. Choose another";
+            dialogueText.text = "The " + playerUnit.unitName + " exhausted. Choose another role";
             return;
         }
         //change button colour 
@@ -304,7 +319,7 @@ public class BattleSystem : MonoBehaviour
         //if player dead, choose another player
         if(playerUnit.currentHP == 0)
         {
-            dialogueText.text = "Team member is exhausted. Choose another";
+            dialogueText.text = "The " + playerUnit.unitName + " exhausted. Choose another role";
             return;
         }
         //Change button colour 

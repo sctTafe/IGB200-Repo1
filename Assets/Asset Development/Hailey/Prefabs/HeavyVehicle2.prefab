@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: Driver
   unitLevel: 2
   type: 4
   weakness: 3
@@ -134,6 +134,7 @@ MonoBehaviour:
   isHealer: 0
   isSleeping: 0
   numDeaths: 0
+  color: {r: 0.19215688, g: 0.8980393, b: 0.20784315, a: 0}
 --- !u!114 &7755960060403284403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +256,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4800019629911246487, guid: a32dc47593c525b45af3e9306240d247,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f5fea9a3c9a45147832a8068d014b5b, type: 2}
     m_RemovedComponents:
     - {fileID: 5939596074509029998, guid: a32dc47593c525b45af3e9306240d247, type: 3}
     m_RemovedGameObjects: []

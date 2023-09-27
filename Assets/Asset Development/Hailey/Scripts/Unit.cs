@@ -31,6 +31,8 @@ public class Unit : MonoBehaviour
 
     public int numDeaths = 0;
 
+    public Color color;
+
     //apply damage to unit
     public bool TakeDamage(int dmg)
     {

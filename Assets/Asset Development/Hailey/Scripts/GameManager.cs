@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             battleTeam.Add(prefab[j]);
         }*/
     }
+    
     // Start is called before the first frame update
     void Start()
     {

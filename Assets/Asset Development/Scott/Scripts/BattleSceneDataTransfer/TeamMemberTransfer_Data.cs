@@ -12,4 +12,6 @@ public class TeamMemberTransfer_Data : MonoBehaviour
     
     //Post battle information
     [SerializeField] public int _numDeaths;
+    [SerializeField] public int moraleCount = 0;
+    [SerializeField] public bool isExhausted;
 }

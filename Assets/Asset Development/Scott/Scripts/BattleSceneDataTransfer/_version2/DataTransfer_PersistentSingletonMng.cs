@@ -45,7 +45,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
     private bool _isDebuggingOn = true;
     public TeamMemberTransfer_Data _Prefab;
-    private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberSelectionGroupHolder_Mng;
+    private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberGroupsHolderMng;
 
 
     void Awake()
@@ -55,15 +55,16 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
 
     #region Public Functions
+    #region - Pass Data To Missiom - 
     // - Passing Data In -
     public void fn_LoadMissionTeam()
     {
-        if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam Called, "); }
+        if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam - Called"); }
 
         connectToSelectionGroupHolder();
-        if (_TeamMemberSelectionGroupHolder_Mng != null)
+        if (_TeamMemberGroupsHolderMng != null)
         {
-            foreach (var item in _TeamMemberSelectionGroupHolder_Mng._selectedMissionTeam._teamMembersGroup.Values)
+            foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values)
             {
                 // Instantiate New Team Member GameObject
                  GameObject teamMember = InstantiateTeamMemberTransfereHolder(item._uID, item._classType, item._maxEnergy, item._currentEnergy);
@@ -73,16 +74,17 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             }
         }
     }
-
-    // - Pass in the Data From the Mission - 
+    // Set the Mission ID value in 'BattleTransferData_PersistentSingleton'
     public void fn_LoadIn_MissionData(int missionID)
     {
         BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID;
     }
 
+    #endregion END: - Pass Data To Missiom - 
 
+    #region - Pull Data From Missiom - 
 
-    // - Returning Data Back - 
+    // - Pass in the Data From the Mission - 
 
     /// <summary>
     ///  Called on Completion of the Battle, pulls data from 'BattleTransferData_PersistentSingleton' to update outcomes
@@ -90,6 +92,12 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     public void fn_HandleMissionFinished()
     {
         if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Called");
+        UpdateMissionObjects();
+        ReintegrateTeamMemberDataWith();
+    }
+
+    private void UpdateMissionObjects()
+    {
         // Update Mission Outcomes
         // 1) retrived mission ID from staticData
         BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
@@ -102,17 +110,29 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
                 GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_CompleteMission(battleTransferData._currentMissionID);
             }
         }
-        
+    }
 
-        // Update Project Points Outcomes
+    private void ReintegrateTeamMemberDataWith()
+    {
+        TeamMember_SelectionGroup_Data groupData = _TeamMemberGroupsHolderMng._selectedMissionTeam;
+        foreach (var tempTeamMemberGO in BattleTransferData_PersistentSingleton.missionTeam)
+        {
+            TeamMemberTransfer_Data transferData = tempTeamMemberGO.GetComponent<TeamMemberTransfer_Data>();
+            
+            // Find and match team member based on ID, then pass data back 
+            groupData._teamMembersGroup.TryGetValue(transferData._uID, out TeamMember_Data teamMemberData);
 
+            teamMemberData._currentMorale = transferData._currentMorale;
+            teamMemberData._currentEnergy = transferData._currentEnergy;    
+
+            // Destory Holder
+            Destroy(tempTeamMemberGO);
+        }
 
     }
 
 
-
-
-    // - 
+    #endregion END: - Pull Data From Missiom - 
     #endregion
 
     #region Private Functions
@@ -127,7 +147,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     }
     private void connectToSelectionGroupHolder()
     {
-        _TeamMemberSelectionGroupHolder_Mng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+        _TeamMemberGroupsHolderMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
     }
     #endregion

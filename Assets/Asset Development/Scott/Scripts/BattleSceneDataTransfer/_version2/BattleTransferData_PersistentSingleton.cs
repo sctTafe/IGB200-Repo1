@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BattleTransferData_PersistentSingleton : MonoBehaviour
@@ -31,10 +32,16 @@ public class BattleTransferData_PersistentSingleton : MonoBehaviour
     }
     #endregion
 
+    // - For Use By Hailey - 
     public static List<GameObject> missionTeam = new();
+
+    // - Battle/Mission Data - 
+     
     public int _currentMissionID;
     public bool _isMissionCompletedSuccessfully;
     
+    // Bonues Project Points Earned in missions, (added in mission)
+    public int _earnedBonuseProjectPoints;
 
     void Awake()
     {

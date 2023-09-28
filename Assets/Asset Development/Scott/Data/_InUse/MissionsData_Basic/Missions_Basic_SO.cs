@@ -7,8 +7,6 @@ public class Missions_Basic_SO : ScriptableObject
 {
     public Action <bool> _OnStateChange_isEnabled;
 
-
-
     [SerializeField] public int _missionUID; 
     [SerializeField] public String _missionName;
     

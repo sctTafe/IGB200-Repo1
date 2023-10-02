@@ -446,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &35399759
 Transform:
   m_ObjectHideFlags: 0
@@ -601,8 +601,8 @@ MonoBehaviour:
   _OnMissionSelectionBtn:
     m_PersistentCalls:
       m_Calls: []
-  _MouseSelectionInfoItem:
-    _name: Test Camp Mission
+  _MouseSelectionInfoItemData:
+    _name: 
     _isPurchased: 0
     _isVisable: 0
     _upgradeCost: 0
@@ -1685,7 +1685,7 @@ PrefabInstance:
     - target: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
       propertyPath: m_Name
-      value: Test_GameProgressionInteractableObject_B
+      value: Test Mission 2
       objectReference: {fileID: 0}
     - target: {fileID: 9184996400150833629, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
@@ -2621,7 +2621,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 460224640}
   - {fileID: 827433781}
+  - {fileID: 543450652871716942}
   - {fileID: 2032964438}
   - {fileID: 249388539}
   - {fileID: 1672388436}
@@ -2951,7 +2953,7 @@ GameObject:
   - component: {fileID: 216289947}
   - component: {fileID: 216289946}
   m_Layer: 0
-  m_Name: '[ProgressionScene - Persistent Data - DontDestoryOnLoad]'
+  m_Name: '{Persistent Data - Game Managers} [DontDestoryOnLoad]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6577,12 +6579,12 @@ GameObject:
   m_Component:
   - component: {fileID: 460224640}
   m_Layer: 0
-  m_Name: '[Test_GPIOs_Mng]'
+  m_Name: '{Testing - Interactable Missions}'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &460224640
 Transform:
   m_ObjectHideFlags: 0
@@ -6590,14 +6592,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460224639}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 32.299988, z: 0}
+  m_LocalRotation: {x: -0, y: 0.08502289, z: -0, w: 0.9963791}
+  m_LocalPosition: {x: 121.99253, y: 32.299988, z: 1.3503209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 816830669}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 172776824}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474136504
 GameObject:
@@ -6824,11 +6826,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efeb16e09e699f42a7ca4951a0812fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AllMissionArray:
+  _AllMissionSORefArray:
   - {fileID: 11400000, guid: c8f8c93f3bce35148aa3a84f52ba02d4, type: 2}
   - {fileID: 11400000, guid: 3b779cccdfcef35408349cd0172289dc, type: 2}
   - {fileID: 11400000, guid: 980497ba10ed12b4b85d3ec45a85a04b, type: 2}
+  _AllBridgePartsSORefArray:
+  - {fileID: 11400000, guid: 04da8a61b5e67c14a9bc26c0c69cc2b9, type: 2}
+  - {fileID: 11400000, guid: 4aef60133fb045f44b4d7a8c20d1e8d1, type: 2}
+  - {fileID: 11400000, guid: f9727789d5fd1c74dbb37d0d00f26ecf, type: 2}
+  - {fileID: 11400000, guid: 6608c1eb5d8bdc749a1b83bc72fb6192, type: 2}
+  - {fileID: 11400000, guid: 838c3b5cd58a93e419abb0ebd18da844, type: 2}
   _currentlyEnabaledMissionUIDs_List: 
+  _currentlyEnabaledBuildingUIDs_List: 
 --- !u!1 &505738416
 GameObject:
   m_ObjectHideFlags: 0
@@ -10253,7 +10262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816830669}
   m_Layer: 0
-  m_Name: Test_GPIOs
+  m_Name: Test_Missions (GPIOs)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10271,9 +10280,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 194482708}
-  - {fileID: 358529048}
   - {fileID: 2056675199}
+  - {fileID: 358529048}
+  - {fileID: 194482708}
   m_Father: {fileID: 460224640}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10370,12 +10379,12 @@ GameObject:
   m_Component:
   - component: {fileID: 827433781}
   m_Layer: 0
-  m_Name: '{GreyBoxBridge}'
+  m_Name: '{Bridge_GeryBox}'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &827433781
 Transform:
   m_ObjectHideFlags: 0
@@ -10489,7 +10498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 833877966}
   m_Layer: 0
-  m_Name: '[Persistent - Game Managers]'
+  m_Name: '{Persistent - Game Managers}'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10662,8 +10671,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ThisProgressionSelectionItem:
-    _name: Bridge Road Middle
+  ThisProgressionSelectionItemData:
+    _name: Middle Span
     _isPurchased: 0
     _isVisable: 0
     _upgradeCost: 400
@@ -12098,11 +12107,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ThisProgressionSelectionItem:
-    _name: Bridge Tower Right
+  ThisProgressionSelectionItemData:
+    _name: Tower Right
     _isPurchased: 0
     _isVisable: 0
-    _upgradeCost: 500
+    _upgradeCost: 100
     _missionRewardPoints: 0
     _isAMission: 0
     _isPurchasable: 1
@@ -12526,11 +12535,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ThisProgressionSelectionItem:
-    _name: Bridge Tower Left
+  ThisProgressionSelectionItemData:
+    _name: Tower L
     _isPurchased: 0
     _isVisable: 0
-    _upgradeCost: 500
+    _upgradeCost: 100
     _missionRewardPoints: 0
     _isAMission: 0
     _isPurchasable: 1
@@ -15955,11 +15964,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ThisProgressionSelectionItem:
-    _name: Bridge Road Left
+  ThisProgressionSelectionItemData:
+    _name: Bridge Span L
     _isPurchased: 0
     _isVisable: 0
-    _upgradeCost: 400
+    _upgradeCost: 300
     _missionRewardPoints: 0
     _isAMission: 0
     _isPurchasable: 1
@@ -16614,11 +16623,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ThisProgressionSelectionItem:
-    _name: Bridge Road Right
+  ThisProgressionSelectionItemData:
+    _name: Bridge Span R
     _isPurchased: 0
     _isVisable: 0
-    _upgradeCost: 400
+    _upgradeCost: 300
     _missionRewardPoints: 0
     _isAMission: 0
     _isPurchasable: 1
@@ -16889,7 +16898,7 @@ PrefabInstance:
     - target: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
       propertyPath: m_Name
-      value: Test_GameProgressionInteractableObject_C
+      value: Test Mission 3
       objectReference: {fileID: 0}
     - target: {fileID: 9184996400150833629, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
@@ -21206,6 +21215,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142788065}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &27058699611360972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 6.4762635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450652871716942}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &35173930357929879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21228,6 +21252,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448579935670553051}
   m_CullTransparentMesh: 1
+--- !u!1 &108495224829502135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6421038814717610369}
+  - component: {fileID: 7085381008709860072}
+  - component: {fileID: 1097560048767034762}
+  - component: {fileID: 7085381008709860076}
+  - component: {fileID: 7085381008709860074}
+  - component: {fileID: 7085381008709860073}
+  - component: {fileID: 7085381008709860077}
+  - component: {fileID: 7085381008709860075}
+  m_Layer: 0
+  m_Name: Road_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &196408501362302855
 GameObject:
   m_ObjectHideFlags: 0
@@ -21306,6 +21353,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &543450652871716942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148952148724}
+  m_LocalRotation: {x: 0.00000005112747, y: 0.6405442, z: -0.000000042646832, w: 0.7679214}
+  m_LocalPosition: {x: 9.587182, y: 0.73964, z: -9.156742}
+  m_LocalScale: {x: 1.5567997, y: 1.5568, z: 1.5567997}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7884074840522471063}
+  - {fileID: 6716664356367677053}
+  - {fileID: 6731859519679755781}
+  - {fileID: 27058699611360972}
+  - {fileID: 6421038814717610369}
+  m_Father: {fileID: 172776824}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 69.91, z: 0}
 --- !u!222 &598945358440462931
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21335,6 +21402,29 @@ RectTransform:
   m_AnchoredPosition: {x: -0.09680176, y: 59.9469}
   m_SizeDelta: {x: -45.0494, y: -151.5638}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &664843905885774517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6716664356367677053}
+  - component: {fileID: 998677345687755349}
+  - component: {fileID: 1904097231867007520}
+  - component: {fileID: 6716664356367677057}
+  - component: {fileID: 6716664356367677055}
+  - component: {fileID: 6716664356367677054}
+  - component: {fileID: 6716664356367677058}
+  - component: {fileID: 6716664356367677056}
+  m_Layer: 0
+  m_Name: Poles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!224 &667213849477164599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21389,6 +21479,14 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!33 &832760803869562874
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Mesh: {fileID: -2758090096149678828, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
 --- !u!4 &896644331534062374
 Transform:
   m_ObjectHideFlags: 0
@@ -21496,6 +21594,72 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &919132148952148724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543450652871716942}
+  m_Layer: 0
+  m_Name: '{Bridge_Toms}'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &998677345687755349
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Mesh: {fileID: 4781646845722869590, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!23 &1097560048767034762
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5561349426305759274, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!222 &1106043526459704897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21721,6 +21885,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1658638916233568929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6731859519679755781}
+  - component: {fileID: 8429394753838956020}
+  - component: {fileID: 4027768961058036870}
+  - component: {fileID: 8429394753838956024}
+  - component: {fileID: 8429394753838956022}
+  - component: {fileID: 8429394753838956021}
+  - component: {fileID: 8429394753838956025}
+  - component: {fileID: 8429394753838956023}
+  m_Layer: 0
+  m_Name: Road_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1781403993496823098
 GameObject:
   m_ObjectHideFlags: 0
@@ -21809,6 +21996,48 @@ Transform:
   m_Father: {fileID: 4595135294068141757}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1904097231867007520
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5561349426305759274, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &2018232855359224024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21968,6 +22197,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196408501362302855}
   m_CullTransparentMesh: 1
+--- !u!23 &2449919716009079255
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5561349426305759274, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &2580316746835462635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22644,7 +22915,7 @@ PrefabInstance:
     - target: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
       propertyPath: m_Name
-      value: Test_GameProgressionInteractableObject_A
+      value: Test Mission 1
       objectReference: {fileID: 0}
     - target: {fileID: 9096401082441393287, guid: 8ee3ee2a0ac75b34891538dbb4af59da,
         type: 3}
@@ -22666,6 +22937,48 @@ PrefabInstance:
       addedObject: {fileID: 276355153}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee3ee2a0ac75b34891538dbb4af59da, type: 3}
+--- !u!23 &4027768961058036870
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5561349426305759274, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!154 &4086428499189399019
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -22705,6 +23018,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!23 &4298271140326451890
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5561349426305759274, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4396977980042155227
 GameObject:
   m_ObjectHideFlags: 0
@@ -23559,6 +23914,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6419246071211252822}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6421038814717610369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -32.25763, y: 6.974072, z: -0.05937698}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450652871716942}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &6531630282127743738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23649,6 +24019,121 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0681f85c6afb02f448d8dd153a63eaae, type: 2}
   - {fileID: 11400000, guid: 7e900ff4a22a47b4da43a6d9617176c3, type: 2}
   - {fileID: 11400000, guid: d207100a912dcb14a83ece4a1fe9c71e, type: 2}
+--- !u!4 &6716664356367677053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 6.4762635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450652871716942}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6716664356367677054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e19720566dc654a9ef04f964136a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnBridgeSectionPurchased:
+    m_PersistentCalls:
+      m_Calls: []
+  ThisProgressionSelectionItemData:
+    _name: 
+    _isPurchased: 0
+    _isVisable: 0
+    _upgradeCost: 0
+    _missionRewardPoints: 0
+    _isAMission: 0
+    _isPurchasable: 0
+  _ghostTransform: {fileID: 0}
+  _finTransform: {fileID: 0}
+--- !u!114 &6716664356367677055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920c283937df92c4495a80362c5cfa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6716664356367677054}
+        m_TargetAssemblyTypeName: MouseSelectionInformation_BridgeSection, Assembly-CSharp
+        m_MethodName: fn_BindToProgressionSelectionMng
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6716664356367677056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11a6ab79bdb0494b9864eb3823f68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BridgePartSO: {fileID: 11400000, guid: 4aef60133fb045f44b4d7a8c20d1e8d1, type: 2}
+--- !u!64 &6716664356367677057
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4781646845722869590, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &6716664356367677058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664843905885774517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11ea413bbf59874a99ba7948f9a8c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localBridgePartsDataHolder: {fileID: 0}
 --- !u!114 &6722905064007746898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23679,6 +24164,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!4 &6731859519679755781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.10316, y: 6.9013352, z: -0.06422058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450652871716942}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6776432092822281136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23871,6 +24371,137 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b61526b85b84a41a49f0ae2fc3353c, type: 3}
+--- !u!1 &6961911921059404630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7884074840522471063}
+  - component: {fileID: 832760803869562874}
+  - component: {fileID: 2449919716009079255}
+  - component: {fileID: 7884074840522471067}
+  - component: {fileID: 7884074840522471065}
+  - component: {fileID: 7884074840522471064}
+  - component: {fileID: 7884074840522471068}
+  - component: {fileID: 7884074840522471066}
+  m_Layer: 0
+  m_Name: BridgeSupports
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &7085381008709860072
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Mesh: {fileID: -2820540980474633014, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &7085381008709860073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e19720566dc654a9ef04f964136a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnBridgeSectionPurchased:
+    m_PersistentCalls:
+      m_Calls: []
+  ThisProgressionSelectionItemData:
+    _name: 
+    _isPurchased: 0
+    _isVisable: 0
+    _upgradeCost: 0
+    _missionRewardPoints: 0
+    _isAMission: 0
+    _isPurchasable: 0
+  _ghostTransform: {fileID: 0}
+  _finTransform: {fileID: 0}
+--- !u!114 &7085381008709860074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920c283937df92c4495a80362c5cfa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7085381008709860073}
+        m_TargetAssemblyTypeName: MouseSelectionInformation_BridgeSection, Assembly-CSharp
+        m_MethodName: fn_BindToProgressionSelectionMng
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7085381008709860075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11a6ab79bdb0494b9864eb3823f68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BridgePartSO: {fileID: 11400000, guid: 838c3b5cd58a93e419abb0ebd18da844, type: 2}
+--- !u!64 &7085381008709860076
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2820540980474633014, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &7085381008709860077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108495224829502135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11ea413bbf59874a99ba7948f9a8c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localBridgePartsDataHolder: {fileID: 0}
 --- !u!222 &7296773694185405122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23952,6 +24583,29 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae07ea1baf8fdc044b98c2802f474abf, type: 3}
+--- !u!1 &7628718346409460423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27058699611360972}
+  - component: {fileID: 8185851485801004810}
+  - component: {fileID: 4298271140326451890}
+  - component: {fileID: 8185851485801004814}
+  - component: {fileID: 8185851485801004812}
+  - component: {fileID: 8185851485801004811}
+  - component: {fileID: 8185851485801004815}
+  - component: {fileID: 8185851485801004813}
+  m_Layer: 0
+  m_Name: Road_Mid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!224 &7743149379244087624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23992,6 +24646,121 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &7884074840522471063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 6.4762635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450652871716942}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7884074840522471064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e19720566dc654a9ef04f964136a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnBridgeSectionPurchased:
+    m_PersistentCalls:
+      m_Calls: []
+  ThisProgressionSelectionItemData:
+    _name: 
+    _isPurchased: 0
+    _isVisable: 0
+    _upgradeCost: 0
+    _missionRewardPoints: 0
+    _isAMission: 0
+    _isPurchasable: 0
+  _ghostTransform: {fileID: 0}
+  _finTransform: {fileID: 0}
+--- !u!114 &7884074840522471065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920c283937df92c4495a80362c5cfa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7884074840522471064}
+        m_TargetAssemblyTypeName: MouseSelectionInformation_BridgeSection, Assembly-CSharp
+        m_MethodName: fn_BindToProgressionSelectionMng
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7884074840522471066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11a6ab79bdb0494b9864eb3823f68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BridgePartSO: {fileID: 11400000, guid: 04da8a61b5e67c14a9bc26c0c69cc2b9, type: 2}
+--- !u!64 &7884074840522471067
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2758090096149678828, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &7884074840522471068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961911921059404630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11ea413bbf59874a99ba7948f9a8c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localBridgePartsDataHolder: {fileID: 0}
 --- !u!224 &7938661935834996238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24017,6 +24786,114 @@ RectTransform:
   m_AnchoredPosition: {x: -23, y: -27}
   m_SizeDelta: {x: -483.4432, y: -107.1549}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!33 &8185851485801004810
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Mesh: {fileID: -4703626253300528993, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &8185851485801004811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e19720566dc654a9ef04f964136a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnBridgeSectionPurchased:
+    m_PersistentCalls:
+      m_Calls: []
+  ThisProgressionSelectionItemData:
+    _name: 
+    _isPurchased: 0
+    _isVisable: 0
+    _upgradeCost: 0
+    _missionRewardPoints: 0
+    _isAMission: 0
+    _isPurchasable: 0
+  _ghostTransform: {fileID: 0}
+  _finTransform: {fileID: 0}
+--- !u!114 &8185851485801004812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920c283937df92c4495a80362c5cfa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8185851485801004811}
+        m_TargetAssemblyTypeName: MouseSelectionInformation_BridgeSection, Assembly-CSharp
+        m_MethodName: fn_BindToProgressionSelectionMng
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8185851485801004813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11a6ab79bdb0494b9864eb3823f68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BridgePartSO: {fileID: 11400000, guid: 6608c1eb5d8bdc749a1b83bc72fb6192, type: 2}
+--- !u!64 &8185851485801004814
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4703626253300528993, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &8185851485801004815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628718346409460423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11ea413bbf59874a99ba7948f9a8c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localBridgePartsDataHolder: {fileID: 0}
 --- !u!1 &8189172705380773704
 GameObject:
   m_ObjectHideFlags: 0
@@ -24136,6 +25013,114 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!33 &8429394753838956020
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Mesh: {fileID: 6225326464621255436, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &8429394753838956021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e19720566dc654a9ef04f964136a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnBridgeSectionPurchased:
+    m_PersistentCalls:
+      m_Calls: []
+  ThisProgressionSelectionItemData:
+    _name: 
+    _isPurchased: 0
+    _isVisable: 0
+    _upgradeCost: 0
+    _missionRewardPoints: 0
+    _isAMission: 0
+    _isPurchasable: 0
+  _ghostTransform: {fileID: 0}
+  _finTransform: {fileID: 0}
+--- !u!114 &8429394753838956022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920c283937df92c4495a80362c5cfa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8429394753838956021}
+        m_TargetAssemblyTypeName: MouseSelectionInformation_BridgeSection, Assembly-CSharp
+        m_MethodName: fn_BindToProgressionSelectionMng
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8429394753838956023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11a6ab79bdb0494b9864eb3823f68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BridgePartSO: {fileID: 11400000, guid: f9727789d5fd1c74dbb37d0d00f26ecf, type: 2}
+--- !u!64 &8429394753838956024
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6225326464621255436, guid: c37cdf9269dc1d4478575d569a1ffaf4, type: 3}
+--- !u!114 &8429394753838956025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11ea413bbf59874a99ba7948f9a8c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localBridgePartsDataHolder: {fileID: 0}
 --- !u!4 &8459572464599369574
 Transform:
   m_ObjectHideFlags: 0

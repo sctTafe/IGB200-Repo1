@@ -24,7 +24,8 @@ public class Missions_Basic_SO : ScriptableObject
     [SerializeField] public GameObject _finishedPrefab;
 
     // - Missions & Interaction Objects Enabled On Mission Completion -
-    [SerializeField] public Missions_Basic_SO[] _EnabledOnCompletion_Array;
+    [SerializeField] public Missions_Basic_SO[] _MissionsEnabledOnCompletion_Array;
+    [SerializeField] public BridgeParts_SO[] _BridgePartsEnabledOnCompletion_Array;
 
     // - Other - 
     [SerializeField] public bool _isEnabledFromGameStart = false;

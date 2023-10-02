@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: Mission 3 - Erect the Arch
+  m_Name: Test Mission 3 - Erect the Arch
   m_EditorClassIdentifier: 
-  _missionUID: 3
-  _missionName: 'Erect the Arch '
+  _missionUID: 1003
+  _missionName: 'Test - Erect the Arch '
   _missionShortBrife: Erect the Arch  somthing somthing (Short Brief)
   _missionDescription: Erect the Arch  somthing somthing somthing somthing (Mission
     Description)
@@ -23,5 +23,7 @@ MonoBehaviour:
   _daysToComplete: 64
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
-  _EnabledOnCompletion_Array: []
+  _MissionsEnabledOnCompletion_Array: []
+  _BridgePartsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: f9727789d5fd1c74dbb37d0d00f26ecf, type: 2}
   _isEnabledFromGameStart: 0

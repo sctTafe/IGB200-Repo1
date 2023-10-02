@@ -99,7 +99,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     private void UpdateMissionObjects()
     {
         // Update Mission Outcomes
-        // 1) retrived mission ID from staticData
+        // 1) retrieve mission ID from staticData
         BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
         if (battleTransferData != null)
         {
@@ -125,10 +125,11 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             teamMemberData._currentMorale = transferData._currentMorale;
             teamMemberData._currentEnergy = transferData._currentEnergy;    
 
-            // Destory Holder
+            // Destroy Holder
             Destroy(tempTeamMemberGO);
         }
-
+        // Clear the list after all the related Team Member GameObjects have been destroyed
+        BattleTransferData_PersistentSingleton.missionTeam.Clear();
     }
 
 

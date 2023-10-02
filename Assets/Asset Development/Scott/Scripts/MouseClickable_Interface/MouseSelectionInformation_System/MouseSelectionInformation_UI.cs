@@ -41,7 +41,7 @@ public class MouseSelectionInformation_UI : MonoBehaviour
         HandleMissionInfoPanel();
 
 
-        _nameTMP.SetText(_MouseSelectionInfo_Mng._currentMouseSelectionItem._name.ToString());
+        _nameTMP.SetText(_MouseSelectionInfo_Mng.CurrentMouseSelectionItemData._name.ToString());
         _MouseSelectionInfoUI_Panel.gameObject.SetActive(true);
     }
 
@@ -51,11 +51,11 @@ public class MouseSelectionInformation_UI : MonoBehaviour
         _PurchaseInfo_Panel.gameObject.SetActive(false);
 
         // check if panel is needed
-        if (_MouseSelectionInfo_Mng._currentMouseSelectionItem._isPurchasable &&
-            _MouseSelectionInfo_Mng._currentMouseSelectionItem._isPurchased == false)
+        if (_MouseSelectionInfo_Mng.CurrentMouseSelectionItemData._isPurchasable &&
+            _MouseSelectionInfo_Mng.CurrentMouseSelectionItemData._isPurchased == false)
         {
             // set buy panel cost value
-            _costTMP.SetText(_MouseSelectionInfo_Mng._currentMouseSelectionItem._upgradeCost.ToString());
+            _costTMP.SetText(_MouseSelectionInfo_Mng.CurrentMouseSelectionItemData._upgradeCost.ToString());
             // enable panel
             _PurchaseInfo_Panel.gameObject.SetActive(true);
         }
@@ -66,10 +66,10 @@ public class MouseSelectionInformation_UI : MonoBehaviour
         _MissionInfo_Panel.gameObject.SetActive(false);
 
         // check if panel is needed
-        if (_MouseSelectionInfo_Mng._currentMouseSelectionItem._isAMission)
+        if (_MouseSelectionInfo_Mng.CurrentMouseSelectionItemData._isAMission)
         {
             // set output values
-            _pointsTMP.SetText(_MouseSelectionInfo_Mng._currentMouseSelectionItem._missionRewardPoints.ToString());
+            _pointsTMP.SetText(_MouseSelectionInfo_Mng.CurrentMouseSelectionItemData._missionRewardPoints.ToString());
             // enable panel
             _MissionInfo_Panel.gameObject.SetActive(true);
         }

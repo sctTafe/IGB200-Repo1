@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: Mission 2 - SetUpPillarFoundation
+  m_Name: Test Mission 2 - SetUpPillarFoundation
   m_EditorClassIdentifier: 
-  _missionUID: 2
-  _missionName: Set Up Bridge Foundations
+  _missionUID: 1002
+  _missionName: Test - Set Up Bridge Foundations
   _missionShortBrife: Drill into the ..... Achoring somthing somthing (Short Brief)
   _missionDescription: Drill into the ..... Achoring somthing somthing .... set up
     foundations that will stand the test of time (Mission Description)
@@ -23,6 +23,8 @@ MonoBehaviour:
   _daysToComplete: 32
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
-  _EnabledOnCompletion_Array:
+  _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 980497ba10ed12b4b85d3ec45a85a04b, type: 2}
+  _BridgePartsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: 6608c1eb5d8bdc749a1b83bc72fb6192, type: 2}
   _isEnabledFromGameStart: 0

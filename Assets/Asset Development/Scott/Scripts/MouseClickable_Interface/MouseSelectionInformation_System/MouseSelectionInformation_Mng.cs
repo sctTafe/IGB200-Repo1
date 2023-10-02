@@ -37,7 +37,7 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
 
     public UnityEvent OnUpdateOfPSI;
 
-    public MouseSelectionInformation_Item _currentMouseSelectionItem { get; private set; }
+    public MouseSelectionInformation_ItemData CurrentMouseSelectionItemData { get; private set; }
     private ProjectPoints_PersistentSingletonMng _PPMng;
     private void Awake()
     {
@@ -45,9 +45,9 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
     }
 
 
-    public void fn_Bind_CurrentlySelected(MouseSelectionInformation_Item mouseSelectionItem)
+    public void fn_Bind_CurrentlySelected(MouseSelectionInformation_ItemData mouseSelectionItemData)
     {
-        _currentMouseSelectionItem = mouseSelectionItem;
+        CurrentMouseSelectionItemData = mouseSelectionItemData;
         OnUpdateOfPSI?.Invoke();
     }
 
@@ -57,12 +57,12 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
 
         _PPMng ??= ProjectPoints_PersistentSingletonMng.Instance;
         // check is not already purchased
-        if (!_currentMouseSelectionItem._isPurchased)
+        if (!CurrentMouseSelectionItemData._isPurchased)
         {
             // check is there are enough Project Points to purchase & deduct them if true
-            if (_PPMng.fn_TrySubtractPoints(_currentMouseSelectionItem._upgradeCost)) {
+            if (_PPMng.fn_TrySubtractPoints(CurrentMouseSelectionItemData._upgradeCost)) {
                 // set the item to purchased 
-                _currentMouseSelectionItem.fn_Purchase();
+                CurrentMouseSelectionItemData.fn_Purchase();
                 OnUpdateOfPSI?.Invoke();
             }
         }
@@ -70,8 +70,8 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
 
     public void fn_TrySelectMission()
     {
-        // NOTE: this is a bad way of doing this -> this just triggers the action on the '_currentMouseSelectionItem'
-        _currentMouseSelectionItem.fn_MissionSelect();
+        // NOTE: this is a bad way of doing this -> this just triggers the action on the 'CurrentMouseSelectionItemData'
+        CurrentMouseSelectionItemData.fn_MissionSelect();
     }
 
 

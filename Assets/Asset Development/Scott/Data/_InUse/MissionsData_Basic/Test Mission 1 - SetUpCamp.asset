@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: Mission 1 - SetUpCamp
+  m_Name: Test Mission 1 - SetUpCamp
   m_EditorClassIdentifier: 
-  _missionUID: 1
-  _missionName: 'Set Up Work Site '
+  _missionUID: 1001
+  _missionName: 'Test A - Set Up Work Site '
   _missionShortBrife: 'Clear the base camp are & Set Up Work Site... etc. (Short
     Brife) '
   _missionDescription: 'Clear the base camp are & Set Up Work Site... etc. (Long
@@ -24,6 +24,8 @@ MonoBehaviour:
   _daysToComplete: 8
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
-  _EnabledOnCompletion_Array:
+  _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 3b779cccdfcef35408349cd0172289dc, type: 2}
+  _BridgePartsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: 838c3b5cd58a93e419abb0ebd18da844, type: 2}
   _isEnabledFromGameStart: 1

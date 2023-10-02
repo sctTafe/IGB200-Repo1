@@ -1,7 +1,7 @@
 using System;
 
 [Serializable]
-public class MouseSelectionInformation_Item
+public class MouseSelectionInformation_ItemData
 {
     public Action OnChange;
     

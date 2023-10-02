@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: Test Mission 3 - Erect the Arch
+  m_Name: Test Mission 1003 - Erect the Arch
   m_EditorClassIdentifier: 
   _missionUID: 1003
   _missionName: 'Test - Erect the Arch '

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9d67d44e1e57f1448a827cc2f5c343d, type: 3}
-  m_Name: Bridge 4 - Roadway Middle
+  m_Name: 1 - Bridge - Arches
   m_EditorClassIdentifier: 
-  _bridgePartUID: 4
-  _bridgePartName: Roadway Middle
+  _bridgePartUID: 1
+  _bridgePartName: Support Arches

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
+  m_Name: 5 - Bridge Roadway Right
+  m_EditorClassIdentifier: 
+  _missionUID: 5
+  _missionName: Bridge Roadway Right
+  _missionShortBrife: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. '
+  _missionDescription: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+    enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+    quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+    quaerat voluptatem.'
+  _missionPic: {fileID: 0}
+  _missionDifficultyRating: 4
+  _completionBonusPoints: 150
+  _daysToComplete: 25
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}
+  _MissionsEnabledOnCompletion_Array: []
+  _BridgePartsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: 838c3b5cd58a93e419abb0ebd18da844, type: 2}
+  _isEnabledFromGameStart: 0

@@ -5,14 +5,11 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
-/// 
-/// DOSE: Manages which progression game objects are active/disabled - Works with Mission_Basic_SO (they are just relays) 
-/// 
-/// 
+/// DOSE: Manages which progression game objects are active/disabled; Works with 'Mission_Basic_SO' & 'Bridge_SO' (they work as data holders and event relays) 
 /// </summary>
+
 public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBehaviour
 {
-
     #region Singelton Setup
     private static GameProgressionInteractableObjects_PersistentSingletonMng _instance;
     public static GameProgressionInteractableObjects_PersistentSingletonMng Instance
@@ -38,38 +35,37 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
         DontDestroyOnLoad(gameObject);
     }
     #endregion
-    
+
+    #region Variables
     // - Events - 
     public Action _OnChange_UpdateOfMissionObjectsActiveList;
     public Action _OnChange_UpdateOfBridgeObjectsActiveList;
 
     // - Debugging -
-    private bool _isDebuggingOn = true;
+    private bool _isDebuggingOn = false;
 
     // - For Forward Calls -
     public Missions_Basic_SO[] _AllMissionSORefArray;
     public BridgeParts_SO[] _AllBridgePartsSORefArray;
 
-
-    // public for testing
+    // NOTE: lists are public for testing
     public List<int> _currentlyEnabaledMissionUIDs_List = new List<int>();
     public List<int> _currentlyEnabaledBuildingUIDs_List = new List<int>();
+
     private bool _isSetUpComplete = false;
+    #endregion
 
-
-    void Awake()
-    {
+    #region Unitys Native Functions
+    void Awake() {
         SingeltonSetup();
     }
-
-    void Start()
-    {
+    void Start() {
         ChangeIsSetupComplete();
     }
-
+    #endregion
 
     // - Mission Progression Functions - 
-    // Call on Mission 'Won' to trigger changes
+    // Call when Mission 'Won' to trigger changes
     public void fn_CompleteMission(int missionUID)
     {
         if (_isDebuggingOn) Debug.Log("GameProgressionInteractableObjects_PersistentSingletonMng: fn_CompleteMission - Called, with ID: [ " + missionUID + "]");
@@ -94,7 +90,6 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
                         fn_SetBridgeObjectToEnabled(bridgePartsSOsToEnable._bridgePartUID);
                 }
 
-
                 // Disable Current Mission Object - Uses both Push Method & a List update for if the event listener is not around
                 missionSO.fn_SetEnabledState(false);
                 if (_currentlyEnabaledMissionUIDs_List.Contains(missionSO._missionUID))
@@ -103,24 +98,17 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
         }
     }
 
-
-
-
-
     // - Object Enable / Disable Functions -
-
     #region Mission Objects
     public void fn_SetMissionObjectToDisabled(int uID) {
         _currentlyEnabaledMissionUIDs_List.Remove(uID);
         _OnChange_UpdateOfMissionObjectsActiveList?.Invoke();
     }
-
     public void fn_SetMissionObjectToEnabled(int uID) {
         _currentlyEnabaledMissionUIDs_List.Add(uID);
         _OnChange_UpdateOfMissionObjectsActiveList?.Invoke();
     }
     #endregion
-
     #region Bridge Objects
     public void fn_SetBridgeObjectToDisabled(int uID) {
         _currentlyEnabaledBuildingUIDs_List.Remove(uID);
@@ -131,9 +119,7 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
         _currentlyEnabaledBuildingUIDs_List.Add(uID);
         _OnChange_UpdateOfBridgeObjectsActiveList?.Invoke();
     }
-
     #endregion
-
 
 
     // - Special Case Functions -
@@ -164,9 +150,6 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
         }
     }
     #endregion
-
-
-
 
     private async Task ChangeIsSetupComplete()
     {

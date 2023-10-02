@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9d67d44e1e57f1448a827cc2f5c343d, type: 3}
-  m_Name: Bridge 3 - Roadway Left
+  m_Name: 0 - Worksite -Worksite Setup
   m_EditorClassIdentifier: 
-  _bridgePartUID: 3
-  _bridgePartName: Roadway Left
+  _bridgePartUID: 0
+  _bridgePartName: Worksite

@@ -31,11 +31,13 @@ public class CharacterSelection : MonoBehaviour
         {
             if(characters[i].GetComponent<Unit>().currentHP <= 0 && !characters[i].GetComponent<Unit>().isSleeping)
             {
+                Debug.Log("sleepy");
                 sleepy[i].SetActive(true);
                 characters[i].GetComponent<Unit>().isSleeping = true;
             }
             else if(characters[i].GetComponent<Unit>().currentHP > 0 && characters[i].GetComponent<Unit>().isSleeping)
             {
+                Debug.Log("not sleepy");
                 sleepy[i].SetActive(false);
                 characters[i].GetComponent<Unit>().isSleeping = false;
             }

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 
@@ -21,6 +22,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject enemyGO;
     
     public CharacterSelection players;
+    [FormerlySerializedAs("playersGO")] public List<GameObject> clones = new List<GameObject>();
 
     [Header("BattleHUD")]
     public Transform[] playerBattleStations;
@@ -78,8 +80,11 @@ public class BattleSystem : MonoBehaviour
         for(int i=0; i < players.characters.Count; i++)
         {
             Debug.Log("instantiate team member" + players.characters[i].GetComponent<Unit>().type);
-            Instantiate(players.characters[i], playerBattleStations[i]);
+            GameObject playerClone = Instantiate(players.characters[i], playerBattleStations[i]);
+            clones.Add(playerClone);
         }
+
+        players.characters = clones;
 
         enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
@@ -110,7 +115,7 @@ public class BattleSystem : MonoBehaviour
 
         //Debug.Log(rndDamage);
 
-        playerAnimator = playerUnit.gameObject.GetComponent<Animator>();
+        playerAnimator = FindAnimator();
         
         int damage;
         if (isSpecial)
@@ -260,8 +265,7 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator PlayerHeal()
     {
-        //playerUnit.Heal(5);
-        playerAnimator = playerUnit.gameObject.GetComponent<Animator>();
+        playerAnimator = FindAnimator();
 
         //playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
         dialogueText.text = "You feel renewed strength!";
@@ -272,6 +276,19 @@ public class BattleSystem : MonoBehaviour
         playerAnimator.SetBool("IsHealing", false);
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
+    }
+
+    private Animator FindAnimator()
+    {
+        for (int i=0; i < clones.Count; i++)
+        {
+            if (i == players.selectedCharacter)
+            {
+                return clones[i].GetComponent<Animator>();
+            }
+        }
+
+        return null;
     }
 
     //execute player attack

@@ -97,7 +97,7 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
             }      
         }
     }
-
+    
     // - Object Enable / Disable Functions -
     #region Mission Objects
     public void fn_SetMissionObjectToDisabled(int uID) {
@@ -121,6 +121,19 @@ public class GameProgressionInteractableObjects_PersistentSingletonMng : MonoBeh
     }
     #endregion
 
+    
+    public Missions_Basic_SO fn_GetMissionSO(int missionUID)
+    {
+        foreach (var missionSO in _AllMissionSORefArray)
+        {
+            if (missionSO._missionUID == missionUID)
+            {
+                return missionSO;
+            }
+        }
+        Debug.LogError("GameProgressionInteractableObjects_PersistentSingletonMng: fn_GetMissionSO; Error - missionID could not be found!");
+        return null;
+    }
 
     // - Special Case Functions -
     public void fn_AddMissionObjectToEnableAtStartOfGame(int uID)

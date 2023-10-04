@@ -10,6 +10,7 @@ using UnityEngine;
 ///     Calls on 'TeanMember_SelectionGroupHolder_Mng' to get Mission Team
 ///     Instantiates holder classes, then addes it to the 'team' list in 'StaticData' Class
 /// NOTE:
+///     This all should be refactored!
 /// 
 /// </summary>
 
@@ -65,7 +66,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     {
         if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam - Called"); }
 
-        connectToSelectionGroupHolder();
+        ConnectToSelectionGroupHolder();
         if (_TeamMemberGroupsHolderMng != null)
         {
             foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values)
@@ -123,7 +124,8 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     {
         if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Called");
         UpdateMissionObjects();
-        ReintegrateTeamMemberDataWith();
+        ReintegrateTeamMemberData();
+        UpdateProjectPoints();
     }
 
     private void UpdateMissionObjects()
@@ -135,14 +137,16 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         {
             if (battleTransferData._isMissionCompletedSuccessfully)
             {
+                // - Update Missions & Buildings -
                 if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Mission Was Successful");
-                // 2) with the ID get what ID will be enabled
-                GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_CompleteMission(battleTransferData._currentMissionID);
+                GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_CompleteMission(
+                    battleTransferData._currentMissionID);
             }
         }
-    }
 
-    private void ReintegrateTeamMemberDataWith()
+
+    }
+    private void ReintegrateTeamMemberData()
     {
         TeamMember_SelectionGroup_Data groupData = _TeamMemberGroupsHolderMng._selectedMissionTeam;
         foreach (var tempTeamMemberGO in BattleTransferData_PersistentSingleton._missionTeam_List)
@@ -162,13 +166,32 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         BattleTransferData_PersistentSingleton._missionTeam_List.Clear();
     }
 
+    private void UpdateProjectPoints()
+    {
+        int missionPointsGained;
+
+        // Bonus Points From Mission 
+        BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
+        missionPointsGained = battleTransferData._earnedBonuseProjectPoints;
+
+        // Points From Completing Mission
+        if (battleTransferData._isMissionCompletedSuccessfully)
+        {
+            Missions_Basic_SO missionSO = GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_GetMissionSO(
+                battleTransferData._currentMissionID);
+            missionPointsGained += missionSO._completionBonusPoints;
+        }
+
+        // Add the Points to the 'ProjectPointsMng'
+        ProjectPoints_PersistentSingletonMng.Instance.fn_AddPoints(missionPointsGained);
+    }
 
     #endregion END: - Pull Data From Missiom - 
     #endregion
 
     #region Private Functions
 
-    private void connectToSelectionGroupHolder()
+    private void ConnectToSelectionGroupHolder()
     {
         _TeamMemberGroupsHolderMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 

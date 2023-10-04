@@ -6,15 +6,11 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour
 {
     public List<GameObject> characters;
-    //public List<GameObject> characters = StaticData.team;
     public int selectedCharacter = 0;
-    public GameObject[] lightLocations;
     public GameObject[] selected;
 
     public BattleSystem battleSystem;
     public BattleHUD playerHUD;
-
-    public GameObject pointLight;
 
     public GameObject[] sleepy;
 
@@ -48,7 +44,6 @@ public class CharacterSelection : MonoBehaviour
     {   
         selected[selectedCharacter].SetActive(false);     
         selectedCharacter = (selectedCharacter + 1) % characters.Count;
-        pointLight.transform.position = lightLocations[selectedCharacter].transform.position;
         selected[selectedCharacter].SetActive(true);
   
         //Update Battle System and HUD
@@ -67,7 +62,6 @@ public class CharacterSelection : MonoBehaviour
         {
             selectedCharacter += characters.Count;
         }
-        pointLight.transform.position = lightLocations[selectedCharacter].transform.position;
         selected[selectedCharacter].SetActive(true);        
 
         //Update Battle System and HUD

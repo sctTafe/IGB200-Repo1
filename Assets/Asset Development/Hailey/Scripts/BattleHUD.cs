@@ -3,32 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class BattleHUD : MonoBehaviour
 {
-    public Slider[] hpSliders;
-    public TMP_Text[] names;
+    public Slider sliderPrefab;
+    public TMP_Text namePrefab;
+
+    public Transform[] sliderLocations;
+    public List<Slider> hpSliders;
+    public List<TMP_Text> names;
     public List<GameObject> characters;
+    
     public GameObject[] specialAttackButtons;
 
     public GameObject[] icons;
     public Sprite[] iconSprites;
 
+    public bool isEnemyHUD;
+
     public void SetHUD()
     {
-        for(int i = 0; i < hpSliders.Length; i++)
+        if (isEnemyHUD)
         {
-            //hpSliders[i].gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color =
-              //  characters[i].GetComponent<Unit>().color;
+            for(int i=0; i < sliderLocations.Length; i++)
+            {
+                //add slider and name
+                Slider newSlider = Instantiate(sliderPrefab, sliderLocations[i]);
+                TMP_Text newName = Instantiate(namePrefab, sliderLocations[i]);
+            
+                hpSliders.Add(newSlider);
+                names.Add(newName);
+            
+                //Set hp and name values
+                hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
+                hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
+                names[i].text = characters[i].GetComponent<Unit>().unitName;
+            }
+
+            return;
+        }
+        else
+        {
+            for(int i=0; i < characters.Count; i++)
+            {
+                //add slider and name
+                Slider newSlider = Instantiate(sliderPrefab, sliderLocations[i]);
+                TMP_Text newName = Instantiate(namePrefab, sliderLocations[i]);
+            
+                hpSliders.Add(newSlider);
+                names.Add(newName);
+            
+                //Set hp and name values
+                hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
+                hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
+                names[i].text = characters[i].GetComponent<Unit>().unitName;
+            }
+        }
+         
+        /*for(int i = 0; i < hpSliders.Count; i++)
+        {
             hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
             hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
             names[i].text = characters[i].GetComponent<Unit>().unitName;
-        }
+        }*/
 
-        for (int i = 0; i < icons.Length; i++)
+        for (int i = 0; i < characters.Count; i++)
         {
-            GameObject icon = icons[i];
             Unit player = characters[i].GetComponent<Unit>();
+            GameObject icon = icons[i];
+            
             Sprite iconSprite;
 
             if (player.type == UnitType.Water)
@@ -57,6 +101,7 @@ public class BattleHUD : MonoBehaviour
                 iconSprite = iconSprites[0];
             }
 
+            icon.AddComponent<Image>();
             icon.GetComponent<Image>().sprite = iconSprite;
         }
     }

@@ -186,7 +186,7 @@ public class BattleSystem : MonoBehaviour
 
         bool allDead = players.AllDead();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         
         enemyAnimator.SetBool("IsAttacking", false);
         waterEffect.SetActive(false);
@@ -267,14 +267,17 @@ public class BattleSystem : MonoBehaviour
     {
         playerAnimator = FindAnimator();
 
-        //playerHUD.SetHP(playerUnit.currentHP, playerUnit.unitLevel);
         dialogueText.text = "You feel renewed strength!";
         playerAnimator.SetBool("IsHealing", true);
 
         yield return new WaitForSeconds(2f);
         
         playerAnimator.SetBool("IsHealing", false);
+        
+        //begin enemy turn
         state = BattleState.ENEMYTURN;
+        enemyAnimator.SetBool("IsAttacking", true);
+        waterEffect.SetActive(true);
         StartCoroutine(EnemyTurn());
     }
 

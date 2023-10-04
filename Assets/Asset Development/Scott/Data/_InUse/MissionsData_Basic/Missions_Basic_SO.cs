@@ -10,7 +10,7 @@ public class Missions_Basic_SO : ScriptableObject
     [SerializeField] public int _missionUID; 
     [SerializeField] public String _missionName;
     
-    [TextArea] [SerializeField] public String _missionShortBrife;
+    [TextArea] [SerializeField] public String _missionShortBrief;
     [TextArea] [SerializeField] public String _missionDescription;
     [SerializeField] public Sprite _missionPic;
 

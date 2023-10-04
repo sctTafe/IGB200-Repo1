@@ -8,6 +8,6 @@ public class TeamMember_Basic_SO : ScriptableObject
     [SerializeField] public String _name;
     [SerializeField] public Sprite _profilePic;
     [SerializeField] public Sprite _toolPic;
-    [SerializeField] public String _bio;
+    [TextArea] [SerializeField] public String _bio;
     [SerializeField] public TeamMemberClassType _teamMemberClass;
 }

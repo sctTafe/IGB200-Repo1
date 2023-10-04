@@ -56,7 +56,11 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
     #region Public Functions
     #region - Pass Data To Missiom - 
-    // - Passing Data In -
+
+    #region fn_LoadMissionTeam 
+    /// <summary>
+    /// 'fn_LoadMissionTeam' - Instantiates the team member game objects and populates their data sets
+    /// </summary>
     public void fn_LoadMissionTeam()
     {
         if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam - Called"); }
@@ -66,14 +70,40 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         {
             foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values)
             {
-                // Instantiate New Team Member GameObject
-                 GameObject teamMember = InstantiateTeamMemberTransfereHolder(item._uID, item._classType, item._maxEnergy, item._currentEnergy);
-                
+                TeamMemberTransfer_Data tMTD = Instantiate(_Prefab, this.transform);
+                tMTD._uID = item._uID;
+                tMTD._classType =  item._classType;
+                tMTD._maxEnergy = item._maxEnergy;
+                tMTD._maxMorale = item._maxMorale;
+                tMTD._currentEnergy = item._currentEnergy;
+                tMTD._currentMorale = item._currentMorale;
+
                 // Add to StaticData List
-                BattleTransferData_PersistentSingleton.missionTeam.Add(teamMember);
+                BattleTransferData_PersistentSingleton._missionTeam_List.Add(tMTD.gameObject);
+
+                //// Instantiate New Team Member GameObject
+                //GameObject teamMember = InstantiateTeamMemberTransfereHolder(
+                //      item._uID, 
+                //      item._classType, 
+                //      item._maxEnergy, 
+                //      item._currentEnergy
+                //      );
+
             }
         }
     }
+    //private GameObject InstantiateTeamMemberTransfereHolder(int _uID, TeamMemberClassType _classType, float _maxEnergy, float _currentEnergy) {
+    //    TeamMemberTransfer_Data newTeamMemberTransfereData = Instantiate(_Prefab, this.transform);
+    //    newTeamMemberTransfereData._uID = _uID;
+    //    newTeamMemberTransfereData._classType = _classType;
+    //    newTeamMemberTransfereData._maxEnergy = _maxEnergy;
+    //    newTeamMemberTransfereData._currentEnergy = _currentEnergy;
+
+    //    return newTeamMemberTransfereData.gameObject;
+    //}
+    #endregion
+
+
     // Set the Mission ID value in 'BattleTransferData_PersistentSingleton'
     public void fn_LoadIn_MissionData(int missionID)
     {
@@ -115,7 +145,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     private void ReintegrateTeamMemberDataWith()
     {
         TeamMember_SelectionGroup_Data groupData = _TeamMemberGroupsHolderMng._selectedMissionTeam;
-        foreach (var tempTeamMemberGO in BattleTransferData_PersistentSingleton.missionTeam)
+        foreach (var tempTeamMemberGO in BattleTransferData_PersistentSingleton._missionTeam_List)
         {
             TeamMemberTransfer_Data transferData = tempTeamMemberGO.GetComponent<TeamMemberTransfer_Data>();
             
@@ -129,7 +159,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             Destroy(tempTeamMemberGO);
         }
         // Clear the list after all the related Team Member GameObjects have been destroyed
-        BattleTransferData_PersistentSingleton.missionTeam.Clear();
+        BattleTransferData_PersistentSingleton._missionTeam_List.Clear();
     }
 
 
@@ -137,15 +167,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     #endregion
 
     #region Private Functions
-    private GameObject InstantiateTeamMemberTransfereHolder(int _uID, TeamMemberClassType _classType, float _maxEnergy, float _currentEnergy)
-    {
-        TeamMemberTransfer_Data newTeamMemberTransfereData = Instantiate(_Prefab, this.transform);
-        newTeamMemberTransfereData._uID = _uID;
-        newTeamMemberTransfereData._classType = _classType;
-        newTeamMemberTransfereData._maxEnergy = _maxEnergy;
-        newTeamMemberTransfereData._currentEnergy = _currentEnergy;
-        return newTeamMemberTransfereData.gameObject;
-    }
+
     private void connectToSelectionGroupHolder()
     {
         _TeamMemberGroupsHolderMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;

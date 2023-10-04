@@ -33,7 +33,7 @@ public class BattleTransferData_PersistentSingleton : MonoBehaviour
     #endregion
 
     // - For Use By Hailey - 
-    public static List<GameObject> missionTeam = new();
+    public static List<GameObject> _missionTeam_List = new();
 
     // - Battle/Mission Data - 
      
@@ -48,4 +48,14 @@ public class BattleTransferData_PersistentSingleton : MonoBehaviour
         SingeltonSetup();
     }
 
+}
+
+public enum EnemyTypes
+{
+    error,
+    Water,      // pipe
+    Electric,   // wire
+    Practical,  // blocks
+    Planning,   // scaffolding  
+    Special     // special missions - not added yet (maybe 1,2,3, etc.)
 }

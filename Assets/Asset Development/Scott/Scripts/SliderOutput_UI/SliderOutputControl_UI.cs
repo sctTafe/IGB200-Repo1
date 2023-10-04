@@ -12,18 +12,24 @@ public class SliderOutputControl_UI : MonoBehaviour
 {
     public Image _fillBar_Img;
     public float _startFillPct = 0.5f;
-    public float _fillLerpCoeff = 5f;
-    public float _dif;
-    public float _currentFill;
+    public float _fillLerpCoeff = 0.5f;
+
+    public bool _isFillBarFullOnStart;
+
+    private float _dif;
+    private float _currentFill;
 
     private float _currentTargetValue, _maxValue = 1000;
     private float _barUilerpSpeed;
     private float _targetPct;
     private bool _isLerpModeActive = false;
 
+
+
     private void Start()
     {
-        //fn_SetPctFullValue_Pct(_startFillPct);
+        if(_isFillBarFullOnStart) 
+            fn_SetFillPct_NoLerp(1f);
     }
 
     private void Update()
@@ -67,6 +73,12 @@ public class SliderOutputControl_UI : MonoBehaviour
             return 1.0f;
         return fill_pct;
     }
+
+
+
+
+
+
 
 
 

@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
-  m_Name: Misha Management
+  m_Name: Sarah
   m_EditorClassIdentifier: 
-  _name: Misha Management
+  _name: Sarah (Safety Foreman)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: 816120719, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_100x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_200x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_300x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_400x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_500x
+  _bio: Meet Sarah, our Safety Foreman. Sarah's career journey started as a safety
+    officer after she landed a job as a labourer on-site upon enrolling in an apprenticeship.
+    She then pursued advanced safety training courses through OHSA (Occupational
+    Health Services Australia) and actively participated in safety audits and inspections.
+    Now, as our Safety Foreman, she ensures that every aspect of our construction
+    projects adheres to the highest safety standards.
   _teamMemberClass: 5

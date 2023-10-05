@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
-  m_Name: James Goodbuild
+  m_Name: Jessica
   m_EditorClassIdentifier: 
-  _name: James Goodbuild
+  _name: Jessica (Sanitation Plumber)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: (electric) James Goodbuild is a dedicated construction work site health and
-    safety inspector. With a meticulous approach, he ensures that every work site
-    adheres to the highest safety standards. James's commitment to protecting workers
-    and the public is integral to fostering secure and accident-free construction
-    environments
+  _bio: after graduating from a Certificate IV in Plumbing and Services and working
+    as an apprentice, Jessica was fuelled by a passion for sanitation, obtaining
+    specialised training in wastewater and sewage systems through her course. Jessica
+    now excels in installing, repairing, and maintaining vital sanitary systems on
+    construction sites.
   _teamMemberClass: 2

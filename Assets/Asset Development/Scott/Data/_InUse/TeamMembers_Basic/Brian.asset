@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
+  m_Name: Brian
+  m_EditorClassIdentifier: 
+  _name: Brian (Construction Electrician)
+  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
+  _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
+  _bio: Brian's career journey began after graduating from a Certificate III in Electrotechnology
+    straight out of high school. Starting as an apprentice in the area, he gained
+    hands-on experience in electrical work, over time becoming an effective and confident
+    electrician. Motivated to excel, Brian specialised in construction electrician
+    roles, mastering temporary electrical systems on construction sites.
+  _teamMemberClass: 2

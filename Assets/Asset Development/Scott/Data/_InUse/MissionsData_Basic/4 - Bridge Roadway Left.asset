@@ -14,18 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _missionUID: 4
   _missionName: Suspend Deck (Left)
-  _missionShortBrife: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. '
-  _missionDescription: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-    enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-    quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
-    quaerat voluptatem.'
+  _missionShortBrief: Suspending the Left Side of the Deck
+  _missionDescription: "The left side of the bridge deck needs to be suspended in
+    a way that ensures proper alignment and support. Your mission is to coordinate\r\nthe
+    suspension process effectively, though a particular issue has arisen that needs
+    your attention, a massive cinderblock has unexpectedly fallen onto the deck,
+    making \r\nsuspension difficult.  You must remove it and ensure the left side
+    hangs securely. The success of this task is vital for the overall stability of
+    the bridge. Gather your team and get on it!"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 3
   _completionBonusPoints: 150

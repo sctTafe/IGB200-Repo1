@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
-  m_Name: Jenny Heavylift
+  m_Name: Emily
   m_EditorClassIdentifier: 
-  _name: Jenny Heavylift
+  _name: Emily (Finish Carpenter)
   _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: 681629934, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: (Planning) Jenny Heavylift is a bridge surveyor with a keen eye for detail
-    and a passion for engineering. She meticulously examines structures, ensuring
-    they stand the test of time. Jenny's expertise in assessing bridges' integrity
-    and safety is vital to keeping communities connected and secure, making her an
-    indispensable professional.
+  _bio: Meet Emily, our Finish Carpenter. Starting as a general carpenter's apprentice
+    after enrolling in her Certificate III in Carpentry, she mastered foundational
+    skills. After graduating, she began focusing on fine woodworking, cabinetry,
+    and trim work, realising how much she enjoyed the fine details of the craft.
+    Her dedication to craftsmanship shines through in every project.
   _teamMemberClass: 3

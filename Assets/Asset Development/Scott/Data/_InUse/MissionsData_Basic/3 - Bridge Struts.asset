@@ -14,18 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _missionUID: 3
   _missionName: Connect Bridge Struts
-  _missionShortBrife: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. '
-  _missionDescription: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-    enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-    quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
-    quaerat voluptatem.'
+  _missionShortBrief: Connecting Bridge to Struts
+  _missionDescription: "Your mission is to ensure that the connection of the newly
+    constructed bridge arches to the support struts goes smoothely, as this step
+    is crucial in ensuring the stability and \r\nstrength of the bridge. However,
+    there's a problem \u2013 the scaffolding supporting the arches is unstable and
+    simply not behaving correctly. Be prepared for any\r\n unexpected challenges
+    that may arise during the process. Rally your team get this problem sorted with,
+    we're relying on you!\r\n"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 3
   _completionBonusPoints: 150

@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
-  m_Name: Jane Smith
+  m_Name: Sadie
   m_EditorClassIdentifier: 
-  _name: Jane Smith
+  _name: Sadie (Formwork Carpenter)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: 751152706, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: (water) Jane Smith is a dynamic force in the construction industry, breaking
-    barriers with every brick laid. With a passion for building, she brings innovation
-    and determination to her work. Jane's commitment to quality and safety is reshaping
-    the skyline, proving that women can excel in every facet of construction.
+  _bio: Sadie is a Formwork Carpenter, someone who specialises in constructing temporary
+    forms used to mould and shape concrete during a project's construction. She's
+    always been a hard worker, and after obtaining her Certificate III in Carpentry
+    through TAFE, she continued to gain experience in formwork on-site, eventually
+    becoming the skilled worker she is today.
   _teamMemberClass: 1

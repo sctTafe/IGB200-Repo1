@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3052c446f6ca33340b766b9029bbb467
+guid: f8f5c35830d34314f85a359c784475d6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,106 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wrench
+      name: Morale1
       rect:
         serializedVersion: 2
-        x: 107
-        y: 323
-        width: 212
-        height: 212
+        x: 172
+        y: 464
+        width: 120
+        height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 1, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1c0cc17d49b75546a322beb8daf17e8
-      internalID: 751152706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hammer
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 107
-        width: 212
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 988fbdd704eba6a4a95611c31c69caf6
-      internalID: 681629934
+      spriteID: 2f6ee437e080bbe44b0d0c4b2cbef637
+      internalID: -1136441342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Screwdriver
+      name: Morale2
       rect:
         serializedVersion: 2
-        x: 327
-        y: 96
-        width: 212
-        height: 212
+        x: 313
+        y: 461
+        width: 120
+        height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 085dca3195a7daf4dbe2cdc0ca6a460f
-      internalID: -663992460
+      spriteID: b710afaad2ffc3444978a182a6d7efb7
+      internalID: -2048529524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ClipBoard
+      name: Morale3
       rect:
         serializedVersion: 2
-        x: 544
-        y: 107
-        width: 212
-        height: 212
+        x: 449
+        y: 460
+        width: 120
+        height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f29eb8b57916f54db4c6cb1a7abfbbd
-      internalID: 816120719
+      spriteID: 8de659de848b0e3478e68fc407000c3a
+      internalID: -1301454085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForkLift
+      name: Morale4
       rect:
         serializedVersion: 2
-        x: 765
-        y: 107
-        width: 212
-        height: 212
+        x: 583
+        y: 457
+        width: 120
+        height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81fa90f0d8ebbc54591dfbcc2b297bec
-      internalID: -916160410
+      spriteID: e4d8c4cf5e2fb304fa1c7c5feab6b6c5
+      internalID: -799591338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Morale5
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 456
+        width: 120
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59deb9d5928ef714682edfbd0ade7578
+      internalID: 1422680166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoraleBar
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 369
+        width: 648
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6f5fafbcacec74d87d10880c560d9e
+      internalID: 955176210
       vertices: []
       indices: 
       edges: []
@@ -230,7 +251,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3a8b43fc3f99e454ea7effb15763004b
+    spriteID: 98760f9ed7943ae4480c0e80a5033989
     internalID: 0
     vertices: []
     indices: 
@@ -238,11 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ClipBoard: 816120719
-      ForkLift: -916160410
-      Hammer: 681629934
-      Screwdriver: -663992460
-      Wrench: 751152706
+      Morale1: -1136441342
+      Morale2: -2048529524
+      Morale3: -1301454085
+      Morale4: -799591338
+      Morale5: 1422680166
+      MoraleBar: 955176210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

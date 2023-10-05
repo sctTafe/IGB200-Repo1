@@ -14377,7 +14377,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _isDebugging: 0
-  _isTestBattleModeOn: 1
+  _isTestBattleModeOn: 0
   _MissionBrife_UI: {fileID: 1329550145}
   _MissionTeamSelection_UI: {fileID: 1329550144}
 --- !u!4 &1330470824 stripped

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -50,6 +51,9 @@ public class BattleSystem : MonoBehaviour
     
     private Animator enemyAnimator;
     public Animator playerAnimator;
+
+    [Header("Events")] 
+    public UnityEvent _OnBattleEnd;
 
     // Start is called before the first frame update
     void Start()
@@ -244,9 +248,14 @@ public class BattleSystem : MonoBehaviour
         }
 
         //UpdateTeamInformation();
-        StaticData.team.Clear(); //reset the team list
+        if (debugMode)                                                      // SCOTT EDIT - so the list remains to be pulled from in the Progress Scene & cleared there
+        {
+            StaticData.team.Clear(); //reset the team list
+        }
         
         yield return new WaitForSeconds(2f);
+
+        _OnBattleEnd?.Invoke(); // Invoke Event                             // SCOTT EDIT - So that functions can be called for integrating to two scene
         SceneManager.LoadScene(scene);
     }
 

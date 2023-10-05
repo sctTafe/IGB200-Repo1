@@ -16,9 +16,10 @@ MonoBehaviour:
   _nameAndJob: Carlos (Utility Plumber)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: Carlos launched his career after completing his Certificate III in Plumbing
-    through TAFE. He began as an apprentice plumber, gaining hands-on experience
-    on-site, working with great mentors, and is driven by a passion for simply fixing
-    and creating. Carlos continued to develop his skills and today specialises in
-    setting up reliable water supply systems on construction sites.
+  _bio: Carlos launched his career after completing his <color=yellow>Certificate
+    III in Plumbing</color=yellow> through <color=yellow>TAFE</color=yellow>. He
+    began as an <color=yellow>apprentice plumber</color=yellow>, gaining hands-on
+    experience on-site, working with great mentors, and is driven by a passion for
+    simply fixing and creating. Carlos continued to develop his skills and today
+    specialises in setting up reliable water supply systems on construction sites.
   _teamMemberClass: 2

@@ -16,10 +16,10 @@ MonoBehaviour:
   _nameAndJob: David (Construction Foreman)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: This is David, our Construction Foreman. David's career began as a construction
-    labourer after he completed his Certificate II in Civil Construction through
-    TAFE. Over time, he worked his way up, gaining expertise in multiple trades.
-    Recognised for his work ethic and leadership, David became a construction foreman,
-    overseeing complex projects, ensuring they run smoothly, on schedule, and within
-    budget.
+  _bio: This is David, our <color=yellow>Construction Foreman</color=yellow>. David's
+    career began as a construction labourer after he completed his <color=yellow>Certificate
+    II in Civil Construction</color=yellow> through <color=yellow>TAFE</color=yellow>.
+    Over time, he worked his way up, gaining expertise in multiple trades. Recognised
+    for his work ethic and leadership, David became a construction foreman, overseeing
+    complex projects, ensuring they run smoothly, on schedule, and within budget.
   _teamMemberClass: 2

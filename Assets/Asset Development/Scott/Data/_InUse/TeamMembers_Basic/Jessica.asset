@@ -16,9 +16,9 @@ MonoBehaviour:
   _nameAndJob: Jessica (Sanitation Plumber)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: after graduating from a Certificate IV in Plumbing and Services and working
-    as an apprentice, Jessica was fuelled by a passion for sanitation, obtaining
-    specialised training in wastewater and sewage systems through her course. Jessica
-    now excels in installing, repairing, and maintaining vital sanitary systems on
-    construction sites.
+  _bio: after graduating from a <color=yellow>Certificate IV in Plumbing and Services</color=yellow>
+    and working as an apprentice, Jessica was fuelled by a passion for sanitation,
+    obtaining specialised training in wastewater and sewage systems through her course.
+    Jessica now excels in installing, repairing, and maintaining vital sanitary systems
+    on construction sites.
   _teamMemberClass: 2

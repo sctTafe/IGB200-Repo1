@@ -16,10 +16,10 @@ MonoBehaviour:
   _nameAndJob: Mark (Instrumentation Electrician)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: Mark embarked on his career journey after completing his Certificate III
-    in Electrotechnology, specialising in Instrumentation and Control from TAFE.
-    He started as an electrician, honing his skills in various on-site zones, and
-    continued to be fuelled by a passion for control systems. Today, he excels in
-    setting up and maintaining instrumentation systems for infrastructure projects,
-    ensuring optimal performance and safety.
+  _bio: Mark embarked on his career journey after completing his <color=yellow>Certificate
+    III in Electrotechnology</color=yellow>, specialising in Instrumentation and
+    Control from <color=yellow>TAFE</color=yellow>. He started as an electrician,
+    honing his skills in various on-site zones, and continued to be fuelled by a
+    passion for control systems. Today, he excels in setting up and maintaining instrumentation
+    systems for infrastructure projects, ensuring optimal performance and safety.
   _teamMemberClass: 2

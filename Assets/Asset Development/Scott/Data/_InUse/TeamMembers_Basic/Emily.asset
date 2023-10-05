@@ -16,9 +16,10 @@ MonoBehaviour:
   _nameAndJob: Emily (Finish Carpenter)
   _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: 681629934, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: Meet Emily, our Finish Carpenter. Starting as a general carpenter's apprentice
-    after enrolling in her Certificate III in Carpentry, she mastered foundational
-    skills. After graduating, she began focusing on fine woodworking, cabinetry,
-    and trim work, realising how much she enjoyed the fine details of the craft.
-    Her dedication to craftsmanship shines through in every project.
+  _bio: Meet Emily, our <color=yellow>FinishCarpenter</color=yellow>. Starting as
+    a general carpenter's apprentice after enrolling in her <color=yellow>Certificate
+    III in Carpentry</color=yellow>, she mastered foundational skills. After graduating,
+    she began focusing on fine woodworking, cabinetry, and trim work, realising how
+    much she enjoyed the fine details of the craft. Her dedication to craftsmanship
+    shines through in every project.
   _teamMemberClass: 3

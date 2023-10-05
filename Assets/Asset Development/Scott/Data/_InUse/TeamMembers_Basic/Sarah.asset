@@ -16,10 +16,12 @@ MonoBehaviour:
   _nameAndJob: Sarah (Safety Foreman)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: 816120719, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
-  _bio: Meet Sarah, our Safety Foreman. Sarah's career journey started as a safety
-    officer after she landed a job as a labourer on-site upon enrolling in an apprenticeship.
-    She then pursued advanced safety training courses through OHSA (Occupational
-    Health Services Australia) and actively participated in safety audits and inspections.
-    Now, as our Safety Foreman, she ensures that every aspect of our construction
-    projects adheres to the highest safety standards.
+  _bio: Meet Sarah, our <color=yellow>Safety Foreman</color=yellow>. Sarah's career
+    journey started as a <color=yellow>safety officer</color=yellow> after she landed
+    a job as a labourer on-site upon enrolling in an apprenticeship. She then pursued
+    advanced safety training courses through <color=yellow>OHSA (Occupational Health
+    Services Australia)</color=yellow> and actively participated in safety audits
+    and inspections. Now, as our <color=yellow>Safety Foreman</color=yellow>, she
+    ensures that every aspect of our construction projects adheres to the highest
+    safety standards.
   _teamMemberClass: 5

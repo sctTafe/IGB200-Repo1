@@ -6,7 +6,13 @@ using UnityEngine.Events;
 public class MissionSelection_Mng : MonoBehaviour
 {
     public UnityEvent _OnHandleStartMissionBtn;
-    private bool _isDebugging = false;
+    public UnityEvent _OnHandleStartDebbugingMission;
+
+    [Header("Debugging & Test Options")]
+    public bool _isDebugging = false;
+    public bool _isTestBattleModeOn = false;
+
+    [Header("UI Output Dependencies")]
     [SerializeField] private MissionBrife_UI _MissionBrife_UI;
     [SerializeField] private MissionTeamSelection_UI _MissionTeamSelection_UI;
 
@@ -21,7 +27,11 @@ public class MissionSelection_Mng : MonoBehaviour
         DataTransfer_PersistentSingletonMng dataTransMng = DataTransfer_PersistentSingletonMng.Instance;
         dataTransMng.fn_LoadMissionTeam();
         dataTransMng.fn_LoadIn_MissionData(_currentBound_MissionDataHolder.fn_GetMissionUID());
-        _OnHandleStartMissionBtn?.Invoke();
+        
+        if (_isTestBattleModeOn)
+            _OnHandleStartDebbugingMission?.Invoke();
+        else
+            _OnHandleStartMissionBtn?.Invoke();
     }
 
 

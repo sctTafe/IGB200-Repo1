@@ -43,9 +43,10 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     }
     #endregion
 
+    public bool _isUsingStaticDataModeOn = true;
+    public TeamMemberTransfer_Data _Prefab;
 
     private bool _isDebuggingOn = true;
-    public TeamMemberTransfer_Data _Prefab;
     private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberGroupsHolderMng;
 
 
@@ -65,43 +66,43 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     public void fn_LoadMissionTeam()
     {
         if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam - Called"); }
-
         ConnectToSelectionGroupHolder();
-        if (_TeamMemberGroupsHolderMng != null)
+
+        if (_isUsingStaticDataModeOn)
         {
-            foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values)
+            foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values) 
             {
                 TeamMemberTransfer_Data tMTD = Instantiate(_Prefab, this.transform);
                 tMTD._uID = item._uID;
-                tMTD._classType =  item._classType;
+                tMTD._classType = item._classType;
                 tMTD._maxEnergy = item._maxEnergy;
                 tMTD._maxMorale = item._maxMorale;
                 tMTD._currentEnergy = item._currentEnergy;
                 tMTD._currentMorale = item._currentMorale;
 
-                // Add to StaticData List
-                BattleTransferData_PersistentSingleton._missionTeam_List.Add(tMTD.gameObject);
-
-                //// Instantiate New Team Member GameObject
-                //GameObject teamMember = InstantiateTeamMemberTransfereHolder(
-                //      item._uID, 
-                //      item._classType, 
-                //      item._maxEnergy, 
-                //      item._currentEnergy
-                //      );
-
+                StaticData.team.Add(tMTD);
             }
         }
-    }
-    //private GameObject InstantiateTeamMemberTransfereHolder(int _uID, TeamMemberClassType _classType, float _maxEnergy, float _currentEnergy) {
-    //    TeamMemberTransfer_Data newTeamMemberTransfereData = Instantiate(_Prefab, this.transform);
-    //    newTeamMemberTransfereData._uID = _uID;
-    //    newTeamMemberTransfereData._classType = _classType;
-    //    newTeamMemberTransfereData._maxEnergy = _maxEnergy;
-    //    newTeamMemberTransfereData._currentEnergy = _currentEnergy;
+        else
+        {
+            if (_TeamMemberGroupsHolderMng != null) {
+                foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values) {
+                    TeamMemberTransfer_Data tMTD = Instantiate(_Prefab, this.transform);
+                    tMTD._uID = item._uID;
+                    tMTD._classType = item._classType;
+                    tMTD._maxEnergy = item._maxEnergy;
+                    tMTD._maxMorale = item._maxMorale;
+                    tMTD._currentEnergy = item._currentEnergy;
+                    tMTD._currentMorale = item._currentMorale;
 
-    //    return newTeamMemberTransfereData.gameObject;
-    //}
+                    // Add to List
+                    BattleTransferData_PersistentSingleton._missionTeam_List.Add(tMTD.gameObject);
+                }
+            }
+        }
+
+
+    }
     #endregion
 
 
@@ -109,6 +110,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     public void fn_LoadIn_MissionData(int missionID)
     {
         BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID;
+        StaticData.currentMissionID = missionID;
     }
 
     #endregion END: - Pass Data To Missiom - 
@@ -130,56 +132,101 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
     private void UpdateMissionObjects()
     {
-        // Update Mission Outcomes
-        // 1) retrieve mission ID from staticData
-        BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
-        if (battleTransferData != null)
+
+        if (_isUsingStaticDataModeOn)
         {
-            if (battleTransferData._isMissionCompletedSuccessfully)
+            if (StaticData.isBattleWon)
             {
                 // - Update Missions & Buildings -
                 if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Mission Was Successful");
                 GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_CompleteMission(
-                    battleTransferData._currentMissionID);
+                    StaticData.currentMissionID);
+            }
+
+        }
+        else
+        {
+            // Update Mission Outcomes
+            // 1) retrieve mission ID from staticData
+            BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
+            if (battleTransferData != null) {
+                if (battleTransferData._isMissionCompletedSuccessfully) {
+                    // - Update Missions & Buildings -
+                    if (_isDebuggingOn) Debug.Log("DataTransfer_PersistentSingletonMng: fn_HandleMissionFinished - Mission Was Successful");
+                    GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_CompleteMission(
+                        battleTransferData._currentMissionID);
+                }
             }
         }
-
 
     }
     private void ReintegrateTeamMemberData()
     {
         TeamMember_SelectionGroup_Data groupData = _TeamMemberGroupsHolderMng._selectedMissionTeam;
-        foreach (var tempTeamMemberGO in BattleTransferData_PersistentSingleton._missionTeam_List)
+
+        if (_isUsingStaticDataModeOn)
         {
-            TeamMemberTransfer_Data transferData = tempTeamMemberGO.GetComponent<TeamMemberTransfer_Data>();
-            
-            // Find and match team member based on ID, then pass data back 
-            groupData._teamMembersGroup.TryGetValue(transferData._uID, out TeamMember_Data teamMemberData);
-
-            teamMemberData._currentMorale = transferData._currentMorale;
-            teamMemberData._currentEnergy = transferData._currentEnergy;    
-
-            // Destroy Holder
-            Destroy(tempTeamMemberGO);
+            foreach (var teamMemberGO in StaticData.team)
+            {
+                TeamMemberTransfer_Data transferData = teamMemberGO.GetComponent<TeamMemberTransfer_Data>();
+                // Find and match team member based on ID, then pass data back 
+                groupData._teamMembersGroup.TryGetValue(transferData._uID, out TeamMember_Data teamMemberData);
+                teamMemberData._currentMorale = transferData._currentMorale;
+                teamMemberData._currentEnergy = transferData._currentEnergy;
+                // Destroy Holder
+                Destroy(teamMemberGO);
+            }
+            StaticData.team.Clear();
         }
-        // Clear the list after all the related Team Member GameObjects have been destroyed
-        BattleTransferData_PersistentSingleton._missionTeam_List.Clear();
+        else
+        {
+            
+            foreach (var tempTeamMemberGO in BattleTransferData_PersistentSingleton._missionTeam_List)
+            {
+                TeamMemberTransfer_Data transferData = tempTeamMemberGO.GetComponent<TeamMemberTransfer_Data>();
+
+                // Find and match team member based on ID, then pass data back 
+                groupData._teamMembersGroup.TryGetValue(transferData._uID, out TeamMember_Data teamMemberData);
+                teamMemberData._currentMorale = transferData._currentMorale;
+                teamMemberData._currentEnergy = transferData._currentEnergy;
+                // Destroy Holder
+                Destroy(tempTeamMemberGO);
+            }
+
+            // Clear the list after all the related Team Member GameObjects have been destroyed
+            BattleTransferData_PersistentSingleton._missionTeam_List.Clear();
+        }
     }
 
     private void UpdateProjectPoints()
     {
-        int missionPointsGained;
+        int missionPointsGained = 0;
 
-        // Bonus Points From Mission 
-        BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
-        missionPointsGained = battleTransferData._earnedBonuseProjectPoints;
-
-        // Points From Completing Mission
-        if (battleTransferData._isMissionCompletedSuccessfully)
+        if (_isUsingStaticDataModeOn)
         {
-            Missions_Basic_SO missionSO = GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_GetMissionSO(
-                battleTransferData._currentMissionID);
-            missionPointsGained += missionSO._completionBonusPoints;
+            // Bonus Points From Mission 
+            missionPointsGained += StaticData.additionalProjectPointsEarned;
+
+            // Points From Completing Mission
+            if (StaticData.isBattleWon)
+            {
+                // Note: gets the related missionSO, then get the Bonus points for completing the mission from it
+                missionPointsGained += GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_GetMissionSO(
+                    StaticData.currentMissionID)._completionBonusPoints;
+            }
+        }
+        else
+        {
+            // Bonus Points From Mission 
+            BattleTransferData_PersistentSingleton battleTransferData = BattleTransferData_PersistentSingleton.Instance;
+            missionPointsGained = battleTransferData._earnedBonuseProjectPoints;
+
+            // Points From Completing Mission
+            if (battleTransferData._isMissionCompletedSuccessfully) {
+                Missions_Basic_SO missionSO = GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_GetMissionSO(
+                    battleTransferData._currentMissionID);
+                missionPointsGained += missionSO._completionBonusPoints;
+            }
         }
 
         // Add the Points to the 'ProjectPointsMng'

@@ -14358,9 +14358,26 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: BattleScene
+          m_BoolArgument: 0
+        m_CallState: 2
+  _OnHandleStartDebbugingMission:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 304584817}
+        m_TargetAssemblyTypeName: ScottBarley.IGB200.V1.UI_SceneSwitch, Assembly-CSharp
+        m_MethodName: fn_ChangeToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: BtlTestScene_SCOTSDEVSCENE_DO_NOT_EDIT
           m_BoolArgument: 0
         m_CallState: 2
+  _isDebugging: 0
+  _isTestBattleModeOn: 1
   _MissionBrife_UI: {fileID: 1329550145}
   _MissionTeamSelection_UI: {fileID: 1329550144}
 --- !u!4 &1330470824 stripped
@@ -19186,6 +19203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569236ce0d7ea184fae0a9032dc2d577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isUsingStaticDataModeOn: 1
   _Prefab: {fileID: 1269415954}
 --- !u!1 &1823741202
 GameObject:

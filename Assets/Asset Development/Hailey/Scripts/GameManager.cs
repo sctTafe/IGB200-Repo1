@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
                     battleTeam.Add(prefab[j]);
                     battleTeam[battleTeam.Count - 1].GetComponent<Unit>().maxHP = (int)team[i]._maxEnergy;
                     battleTeam[battleTeam.Count - 1].GetComponent<Unit>().currentHP = (int)team[i]._currentEnergy;
-                    battleTeam[battleTeam.Count - 1].GetComponent<Unit>().unitLevel = i;
+                    battleTeam[battleTeam.Count - 1].GetComponent<Unit>().index = i;
                 }
             }
         }

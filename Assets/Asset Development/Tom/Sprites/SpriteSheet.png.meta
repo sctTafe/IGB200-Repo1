@@ -483,13 +483,13 @@ TextureImporter:
       name: Sprite_PlayerIcon1
       rect:
         serializedVersion: 2
-        x: 1719
+        x: 1730
         y: 1241
         width: 505
         height: 572
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 18, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -504,10 +504,10 @@ TextureImporter:
       name: Sprite_PlayerIcon2
       rect:
         serializedVersion: 2
-        x: 2249
+        x: 2257
         y: 1237
-        width: 520
-        height: 579
+        width: 505
+        height: 572
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +525,10 @@ TextureImporter:
       name: Sprite_PlayerIcon3
       rect:
         serializedVersion: 2
-        x: 2812
+        x: 2828
         y: 1237
-        width: 525
-        height: 589
+        width: 505
+        height: 572
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

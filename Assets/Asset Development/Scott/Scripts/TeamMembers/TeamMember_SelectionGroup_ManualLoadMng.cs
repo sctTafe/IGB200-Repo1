@@ -42,6 +42,7 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
             {
                 _TeanMemberSelectionGroupHolderMng.fn_LoadingIntoAvalibleSelectionGroup(new TeamMember_Data { 
                     _name = teamMemberBasicSO._name,
+                    _nameAndJob = teamMemberBasicSO._nameAndJob,
                     _profileSprite = teamMemberBasicSO._profilePic,
                     _toolSprite = teamMemberBasicSO._toolPic,
                     _bio = teamMemberBasicSO._bio,

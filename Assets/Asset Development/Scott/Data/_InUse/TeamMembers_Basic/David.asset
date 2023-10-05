@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
   m_Name: David
   m_EditorClassIdentifier: 
-  _name: David (Construction Foreman)
+  _name: David
+  _nameAndJob: David (Construction Foreman)
   _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: This is David, our Construction Foreman. David's career began as a construction

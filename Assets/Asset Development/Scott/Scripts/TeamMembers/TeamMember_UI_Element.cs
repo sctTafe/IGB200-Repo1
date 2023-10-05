@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class TeamMember_UI_Element : MonoBehaviour
 {
-    public TMP_Text _nameText;
+    public TMP_Text _name;
+    public TMP_Text _nameAndJobText;
     public TMP_Text _bioText;
     public Image _profileImg;
     public Image _toolImg;
@@ -55,8 +56,11 @@ public class TeamMember_UI_Element : MonoBehaviour
 
     #region Private Functions
     private void HandleChange_UpdateValues() {
-        _nameText?.SetText(_currentTeamMemberData._name);
+
+        _name?.SetText(_currentTeamMemberData._name);
+        _nameAndJobText?.SetText(_currentTeamMemberData._nameAndJob);
         _bioText?.SetText(_currentTeamMemberData._bio);
+
         if(_profileImg != null) 
             _profileImg.sprite = _currentTeamMemberData._profileSprite;
         if (_toolImg != null)
@@ -70,7 +74,7 @@ public class TeamMember_UI_Element : MonoBehaviour
         }
     }
     private void UnbindValues() {
-        _nameText?.SetText("");
+        _nameAndJobText?.SetText("");
     }
     #endregion
 }

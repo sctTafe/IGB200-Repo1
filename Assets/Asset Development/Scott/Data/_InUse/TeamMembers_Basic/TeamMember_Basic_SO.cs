@@ -6,6 +6,7 @@ using UnityEngine;
 public class TeamMember_Basic_SO : ScriptableObject
 {
     [SerializeField] public String _name;
+    [SerializeField] public String _nameAndJob;
     [SerializeField] public Sprite _profilePic;
     [SerializeField] public Sprite _toolPic;
     [TextArea] [SerializeField] public String _bio;

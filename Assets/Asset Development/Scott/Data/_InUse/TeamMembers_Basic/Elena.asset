@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
   m_Name: Elena
   m_EditorClassIdentifier: 
-  _name: Elena (Traffic Signal Electrician)
+  _name: 'Elena '
+  _nameAndJob: Elena (Traffic Signal Electrician)
   _profilePic: {fileID: 1055536921, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _toolPic: {fileID: -916160410, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Upon graduating from high school, Elena decided to take a break for a few

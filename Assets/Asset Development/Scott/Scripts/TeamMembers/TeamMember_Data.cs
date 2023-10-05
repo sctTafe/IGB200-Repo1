@@ -10,6 +10,7 @@ public class TeamMember_Data
 
     // Static Information
     [SerializeField] public string _name;
+    [SerializeField] public string _nameAndJob;
     [SerializeField] public string _bio;
     [SerializeField] public Sprite _profileSprite;
     [SerializeField] public Sprite _toolSprite;

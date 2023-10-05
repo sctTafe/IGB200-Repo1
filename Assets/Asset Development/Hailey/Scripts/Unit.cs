@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum UnitType 
 { 
@@ -15,7 +16,8 @@ public enum UnitType
 public class Unit : MonoBehaviour
 {
     public string unitName;
-    public int unitLevel;
+    [FormerlySerializedAs("unitLevel")] public int index;
+    public int level;
     public UnitType type;
     public UnitType weakness;
 

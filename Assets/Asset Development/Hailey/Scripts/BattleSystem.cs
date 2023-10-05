@@ -11,10 +11,12 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 
 public class BattleSystem : MonoBehaviour
 {
+    public bool debugMode = false;
     [Header("Characters")]
     public GameObject playerPrefab;
-    //public GameObject playerOne = StaticData.playerOne;
     public GameObject enemyPrefab;
+
+    //public List<GameObject> enemyPrefabs;
 
     public Unit playerUnit;
     public Unit enemyUnit;
@@ -27,6 +29,7 @@ public class BattleSystem : MonoBehaviour
     [Header("BattleHUD")]
     public Transform[] playerBattleStations;
     public Transform enemyBattleStation;
+    //public Transform[] enemyBattleStations;
     
     public TMP_Text dialogueText;
 
@@ -41,8 +44,9 @@ public class BattleSystem : MonoBehaviour
 
     public string scene;
     
+    [FormerlySerializedAs("waterEffect")]
     [Header("Battle Animations")]
-    [SerializeField] private GameObject waterEffect;
+    [SerializeField] private GameObject particleEffect;
     
     private Animator enemyAnimator;
     public Animator playerAnimator;
@@ -51,8 +55,13 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        //players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer
-
+        
+        if (!debugMode)
+        { 
+            players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer   
+        }
+        
+        //check that battle characters from game manager match team in battle system
         foreach (GameObject character in players.characters)
         {
             Debug.Log("character is: " + character.GetComponent<Unit>().type);
@@ -62,6 +71,8 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.Log("battle character is: " + character.GetComponent<Unit>().type);
         }
+        
+        //start the battle
         StartCoroutine(SetUpBattle());
     }
 
@@ -89,7 +100,7 @@ public class BattleSystem : MonoBehaviour
         enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
         enemyAnimator = enemyGO.GetComponent<Animator>();
-        waterEffect = enemyGO.transform.GetChild(0).gameObject;
+        particleEffect = enemyGO.transform.GetChild(0).gameObject;
 
         playerHUD.characters = players.characters;
         enemyHUD.characters = new List<GameObject> {enemyPrefab};
@@ -145,7 +156,7 @@ public class BattleSystem : MonoBehaviour
 
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(damage);
-        enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.unitLevel);
+        enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.index);
 
         Debug.Log("player attack animation start");
         playerAnimator.SetBool("IsAttacking", true);
@@ -168,7 +179,7 @@ public class BattleSystem : MonoBehaviour
             //enemy turn            
             state = BattleState.ENEMYTURN;
             enemyAnimator.SetBool("IsAttacking", true);
-            waterEffect.SetActive(true);
+            particleEffect.SetActive(true);
             StartCoroutine(EnemyTurn());
         }     
 
@@ -189,7 +200,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(3f);
         
         enemyAnimator.SetBool("IsAttacking", false);
-        waterEffect.SetActive(false);
+        particleEffect.SetActive(false);
 
         if(allDead)
         {
@@ -216,7 +227,7 @@ public class BattleSystem : MonoBehaviour
             extraDamage = 5;
         }
         tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
-        playerHUD.SetHP(tempPlayer.currentHP, tempPlayer.unitLevel);
+        playerHUD.SetHP(tempPlayer.currentHP, tempPlayer.index);
     }
 
     IEnumerator EndBattle()
@@ -277,7 +288,7 @@ public class BattleSystem : MonoBehaviour
         //begin enemy turn
         state = BattleState.ENEMYTURN;
         enemyAnimator.SetBool("IsAttacking", true);
-        waterEffect.SetActive(true);
+        particleEffect.SetActive(true);
         StartCoroutine(EnemyTurn());
     }
 

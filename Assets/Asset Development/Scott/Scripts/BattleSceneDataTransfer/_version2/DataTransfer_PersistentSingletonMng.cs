@@ -166,15 +166,15 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
         if (_isUsingStaticDataModeOn)
         {
-            foreach (var teamMemberGO in StaticData.team)
+            foreach (var teamMemberTransData in StaticData.team)
             {
-                TeamMemberTransfer_Data transferData = teamMemberGO.GetComponent<TeamMemberTransfer_Data>();
+                TeamMemberTransfer_Data transferData = teamMemberTransData.GetComponent<TeamMemberTransfer_Data>();
                 // Find and match team member based on ID, then pass data back 
                 groupData._teamMembersGroup.TryGetValue(transferData._uID, out TeamMember_Data teamMemberData);
                 teamMemberData._currentMorale = transferData._currentMorale;
                 teamMemberData._currentEnergy = transferData._currentEnergy;
                 // Destroy Holder
-                Destroy(teamMemberGO);
+                Destroy(teamMemberTransData.gameObject);
             }
             StaticData.team.Clear();
         }

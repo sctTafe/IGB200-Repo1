@@ -12,6 +12,12 @@ public class TeamMember_UI_Element : MonoBehaviour
     public Image _profileImg;
     public Image _toolImg;
 
+    [Header("Sliders")] 
+    public SliderOutputControl_UI _energyGauge;
+    public SliderOutputControl_UI _moraleGauge;
+
+
+    // - Private -
     private TeamMember_UI_ElementsMng _currentMng;
     private TeamMember_Data _currentTeamMemberData;
 
@@ -61,7 +67,17 @@ public class TeamMember_UI_Element : MonoBehaviour
         _nameAndJobText?.SetText(_currentTeamMemberData._nameAndJob);
         _bioText?.SetText(_currentTeamMemberData._bio);
 
-        if(_profileImg != null) 
+        if (_moraleGauge != null)
+        {
+            float moralePct = (_currentTeamMemberData._currentMorale * 1.0f) / (_currentTeamMemberData._maxMorale * 1.0f);
+            _moraleGauge.fn_SetFillPct_Lerp(moralePct);
+        }
+        if (_energyGauge != null)
+        {
+            float energyPct =_currentTeamMemberData._currentEnergy / _currentTeamMemberData._maxEnergy;
+            _energyGauge?.fn_SetFillPct_Lerp(energyPct);
+        }
+        if (_profileImg != null) 
             _profileImg.sprite = _currentTeamMemberData._profileSprite;
         if (_toolImg != null)
             _toolImg.sprite = _currentTeamMemberData._toolSprite;

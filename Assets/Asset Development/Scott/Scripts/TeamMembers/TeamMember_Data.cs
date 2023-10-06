@@ -26,6 +26,8 @@ public class TeamMember_Data
     [SerializeField] public float _maxMorale;
     [SerializeField] public float _maxEnergy;
 
+    // -- CONSTRUCTOR --
+    // Note: Default Dynamic Values & All other values come from TeamMemberSO
     public TeamMember_Data()
     {
         _level = 1;
@@ -34,6 +36,11 @@ public class TeamMember_Data
         _maxEnergy = 100;
         _currentMorale = _maxMorale;
         _currentEnergy = _maxEnergy;
+    }
+
+    public void fn_TriggerOnChangeEvent()
+    {
+        _OnChange?.Invoke();
     }
 }
 public enum TeamMemberClassType

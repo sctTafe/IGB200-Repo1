@@ -28,8 +28,8 @@ public class SliderOutputControl_UI : MonoBehaviour
 
     private void Start()
     {
-        if(_isFillBarFullOnStart) 
-            fn_SetFillPct_NoLerp(1f);
+        //if(_isFillBarFullOnStart) 
+        //    fn_SetFillPct_NoLerp(1f);
     }
 
     private void Update()

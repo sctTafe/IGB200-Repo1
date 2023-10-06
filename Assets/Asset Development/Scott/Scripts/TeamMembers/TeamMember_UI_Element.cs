@@ -13,9 +13,11 @@ public class TeamMember_UI_Element : MonoBehaviour
     public Image _toolImg;
 
     [Header("Sliders")] 
-    public SliderOutputControl_UI _energyGauge;
-    public SliderOutputControl_UI _moraleGauge;
-
+    public SliderOutputControl_UI _energySiderOut;
+    public SliderOutputControl_UI _moraleSilderOut;
+    [Header("Icon Gauge")]
+    public IconGauge_UI _energyIconGauge;
+    public IconGauge_UI _moraleIconGauge;
 
     // - Private -
     private TeamMember_UI_ElementsMng _currentMng;
@@ -66,17 +68,29 @@ public class TeamMember_UI_Element : MonoBehaviour
         _name?.SetText(_currentTeamMemberData._name);
         _nameAndJobText?.SetText(_currentTeamMemberData._nameAndJob);
         _bioText?.SetText(_currentTeamMemberData._bio);
+        
 
-        if (_moraleGauge != null)
+        // sliders out
+        if (_moraleSilderOut != null)
         {
             float moralePct = (_currentTeamMemberData._currentMorale * 1.0f) / (_currentTeamMemberData._maxMorale * 1.0f);
-            _moraleGauge.fn_SetFillPct_Lerp(moralePct);
+            _moraleSilderOut.fn_SetFillPct_Lerp(moralePct);
         }
-        if (_energyGauge != null)
+        if (_energySiderOut != null)
         {
             float energyPct =_currentTeamMemberData._currentEnergy / _currentTeamMemberData._maxEnergy;
-            _energyGauge?.fn_SetFillPct_Lerp(energyPct);
+            _energySiderOut?.fn_SetFillPct_Lerp(energyPct);
         }
+        // icon gauge out
+        if (_moraleIconGauge != null) {
+            float moralePct = (_currentTeamMemberData._currentMorale * 1.0f) / (_currentTeamMemberData._maxMorale * 1.0f);
+            _moraleIconGauge.fn_SetLevel_Pct(moralePct);
+        }
+        if (_energyIconGauge != null) {
+            float energyPct = _currentTeamMemberData._currentEnergy / _currentTeamMemberData._maxEnergy;
+            _energyIconGauge?.fn_SetLevel_Pct(energyPct);
+        }
+        // pics
         if (_profileImg != null) 
             _profileImg.sprite = _currentTeamMemberData._profileSprite;
         if (_toolImg != null)

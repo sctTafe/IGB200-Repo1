@@ -74,15 +74,6 @@ public class SliderOutputControl_UI : MonoBehaviour
         return fill_pct;
     }
 
-
-
-
-
-
-
-
-
-
     #region Testing
     // Do Not Use: Only For Testing
     [ContextMenu("Testing ( Set to 25% Lerp )")]

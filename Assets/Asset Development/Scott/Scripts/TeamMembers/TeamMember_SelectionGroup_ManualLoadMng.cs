@@ -10,7 +10,9 @@ using UnityEngine;
 public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
 {
     [SerializeReference] private bool _isManuleLoadingEnabled;   
-    public TeamMember_Basic_SO[] _AvalibleTeamMembers;
+    
+    public TeamMember_Basic_SO[] _StartingTeamMembers;
+    public TeamMember_Basic_SO[] _PurchasableTeamMembers;
 
     private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeanMemberSelectionGroupHolderMng;
 
@@ -25,22 +27,23 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
     }
 
 
-
+    // Event Based, so only loads in the team members after other scrips are good to go!
     private void HandleResponseToSetUpComplete()
     {
         if (_isManuleLoadingEnabled)
         {
-            CreateTeamMembereDataAndLoad();
+            CreateTeamMembersDataAndLoad();
+            CreateTeamMembersDataAndLoad_PurchasableTeam();
         }
         
     }
-    private void CreateTeamMembereDataAndLoad()
+    private void CreateTeamMembersDataAndLoad()
     {
-        if (_AvalibleTeamMembers != null && _AvalibleTeamMembers.Length > 0)
+        if (_StartingTeamMembers != null && _StartingTeamMembers.Length > 0)
         {
-            foreach (var teamMemberBasicSO in _AvalibleTeamMembers)
+            foreach (var teamMemberBasicSO in _StartingTeamMembers)
             {
-                _TeanMemberSelectionGroupHolderMng.fn_LoadingIntoAvalibleSelectionGroup(new TeamMember_Data { 
+                _TeanMemberSelectionGroupHolderMng.fn_LoadingInto_AvailableTeamMemberPool(new TeamMember_Data { 
                     _name = teamMemberBasicSO._name,
                     _nameAndJob = teamMemberBasicSO._nameAndJob,
                     _profileSprite = teamMemberBasicSO._profilePic,
@@ -50,6 +53,20 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
                 });
             }
         }
-    } 
+    }
+    private void CreateTeamMembersDataAndLoad_PurchasableTeam() {
+        if (_PurchasableTeamMembers != null && _PurchasableTeamMembers.Length > 0) {
+            foreach (var teamMemberBasicSO in _PurchasableTeamMembers) {
+                _TeanMemberSelectionGroupHolderMng.fn_LoadingInto_PurchasableTeamMemberPool(new TeamMember_Data {
+                    _name = teamMemberBasicSO._name,
+                    _nameAndJob = teamMemberBasicSO._nameAndJob,
+                    _profileSprite = teamMemberBasicSO._profilePic,
+                    _toolSprite = teamMemberBasicSO._toolPic,
+                    _bio = teamMemberBasicSO._bio,
+                    _classType = teamMemberBasicSO._teamMemberClass
+                });
+            }
+        }
+    }
 
 }

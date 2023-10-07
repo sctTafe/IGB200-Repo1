@@ -58,6 +58,7 @@ public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehavi
     public Action _OnSetupComplete;
 
     public TeamMember_SelectionGroup_Data _avalibleTeamMemberPool { get; private set; }
+    public TeamMember_SelectionGroup_Data _purchasableTeamMemberPool { get; private set; }
     public TeamMember_SelectionGroup_Data _selectedMissionTeam { get; private set; }
     public TeamMember_SelectionGroup_Data _newTeamMemberPool { get; private set; }
 
@@ -90,14 +91,22 @@ public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehavi
         
         // all other groups unlimited group size
         _avalibleTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Available);
-        _newTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Purchase);
+        _purchasableTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Purchase);
+
+
+        //_newTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Purchase);
     }
 
-    public void fn_LoadingIntoAvalibleSelectionGroup(TeamMember_Data teamMembereData)
+    public void fn_LoadingInto_AvailableTeamMemberPool(TeamMember_Data teamMemberData)
     {
-        teamMembereData._uID = GetNewUID();
-        _avalibleTeamMemberPool.fn_TryAddTeamMember(teamMembereData);
+        teamMemberData._uID = GetNewUID();
+        _avalibleTeamMemberPool.fn_TryAddTeamMember(teamMemberData);
     }
+    public void fn_LoadingInto_PurchasableTeamMemberPool(TeamMember_Data teamMemberData) {
+        teamMemberData._uID = GetNewUID();
+        _purchasableTeamMemberPool.fn_TryAddTeamMember(teamMemberData);
+    }
+
 
 
     private void Debuging_CreateTestPool(TeamMember_SelectionGroup_Data tGD, int numberToCreate = 1) {

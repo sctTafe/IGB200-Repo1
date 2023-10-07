@@ -17,7 +17,7 @@ public class TeamMember_UI_ElementsMng : MonoBehaviour
 
     private void Awake()
     {
-        _panelRootTransform = _templateUIElement.transform.parent;
+        _panelRootTransform = _templateUIElement.transform.parent; // gets the parent transform of the Template UI Element 
         _templateUIElement.gameObject.SetActive(false);
     }
 

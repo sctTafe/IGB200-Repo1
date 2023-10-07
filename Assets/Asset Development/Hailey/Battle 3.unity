@@ -8253,7 +8253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1f6d27f4a96374992bdd29615cc04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isTransferTestingEnabled: 1
+  _isTransferTestingEnabled: 0
 --- !u!4 &2094932158
 Transform:
   m_ObjectHideFlags: 0

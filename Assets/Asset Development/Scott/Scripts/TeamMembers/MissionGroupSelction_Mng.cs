@@ -26,32 +26,36 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     // external dependency
     private TeanMember_SelectionGroupHolder_PersistentSingletonMng TeamMemberGroupsMng;
 
-    private void Awake()
-    {
-        TeamMemberGroupsMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
-    }
+    #region Unity Native Functions
+    //private void Awake() {
+    //    TeamMemberGroupsMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+    //}
     void Start() {
         // Disable Mission UI Panel Root
         _TeamMemberMissionSelection_root.SetActive(false);
     }
 
-    private void OnDestroy()
-    {
+    private void OnDestroy() {
         _avaliblePool_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
         _selectedTeam_UIEMng._OnTeamMemberClicked -= Handle_TeamMemberSection;
         _avaliblePool_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
         _selectedTeam_UIEMng._OnPrimaryActionBtn -= Handle_AddToSelectedTeam;
     }
+    #endregion
 
+
+    // - Primary Trigger Function -
     public void fn_OpenTeamMemberSelectionWindow()
     {
         BindToTeamMemberElementMngs();
         _TeamMemberMissionSelection_root.SetActive(true);
-        
     }
+
 
     private void BindToTeamMemberElementMngs()
     {
+        TeamMemberGroupsMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+
         _avaliblePool_UIEMng.fn_Bind(TeamMemberGroupsMng._avalibleTeamMemberPool);
         _selectedTeam_UIEMng.fn_Bind(TeamMemberGroupsMng._selectedMissionTeam);
         _SelectedBigInfo_UIEMng.fn_Bind(_currentBigInfo_groupData);
@@ -92,15 +96,4 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         }
         if(isDebuggingOn) Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);
     }
-
-
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
-
-
-
 }

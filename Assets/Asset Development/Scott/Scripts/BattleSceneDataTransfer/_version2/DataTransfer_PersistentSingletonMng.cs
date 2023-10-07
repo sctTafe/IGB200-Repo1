@@ -70,6 +70,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
         if (_isUsingStaticDataModeOn)
         {
+            StaticData.isBattleGameManagerInTestModeOverride = true;
             foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values) 
             {
                 TeamMemberTransfer_Data tMTD = Instantiate(_Prefab, this.transform);

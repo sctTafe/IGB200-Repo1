@@ -12,4 +12,5 @@ public class StaticData : MonoBehaviour
     public static bool isBattleWon = false;
     public static int currentMissionID;         // Holds the Mission ID for when its needed on return to the progress scene
     public static int additionalProjectPointsEarned;
+    public static bool isBattleGameManagerInTestModeOverride;
 }

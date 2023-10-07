@@ -10,8 +10,8 @@ public class TeamMember_UI_ElementsMng : MonoBehaviour
 
     [SerializeField] private TeamMember_UI_Element _templateUIElement;
     [SerializeField] private GameObject _panelRoot;
-    [SerializeField] Transform _panelRootTransform;
-
+    
+    private Transform _panelRootTransform;
     private Dictionary<int, TeamMember_UI_Element> _UIElementsHolder_Dic = new Dictionary<int, TeamMember_UI_Element>();
     private TeamMember_SelectionGroup_Data _boundSelectionGroup;
 

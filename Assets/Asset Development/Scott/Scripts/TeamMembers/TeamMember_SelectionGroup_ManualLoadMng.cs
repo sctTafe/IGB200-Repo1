@@ -9,10 +9,13 @@ using UnityEngine;
 /// </summary>
 public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
 {
-    [SerializeReference] private bool _isManuleLoadingEnabled;   
-    
+    [SerializeReference] private bool _isManuleLoadingEnabled;
+
+    public TeamMemberAssetsData_SO _TypeIconDataSO;
+
     public TeamMember_Basic_SO[] _StartingTeamMembers;
     public TeamMember_Basic_SO[] _PurchasableTeamMembers;
+    
 
     private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeanMemberSelectionGroupHolderMng;
 
@@ -47,9 +50,9 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
                     _name = teamMemberBasicSO._name,
                     _nameAndJob = teamMemberBasicSO._nameAndJob,
                     _profileSprite = teamMemberBasicSO._profilePic,
-                    _toolSprite = teamMemberBasicSO._toolPic,
+                    _classType = teamMemberBasicSO._teamMemberClass,
+                    _toolSprite = _TypeIconDataSO.fn_GetIconSprite(teamMemberBasicSO._teamMemberClass),
                     _bio = teamMemberBasicSO._bio,
-                    _classType = teamMemberBasicSO._teamMemberClass
                 });
             }
         }
@@ -61,7 +64,7 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
                     _name = teamMemberBasicSO._name,
                     _nameAndJob = teamMemberBasicSO._nameAndJob,
                     _profileSprite = teamMemberBasicSO._profilePic,
-                    _toolSprite = teamMemberBasicSO._toolPic,
+                    _toolSprite = _TypeIconDataSO.fn_GetIconSprite(teamMemberBasicSO._teamMemberClass),
                     _bio = teamMemberBasicSO._bio,
                     _classType = teamMemberBasicSO._teamMemberClass
                 });

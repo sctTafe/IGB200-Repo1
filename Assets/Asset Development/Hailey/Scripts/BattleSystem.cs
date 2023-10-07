@@ -366,4 +366,9 @@ public class BattleSystem : MonoBehaviour
         hasActed = !hasActed;   
         StartCoroutine(PlayerAttack(true));
     }
+
+    public void fn_OverrideDebugMode()
+    {
+        debugMode = false;
+    }
 }

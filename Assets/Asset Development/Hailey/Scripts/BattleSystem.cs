@@ -14,10 +14,12 @@ public class BattleSystem : MonoBehaviour
 {
     public bool debugMode = false;
     [Header("Characters")]
-    public GameObject playerPrefab;
+    private GameObject playerPrefab;
     public GameObject enemyPrefab;
 
-    //public List<GameObject> enemyPrefabs;
+    public List<GameObject> enemies;
+    public Transform[] battlePos;
+    public GameObject bridge;
 
     public Unit playerUnit;
     public Unit enemyUnit;
@@ -64,6 +66,11 @@ public class BattleSystem : MonoBehaviour
         { 
             players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer   
         }
+
+        //Set battle position, roles and enemies
+        playerPrefab = players.characters[0];
+        enemyPrefab = enemies[StaticData.battlesPlayed];
+        bridge.transform.position = battlePos[StaticData.battlesPlayed].position;
         
         //check that battle characters from game manager match team in battle system
         foreach (GameObject character in players.characters)
@@ -75,7 +82,8 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.Log("battle character is: " + character.GetComponent<Unit>().type);
         }
-        
+
+        SetUpCharacters();
         //start the battle
         StartCoroutine(SetUpBattle());
     }
@@ -85,9 +93,8 @@ public class BattleSystem : MonoBehaviour
 
     }
 
-    //player and enemy spawn into battle
-    IEnumerator SetUpBattle() 
-    {       
+    void SetUpCharacters()
+    {
         GameObject playerGO = playerPrefab;
         //GameObject playerGo = playerPrefab;
         playerUnit = playerGO.GetComponent<Unit>();
@@ -114,7 +121,11 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHUD();
         playerHUD.SetButtons(playerUnit);
         enemyHUD.SetHUD();
+    }
 
+    //player and enemy spawn into battle
+    IEnumerator SetUpBattle() 
+    {       
         yield return new WaitForSeconds(2f);
 
         state = BattleState.PLAYERTURN;
@@ -251,6 +262,14 @@ public class BattleSystem : MonoBehaviour
         if (debugMode)                                                      // SCOTT EDIT - so the list remains to be pulled from in the Progress Scene & cleared there
         {
             StaticData.team.Clear(); //reset the team list
+        }
+
+        StaticData.battlesPlayed++; //for changing out the enemy, update level - HAILEY EDIT
+        Debug.Log(StaticData.battlesPlayed);
+        if (StaticData.battlesPlayed == 4)
+        {
+            Debug.Log("no more battles left");
+            StaticData.battlesPlayed = 0;
         }
         
         yield return new WaitForSeconds(2f);

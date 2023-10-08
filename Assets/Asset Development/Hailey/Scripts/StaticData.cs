@@ -7,6 +7,7 @@ public class StaticData : MonoBehaviour
 {
     public static List<TeamMemberTransfer_Data> team = new();
     public static GameObject playerOne;
+    public static int battlesPlayed = 0;
 
     // - Used In Progress Scene
     public static bool isBattleWon = false;

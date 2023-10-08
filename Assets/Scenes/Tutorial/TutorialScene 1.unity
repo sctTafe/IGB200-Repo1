@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 30e049f0b79ebc54384fdc1ddac4dc0b,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1282,73 +1283,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4954583878786602434, guid: 073c4c368c4dd0242bbfbf9f9eb92d70,
     type: 3}
   m_PrefabInstance: {fileID: 178879066}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &179857697
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1634810619}
-    m_Modifications:
-    - target: {fileID: 1000010992925640, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_Name
-      value: Board
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 19.089996
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -16.167
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7144675
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.16244426
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6636134
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.15088186
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -25.618
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 274.227
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 136fed684fbe9844e8fc5f473bab97cf, type: 3}
---- !u!4 &179857698 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4000012298303660, guid: 136fed684fbe9844e8fc5f473bab97cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 179857697}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &183897162
 PrefabInstance:
@@ -4608,7 +4542,7 @@ MonoBehaviour:
   dialogueText: {fileID: 348250439}
   animator: {fileID: 659436568}
   isCutscene: 1
-  scene: ProjectManagmentSceneTutorial
+  scene: ProScene_Tutorial
   dialogueBox: {fileID: 659436564}
 --- !u!4 &955036178
 Transform:
@@ -6789,7 +6723,6 @@ Transform:
   - {fileID: 1384920587}
   - {fileID: 89918018}
   - {fileID: 361185412}
-  - {fileID: 179857698}
   - {fileID: 1016947548}
   - {fileID: 277879650}
   - {fileID: 77815934}

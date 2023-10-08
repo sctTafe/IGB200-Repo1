@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 /// <summary>
 ///
@@ -51,8 +52,8 @@ public class RecruitmentGroup_Mng : MonoBehaviour
         _recruits_UIEMng.fn_Bind(TeamMemberGroupsMng._purchasableTeamMemberPool);
         _selectedBigInfo_UIEMng.fn_Bind(_currentBigInfo_groupData);
         // - Subscribe to Events -
-        _recruits_UIEMng._OnTeamMemberClicked += Handle_TeamMemberSection;
-        _recruits_UIEMng._OnPrimaryActionBtn += Handle_AddToSelectedTeam;
+        _recruits_UIEMng._OnTeamMemberClicked += Handle_TeamMemberSection;          // Display Member Event Trigger
+        _selectedBigInfo_UIEMng._OnPrimaryActionBtn += Handle_AddToSelectedTeam;    // Primary Action Event Trigger (Hire)
     }
 
 
@@ -67,24 +68,27 @@ public class RecruitmentGroup_Mng : MonoBehaviour
     // Needs Editing
     private void Handle_AddToSelectedTeam(TeamMember_Data tMD, TeamMember_SelectionGroup_Data tMSGD) {
         bool itworked = false;
-        //Request is to add to selected pool
-        if (tMSGD._groupType == SelectionGroupType.Available) //check if current teamMember Group is part of the 'Avalible Pool' i.e. trying to add it to the 'Mission pool' group
-        {
-            if (TeamMemberGroupsMng._selectedMissionTeam.fn_TryAddTeamMember(tMD)) // try add to group, if i can be added to the group, remove it from the 'Avalible Pool'
-            {
-                itworked = TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
-            }
-        }
-        if (tMSGD._groupType == SelectionGroupType.Mission) {
 
-            if (TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD)) {
-                itworked = TeamMemberGroupsMng._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
+        // - Try Purchase Amount - Project Points - PP cost will stored in the Team Member Data
+        int purchaseCostTemp = 40;
+        if (ProjectPoints_PersistentSingletonMng.Instance.fn_TrySubtractPoints(purchaseCostTemp))
+        {
+            if (TeamMemberGroupsMng._avalibleTeamMemberPool
+                .fn_TryAddTeamMember(
+                    tMD)) // try add to group, if i can be added to the group, remove it from the 'Available Pool'
+            {
+                itworked = TeamMemberGroupsMng._purchasableTeamMemberPool.fn_TryRemoveTeamMember(tMD);
             }
+            _recruits_UIEMng.fn_DisplayNextTeamMemberInBigInfo(this);
         }
         if (isDebuggingOn) Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);
     }
     #endregion
 
 
+    public void fn_ClearBigInfo()
+    {
+        _selectedBigInfo_UIEMng.fn_Bind(null);
+    }
 
 }

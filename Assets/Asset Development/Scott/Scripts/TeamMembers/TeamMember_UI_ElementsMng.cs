@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TeamMember_UI_ElementsMng : MonoBehaviour
@@ -93,13 +94,26 @@ public class TeamMember_UI_ElementsMng : MonoBehaviour
     }
 
 
-    #region Debugging
+    #region Bispoke Solutions
+    // - Display Next Team Member in the Big Info Popup - 
+    public void fn_DisplayNextTeamMemberInBigInfo(RecruitmentGroup_Mng rgm) {
+        // calls the event for binding the Team Member to the Big Info, to display the next, or if the are no more, binds 'null' to it, to clear it
+        if (_UIElementsHolder_Dic.Count > 0) {
+            _UIElementsHolder_Dic.FirstOrDefault().Value.fn_Handle_OnElementBtn();
+        }
+        else {
+            rgm.fn_ClearBigInfo();
+        }
+    }
+    #endregion
 
+
+
+    #region Debugging
     [ContextMenu("Testing - ClearUiElements")]
     private void Testing_ClearUiElements() {
         ClearUiElements();
     }
-
     #endregion
 
 

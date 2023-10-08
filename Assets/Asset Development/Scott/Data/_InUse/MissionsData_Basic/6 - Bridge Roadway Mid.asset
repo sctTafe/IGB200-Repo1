@@ -29,7 +29,8 @@ MonoBehaviour:
   _daysToComplete: 25
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
-  _MissionsEnabledOnCompletion_Array: []
+  _MissionsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: 9344f19e81cc8944b8f6b7d41d446b27, type: 2}
   _BridgePartsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 6608c1eb5d8bdc749a1b83bc72fb6192, type: 2}
   _isEnabledFromGameStart: 0

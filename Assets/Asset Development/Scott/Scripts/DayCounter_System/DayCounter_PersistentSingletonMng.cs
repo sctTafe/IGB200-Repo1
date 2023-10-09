@@ -39,8 +39,9 @@ public class DayCounter_PersistentSingletonMng : MonoBehaviour
     #endregion
 
     // - Events - 
-    public UnityEvent _OnDayChange_UnityEvent;
-    public Action <int> _OnDayChange_CurrentDay;
+    public UnityEvent _OnDayChange_UnityEvent;      // used for any effects to be attacked to
+    public Action _OnDayChange;   // used for internal subscriptions 
+    public Action <int> _OnDayChange_CurrentDay;    // used for updating the UI element
 
     // - Private - 
     private int _currentDay = 1;
@@ -50,6 +51,8 @@ public class DayCounter_PersistentSingletonMng : MonoBehaviour
         SingeltonSetup();
     }
 
+
+    // - public functions - 
     public void fn_updateToNextDay()
     {
         nextDay();
@@ -62,6 +65,7 @@ public class DayCounter_PersistentSingletonMng : MonoBehaviour
     private void nextDay()
     {
         _currentDay++;
+        _OnDayChange?.Invoke();
         _OnDayChange_UnityEvent?.Invoke();
         _OnDayChange_CurrentDay?.Invoke(_currentDay);
     }

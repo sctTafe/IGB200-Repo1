@@ -42,6 +42,15 @@ public class TeamMember_Data
     {
         _OnChange?.Invoke();
     }
+
+    public void fn_AddEnergy(float amount)
+    {
+        if (amount > 0) {
+            _currentEnergy += amount;
+            if (_currentEnergy > _maxEnergy)
+                _currentEnergy = _maxEnergy;
+        }
+    }
 }
 public enum TeamMemberClassType
 {

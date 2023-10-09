@@ -26,6 +26,7 @@ public enum SelectionGroupType
 /// 
 public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehaviour
 {
+
     #region Singelton Setup
     private static TeanMember_SelectionGroupHolder_PersistentSingletonMng _instance;
     public static TeanMember_SelectionGroupHolder_PersistentSingletonMng Instance

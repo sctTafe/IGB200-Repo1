@@ -29742,12 +29742,16 @@ MonoBehaviour:
   dialogue:
     name: Amanda (AWIC CEO)
     sentences:
+    - Before a mission, you will select four team members for battle, make sure you
+      read the mission brief, as they offer great insight into which team members
+      will be most effective for the given issue.
     - "For example, if the mission brief mentioned a burst pipe, you should make
       sure that you have a plumber on your team, match your team\u2019s disciplines
       with the problems mentioned in the brief!"
-    - Accept the mission, look through your team's bios and select four members to
-      enter the battle.
-    - Then, we'll move onto the battle itself! Click Ready when you're ready
+    - Click on and select the bridge's arches to view the mission's brief, and once
+      you accept the mission, you can then also view and assign up to four team members
+      for battle!
+    - Press start to begin your mission!
   startButton: {fileID: 0}
 --- !u!114 &1599772978
 MonoBehaviour:

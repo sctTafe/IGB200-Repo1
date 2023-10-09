@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -261,9 +261,16 @@ MonoBehaviour:
     sentences:
     - Welcome to the construction zone, here, we will teach you the basics of combat
       and how to construct this bridge the right way!
-    - Before a mission, you will select four team members for battle, make sure you
-      read the mission brief, as they offer great insight into which team members
-      will be most effective for the given issue.
+    - Hmm, seems like we have a burst pipe to deal with, don't worry, I'll guide
+      you through the process and we'll deal with it in no time!
+    - Use the arrows at the bottom of the screen to select which team member you
+      attack with, remember, team members with disciplines that match the problem
+      you face do more damage!
+    - Each team member has two attack options, one standard attack, and one that
+      relates to their area of expertise! Remember to use the right attack for the
+      job.
+    - Let's get fixing!
+    - Great job, I think you're ready to move on to the bridge itself!
   startButton: {fileID: 13048134}
 --- !u!114 &13048137
 MonoBehaviour:

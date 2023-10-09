@@ -172,9 +172,9 @@ MonoBehaviour:
   level: 0
   type: 2
   weakness: 2
-  damage: 5
-  maxHP: 30
-  currentHP: 25
+  damage: 10
+  maxHP: 75
+  currentHP: 75
   specialDamage: 0
   isHealer: 0
   isSleeping: 0

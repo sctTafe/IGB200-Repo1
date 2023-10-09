@@ -41,35 +41,41 @@ public class CharacterSelection : MonoBehaviour
     }
 
     public void NextCharacter()
-    {   
-        selected[selectedCharacter].SetActive(false);     
-        selectedCharacter = (selectedCharacter + 1) % characters.Count;
-        selected[selectedCharacter].SetActive(true);
+    {
+        if (!battleSystem.isHealing)
+        {
+            selected[selectedCharacter].SetActive(false);     
+            selectedCharacter = (selectedCharacter + 1) % characters.Count;
+            selected[selectedCharacter].SetActive(true);
   
-        //Update Battle System and HUD
-        battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
-        playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
+            //Update Battle System and HUD
+            battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
+            playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
         
-        //Update text
-        selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+            //Update text
+            selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+        }
     }
 
     public void PreviousCharacter()
     {
-        selected[selectedCharacter].SetActive(false); 
-        selectedCharacter--;
-        if(selectedCharacter < 0)
+        if (!battleSystem.isHealing)
         {
-            selectedCharacter += characters.Count;
-        }
-        selected[selectedCharacter].SetActive(true);        
+            selected[selectedCharacter].SetActive(false); 
+            selectedCharacter--;
+            if(selectedCharacter < 0)
+            {
+                selectedCharacter += characters.Count;
+            }
+            selected[selectedCharacter].SetActive(true);        
 
-        //Update Battle System and HUD
-        battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
-        playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
+            //Update Battle System and HUD
+            battleSystem.playerUnit = characters[selectedCharacter].GetComponent<Unit>();
+            playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
         
-        //Update text
-        selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+            //Update text
+            selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+        }
     }
 
     public bool AllDead()

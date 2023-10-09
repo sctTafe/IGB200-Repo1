@@ -135,12 +135,6 @@ public class BattleSystem : MonoBehaviour
     //handles player's attack
     IEnumerator PlayerAttack(bool isSpecial)
     {
-        //determine amount of damage
-        //var rnd = new System.Random();
-        //int rndDamage = rnd.Next(-10, 10);
-
-        //Debug.Log(rndDamage);
-
         playerAnimator = FindAnimator();
         
         int damage;
@@ -365,8 +359,7 @@ public class BattleSystem : MonoBehaviour
         //change button colour 
         hasActed = true;  
         isHealing = true;
-        dialogueText.text = "Choose a team member to heal";       
-        //StartCoroutine(PlayerHeal());
+        dialogueText.text = "Choose a team member to heal";    
     }
 
     //execute player special attack

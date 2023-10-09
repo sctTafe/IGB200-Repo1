@@ -145,8 +145,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6994579144079665197}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 689ebebb9a27cfe49a7d174e5df90129, type: 3}
-  m_Controller: {fileID: 9100000, guid: 78f6a15db3ddbfb4a99216898ac193c0, type: 2}
+  m_Avatar: {fileID: 9000000, guid: f5d85bb309453444e943fa209dbed0b1, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2b8691505359e4b40903b40512339572, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -261,7 +261,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinderBlock
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: f5d85bb309453444e943fa209dbed0b1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

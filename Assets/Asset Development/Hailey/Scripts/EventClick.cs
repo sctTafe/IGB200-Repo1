@@ -10,7 +10,6 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerClickHandl
 
     private void Awake()
     {
-        //materialApplier = GetComponent<materialApplier>();
         battleSystem = GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>();
         unit = GetComponent<Unit>();
     }
@@ -27,8 +26,6 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerClickHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("don't heal");
-        //empty
         if(battleSystem.isHealing)
         {
             Debug.Log("heal");

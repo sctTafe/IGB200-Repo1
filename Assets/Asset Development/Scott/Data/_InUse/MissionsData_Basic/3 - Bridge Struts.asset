@@ -29,9 +29,7 @@ MonoBehaviour:
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
   _MissionsEnabledOnCompletion_Array:
-  - {fileID: 11400000, guid: 9344f19e81cc8944b8f6b7d41d446b27, type: 2}
   - {fileID: 11400000, guid: 5e544ffd47affc441afac3e8eeead89f, type: 2}
-  - {fileID: 11400000, guid: 2a79c34479b278c4296a50ebbcd2146d, type: 2}
   _BridgePartsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 4aef60133fb045f44b4d7a8c20d1e8d1, type: 2}
   _isEnabledFromGameStart: 0

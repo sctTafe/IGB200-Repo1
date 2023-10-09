@@ -129,6 +129,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         UpdateMissionObjects();
         ReintegrateTeamMemberData();
         UpdateProjectPoints();
+        UpdateDaysPassed();
     }
 
     private void UpdateMissionObjects()
@@ -232,6 +233,18 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
         // Add the Points to the 'ProjectPointsMng'
         ProjectPoints_PersistentSingletonMng.Instance.fn_AddPoints(missionPointsGained);
+    }
+
+    private void UpdateDaysPassed()
+    {
+        if (_isUsingStaticDataModeOn) {
+            int days =   GameProgressionInteractableObjects_PersistentSingletonMng.Instance.fn_GetMissionSO(StaticData.currentMissionID)._daysToComplete;
+            DayCounter_PersistentSingletonMng tmp = DayCounter_PersistentSingletonMng.Instance;
+            for (int i = 0; i < days; i++)
+            {
+                tmp.fn_updateToNextDay();
+            }
+        }
     }
 
     #endregion END: - Pull Data From Missiom - 

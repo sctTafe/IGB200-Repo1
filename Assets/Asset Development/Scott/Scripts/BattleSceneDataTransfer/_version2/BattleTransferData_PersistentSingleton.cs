@@ -50,12 +50,3 @@ public class BattleTransferData_PersistentSingleton : MonoBehaviour
 
 }
 
-public enum EnemyTypes
-{
-    error,
-    Water,      // pipe
-    Electric,   // wire
-    Practical,  // blocks
-    Planning,   // scaffolding  
-    Special     // special missions - not added yet (maybe 1,2,3, etc.)
-}

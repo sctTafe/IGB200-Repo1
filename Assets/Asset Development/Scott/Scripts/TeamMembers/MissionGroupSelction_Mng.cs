@@ -45,15 +45,13 @@ public class MissionGroupSelction_Mng : MonoBehaviour
 
 
     // - Primary Trigger Function -
-    public void fn_OpenTeamMemberSelectionWindow()
-    {
+    #region Primary Trigger Functions
+    public void fn_OpenTeamMemberSelectionWindow() {
         BindToTeamMemberElementMngs();
+        ClearMissionTeam();
         _TeamMemberMissionSelection_root.SetActive(true);
     }
-
-
-    private void BindToTeamMemberElementMngs()
-    {
+    private void BindToTeamMemberElementMngs() {
         TeamMemberGroupsMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
         _avaliblePool_UIEMng.fn_Bind(TeamMemberGroupsMng._avalibleTeamMemberPool);
@@ -68,6 +66,27 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         _avaliblePool_UIEMng._OnPrimaryActionBtn += Handle_AddToSelectedTeam;
         _selectedTeam_UIEMng._OnPrimaryActionBtn += Handle_AddToSelectedTeam;
     }
+    private void ClearMissionTeam()
+    {
+        if (TeamMemberGroupsMng._selectedMissionTeam._teamMembersGroup.Count > 0)
+        {
+            Stack<TeamMember_Data> _toClearStack = new();
+            foreach (var teamMembers in TeamMemberGroupsMng._selectedMissionTeam._teamMembersGroup.Values) {
+                _toClearStack.Push(teamMembers);
+            }
+
+            int count = _toClearStack.Count;
+            for (int i = 0; i < count; i++)
+            {
+                TeamMember_Data teamMember = _toClearStack.Pop();
+                TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryAddTeamMember(teamMember);
+                TeamMemberGroupsMng._selectedMissionTeam.fn_TryRemoveTeamMember(teamMember);
+            }
+        }
+    }
+    #endregion
+
+
 
     private void Handle_TeamMemberSection(TeamMember_Data tMD)
     {

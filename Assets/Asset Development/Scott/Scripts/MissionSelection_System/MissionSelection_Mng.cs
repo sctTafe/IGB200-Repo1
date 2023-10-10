@@ -22,7 +22,17 @@ public class MissionSelection_Mng : MonoBehaviour
     /// <summary>
     ///  Loads the relevant data to the Transfer System and starts the Mission
     /// </summary>
-    public void fn_HandleStartMissionBtn()
+
+    public void fn_TryStartMission()
+    {
+        // 1) Check if mission team > 0 members
+        if (TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance._selectedMissionTeam._teamMembersGroup.Count > 0)
+        {
+            fn_StartMission();
+        }
+        
+    }
+    public void fn_StartMission()
     {
         DataTransfer_PersistentSingletonMng dataTransMng = DataTransfer_PersistentSingletonMng.Instance;
         dataTransMng.fn_LoadMissionTeam();

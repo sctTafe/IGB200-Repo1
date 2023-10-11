@@ -18,10 +18,10 @@ MonoBehaviour:
   _missionDescription: "Similar to the left side, your mission is to suspend the
     right side of the bridge deck with precision and accuracy, maintaining balance
     and ensuring\r\n the proper attachment goes smoothely. However, there's a problem
-    \u2013 the wires for the right side suspension are frayed and damaged and we
-    need your team's expertise to repair or \r\nreplace them to ensure the deck hangs
-    securely. As you work on this task, stay vigilant for any potential complications.
-    Lets go!"
+    \u2013 the <color=yellow> electrical wires</color=yellow> for the right side
+    suspension are frayed and damaged and we need your team's expertise to repair
+    or \r\nreplace them to ensure the deck hangs securely. As you work on this task,
+    stay vigilant for any potential complications. Lets go!"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 4
   _completionBonusPoints: 150

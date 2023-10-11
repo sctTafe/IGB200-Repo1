@@ -16,12 +16,12 @@ MonoBehaviour:
   _missionName: Connect Bridge Struts
   _missionShortBrief: Connecting Bridge to Struts
   _missionDescription: "Your mission is to ensure that the connection of the newly
-    constructed bridge arches to the support struts goes smoothely, as this step
+    constructed bridge arches to the  support struts goes smoothely, as this step
     is crucial in ensuring the stability and \r\nstrength of the bridge. However,
-    there's a problem \u2013 the scaffolding supporting the arches is unstable and
-    simply not behaving correctly. Be prepared for any\r\n unexpected challenges
-    that may arise during the process. Rally your team get this problem sorted with,
-    we're relying on you!\r\n"
+    there's a problem \u2013 the <color=yellow>scaffolding</color=yellow> supporting
+    the arches is unstable and simply not behaving correctly. Be prepared for any\r\n
+    unexpected challenges that may arise during the process. Rally your team get
+    this problem sorted with, we're relying on you!\r\n"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 3
   _completionBonusPoints: 150

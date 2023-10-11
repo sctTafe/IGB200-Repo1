@@ -18,10 +18,10 @@ MonoBehaviour:
   _missionDescription: "The left side of the bridge deck needs to be suspended in
     a way that ensures proper alignment and support. Your mission is to coordinate\r\nthe
     suspension process effectively, though a particular issue has arisen that needs
-    your attention, a massive cinderblock has unexpectedly fallen onto the deck,
-    making \r\nsuspension difficult.  You must remove it and ensure the left side
-    hangs securely. The success of this task is vital for the overall stability of
-    the bridge. Gather your team and get on it!"
+    your attention, a  <color=yellow>massive cinderblock</color=yellow> has unexpectedly
+    fallen onto the deck, making \r\nsuspension difficult.  You must remove it and
+    ensure the left side hangs securely. The success of this task is vital for the
+    overall stability of the bridge. Gather your team and get on it!"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 3
   _completionBonusPoints: 150

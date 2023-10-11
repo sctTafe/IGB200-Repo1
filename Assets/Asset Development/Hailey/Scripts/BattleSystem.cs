@@ -70,10 +70,13 @@ public class BattleSystem : MonoBehaviour
         //Set battle position, roles and enemies
         playerPrefab = players.characters[0];
         enemyPrefab = enemies[StaticData.battlesPlayed];
-        bridge.transform.position = battlePos[StaticData.battlesPlayed].position;
+        if (bridge != null)
+        {
+            bridge.transform.position = battlePos[StaticData.battlesPlayed].position;
+        }
         
         //check that battle characters from game manager match team in battle system
-        foreach (GameObject character in players.characters)
+        /*foreach (GameObject character in players.characters)
         {
             Debug.Log("character is: " + character.GetComponent<Unit>().type);
         }
@@ -81,7 +84,7 @@ public class BattleSystem : MonoBehaviour
         foreach (GameObject character in GameManager.instance.battleTeam)
         {
             Debug.Log("battle character is: " + character.GetComponent<Unit>().type);
-        }
+        }*/
 
         SetUpCharacters();
         //start the battle

@@ -124,12 +124,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Electrician
-  unitLevel: 0
+  index: 0
+  level: 0
   type: 2
   weakness: 1
   damage: 5
   maxHP: 25
-  currentHP: 25
+  currentHP: 0
   specialDamage: 10
   isHealer: 0
   isSleeping: 0

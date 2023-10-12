@@ -12,6 +12,7 @@ public enum SelectionGroupType
     Available,
     Mission,
     Purchase,
+    Resting,
     Other
 }
 
@@ -60,6 +61,7 @@ public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehavi
 
     public TeamMember_SelectionGroup_Data _avalibleTeamMemberPool { get; private set; }
     public TeamMember_SelectionGroup_Data _purchasableTeamMemberPool { get; private set; }
+    public TeamMember_SelectionGroup_Data _facilitiesTeamMemberPool { get; private set; }
     public TeamMember_SelectionGroup_Data _selectedMissionTeam { get; private set; }
     public TeamMember_SelectionGroup_Data _newTeamMemberPool { get; private set; }
 
@@ -89,7 +91,8 @@ public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehavi
     private void Setup_CreateGroups() {
         // mission team limited to group size of 4
         _selectedMissionTeam = new TeamMember_SelectionGroup_Data(SelectionGroupType.Mission, 4);
-        
+        _facilitiesTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Resting, 2);
+
         // all other groups unlimited group size
         _avalibleTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Available);
         _purchasableTeamMemberPool = new TeamMember_SelectionGroup_Data(SelectionGroupType.Purchase);

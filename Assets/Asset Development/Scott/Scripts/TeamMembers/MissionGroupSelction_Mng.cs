@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -52,7 +51,8 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         _TeamMemberMissionSelection_root.SetActive(true);
     }
     private void BindToTeamMemberElementMngs() {
-        TeamMemberGroupsMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+        if (TeamMemberGroupsMng == null)
+            TeamMemberGroupsMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
         _avaliblePool_UIEMng.fn_Bind(TeamMemberGroupsMng._avalibleTeamMemberPool);
         _selectedTeam_UIEMng.fn_Bind(TeamMemberGroupsMng._selectedMissionTeam);
@@ -115,4 +115,5 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         }
         if(isDebuggingOn) Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);
     }
+
 }

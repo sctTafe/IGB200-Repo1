@@ -130,7 +130,7 @@ MonoBehaviour:
   weakness: 1
   damage: 5
   maxHP: 25
-  currentHP: 0
+  currentHP: 25
   specialDamage: 10
   isHealer: 0
   isSleeping: 0

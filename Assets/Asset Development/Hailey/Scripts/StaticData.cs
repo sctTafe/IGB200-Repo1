@@ -6,8 +6,8 @@ using UnityEngine;
 public class StaticData : MonoBehaviour
 {
     public static List<TeamMemberTransfer_Data> team = new();
-    public static GameObject playerOne;
-    public static int battlesPlayed = 0;
+    public static int battlePosition = 0;
+    public static EnemyTypes enemyType;
 
     // - Used In Progress Scene
     public static bool isBattleWon = false;

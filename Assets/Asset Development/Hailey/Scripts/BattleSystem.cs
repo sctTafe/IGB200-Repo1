@@ -20,6 +20,12 @@ public class BattleSystem : MonoBehaviour
     public List<GameObject> enemies;
     public Transform[] battlePos;
     public GameObject bridge;
+    
+    //Enemy indexes
+    private int LEAKY_PIPE = 0;
+    private int LIVE_WIRE = 1;
+    private int CINDER_BLOCK = 2;
+    private int SCAFFOLDING = 3;
 
     public Unit playerUnit;
     public Unit enemyUnit;
@@ -64,47 +70,55 @@ public class BattleSystem : MonoBehaviour
         
         if (!debugMode)
         { 
-            players.characters = GameManager.instance.battleTeam; //uncomment when testing info transfer   
+            players.characters = GameManager.instance.battleTeam; 
+            SetBattleState();
         }
 
         //Set battle position, roles and enemies
         playerPrefab = players.characters[0];
-        enemyPrefab = enemies[StaticData.battlesPlayed];
-        if (bridge != null)
-        {
-            bridge.transform.position = battlePos[StaticData.battlesPlayed].position;
-        }
-        
-        //check that battle characters from game manager match team in battle system
-        /*foreach (GameObject character in players.characters)
-        {
-            Debug.Log("character is: " + character.GetComponent<Unit>().type);
-        }
-        
-        foreach (GameObject character in GameManager.instance.battleTeam)
-        {
-            Debug.Log("battle character is: " + character.GetComponent<Unit>().type);
-        }*/
-
         SetUpCharacters();
+        
         //start the battle
         StartCoroutine(SetUpBattle());
     }
 
-    void Update()
+    void SetBattleState()
     {
-
+        if (StaticData.enemyType == EnemyTypes.error)
+        {
+            Debug.Log("error");
+        }
+        else if (StaticData.enemyType == EnemyTypes.Water)
+        {
+            enemyPrefab = enemies[LEAKY_PIPE];
+        }
+        else if (StaticData.enemyType == EnemyTypes.Electric)
+        {
+            enemyPrefab = enemies[LIVE_WIRE];
+        }
+        else if (StaticData.enemyType == EnemyTypes.Practical)
+        {
+            enemyPrefab = enemies[CINDER_BLOCK];
+        }
+        else if (StaticData.enemyType == EnemyTypes.Planning)
+        {
+            enemyPrefab = enemies[SCAFFOLDING];
+        }
+        
+        
+        if (bridge != null)
+        {
+            bridge.transform.position = battlePos[StaticData.battlePosition].position;
+        }
     }
 
     void SetUpCharacters()
     {
         GameObject playerGO = playerPrefab;
-        //GameObject playerGo = playerPrefab;
         playerUnit = playerGO.GetComponent<Unit>();
 
         for(int i=0; i < players.characters.Count; i++)
         {
-            Debug.Log("instantiate team member" + players.characters[i].GetComponent<Unit>().type);
             GameObject playerClone = Instantiate(players.characters[i], playerBattleStations[i]);
             clones.Add(playerClone);
         }
@@ -165,18 +179,25 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                 ". " + " It is somewhat successful!";
         }
+        
+        //energy depleted
+        Debug.Log("take damage");
+        playerUnit.TakeDamage(10);
+        playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
 
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.index);
 
-        Debug.Log("player attack animation start");
         playerAnimator.SetBool("IsAttacking", true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         
         playerAnimator.SetBool("IsAttacking", false);
-        Debug.Log("player attack animation end");
+        
+        dialogueText.text = "Wow that was tiring!";
+
+        yield return new WaitForSeconds(1f);
 
         //Check if the enemy is dead
         //Change state based on what happened
@@ -239,7 +260,8 @@ public class BattleSystem : MonoBehaviour
             extraDamage = 5;
         }
         tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
-        playerHUD.SetHP(tempPlayer.currentHP, tempPlayer.index);
+        playerHUD.SetHP(tempPlayer.currentHP, i);
+        Debug.Log("attacked index: " + i);
     }
 
     IEnumerator EndBattle()
@@ -261,13 +283,13 @@ public class BattleSystem : MonoBehaviour
             StaticData.team.Clear(); //reset the team list
         }
 
-        StaticData.battlesPlayed++; //for changing out the enemy, update level - HAILEY EDIT
-        Debug.Log(StaticData.battlesPlayed);
-        if (StaticData.battlesPlayed == 4)
+        /*StaticData.battleNum++; //for changing out the enemy, update level - HAILEY EDIT
+        Debug.Log(StaticData.battleNum);
+        if (StaticData.battleNum == 4)
         {
             Debug.Log("no more battles left");
-            StaticData.battlesPlayed = 0;
-        }
+            StaticData.battleNum = 0;
+        }*/
         
         yield return new WaitForSeconds(2f);
 
@@ -306,15 +328,33 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "You feel renewed strength!";
         playerAnimator.SetBool("IsHealing", true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         
         playerAnimator.SetBool("IsHealing", false);
+
+        DepleteMorale();
+
+        dialogueText.text = "Woah that was tiring";
+        yield return new WaitForSeconds(1f);
         
         //begin enemy turn
         state = BattleState.ENEMYTURN;
         enemyAnimator.SetBool("IsAttacking", true);
         particleEffect.SetActive(true);
         StartCoroutine(EnemyTurn());
+    }
+
+    private void DepleteMorale()
+    {
+        for (int i = 0; i < StaticData.team.Count; i++)
+        {
+            TeamMemberTransfer_Data role = StaticData.team[i];
+            if (playerUnit.type.ToString() == role._classType.ToString())
+            {
+                role.moraleCount += 5;
+                Debug.Log("morale: " + role.moraleCount);
+            }
+        }
     }
 
     private Animator FindAnimator()

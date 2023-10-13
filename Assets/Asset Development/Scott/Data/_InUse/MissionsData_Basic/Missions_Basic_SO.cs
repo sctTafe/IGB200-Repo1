@@ -20,7 +20,7 @@ public class Missions_Basic_SO : ScriptableObject
     [SerializeField] public int _daysToComplete;
    
     [Header("Battle Settings")]
-    [SerializeField] public int _secnePosition;
+    [SerializeField] public int _battlePosition;
     [SerializeField] public EnemyTypes[] _enemies;
 
     [Header("Mission Success Outcomes")]

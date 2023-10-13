@@ -108,10 +108,18 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
 
     // Set the Mission ID value in 'BattleTransferData_PersistentSingleton'
-    public void fn_LoadIn_MissionData(int missionID)
+    public void fn_LoadIn_MissionData(Missions_Basic_SO missionSO)
     {
-        BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID;
-        StaticData.currentMissionID = missionID;
+        //BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID; // depreciated, all related functionality needs removing 
+        
+        StaticData.fn_ClearData();
+        // - mission UID -
+        StaticData.currentMissionID = missionSO._missionUID;
+        // - mission enemy type - 
+        if (missionSO._enemies != null && missionSO._enemies.Length > 0)
+            StaticData.enemyType = missionSO._enemies[0];
+        // - mission setting position 
+        StaticData.battlePosition = missionSO._battlePosition;
     }
 
     #endregion END: - Pass Data To Missiom - 

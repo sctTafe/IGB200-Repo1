@@ -26,7 +26,7 @@ MonoBehaviour:
   _missionDifficultyRating: 5
   _completionBonusPoints: 150
   _daysToComplete: 25
-  _secnePosition: 0
+  _battlePosition: 5
   _enemies: 03000000
   _MissionsEnabledOnCompletion_Array: []
   _BridgePartsEnabledOnCompletion_Array:

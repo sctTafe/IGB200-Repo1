@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class MissionSelection_Mng : MonoBehaviour
 {
     public UnityEvent _OnHandleStartMissionBtn;
-    public UnityEvent _OnHandleStartDebbugingMission;
+    private UnityEvent _OnHandleStartDebbugingMission; // depreciated, all related functionality needs removing
 
     [Header("Debugging & Test Options")]
     public bool _isDebugging = false;
-    public bool _isTestBattleModeOn = false;
+
+    private bool _isTestBattleModeOn = false; // depreciated, all related functionality needs removing
 
     [Header("UI Output Dependencies")]
     [SerializeField] private MissionBrife_UI _MissionBrife_UI;
@@ -30,20 +29,18 @@ public class MissionSelection_Mng : MonoBehaviour
         {
             fn_StartMission();
         }
-        
     }
     public void fn_StartMission()
     {
         DataTransfer_PersistentSingletonMng dataTransMng = DataTransfer_PersistentSingletonMng.Instance;
         dataTransMng.fn_LoadMissionTeam();
-        dataTransMng.fn_LoadIn_MissionData(_currentBound_MissionDataHolder.fn_GetMissionUID());
+        dataTransMng.fn_LoadIn_MissionData(_currentBound_MissionDataHolder._MissionSO);
         
         if (_isTestBattleModeOn)
             _OnHandleStartDebbugingMission?.Invoke();
         else
             _OnHandleStartMissionBtn?.Invoke();
     }
-
 
     public void fn_BindMissionDataHolder(MissionDataHolder newMissionDataHolder)
     {
@@ -54,7 +51,6 @@ public class MissionSelection_Mng : MonoBehaviour
             BindDataToMissionBrife();
             BindDataToMissionTeamSelection();            
         }
-        
     } 
 
     private void BindDataToMissionBrife()

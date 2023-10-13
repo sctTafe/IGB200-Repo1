@@ -16,20 +16,22 @@ MonoBehaviour:
   _missionName: Connect Bridge Struts
   _missionShortBrief: Connecting Bridge to Struts
   _missionDescription: "Your mission is to ensure that the connection of the newly
-    constructed bridge arches to the  support struts goes smoothely, as this step
-    is crucial in ensuring the stability and \r\nstrength of the bridge. However,
-    there's a problem \u2013 the <color=yellow>scaffolding</color=yellow> supporting
-    the arches is unstable and simply not behaving correctly. Be prepared for any\r\n
-    unexpected challenges that may arise during the process. Rally your team get
-    this problem sorted with, we're relying on you!\r\n"
+    constructed bridge arches to the support struts goes smoothly, as this step is
+    crucial in ensuring the stability and strength of the bridge. However, there's
+    a problem \u2013 the <color=yellow>scaffolding</color=yellow> supporting the
+    arches is unstable and simply not behaving correctly. Be prepared for any unexpected
+    challenges that may arise during the process. Rally your team to get this problem
+    sorted out, we're relying on you!"
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 3
+  _missionDifficultyRating: 2
   _completionBonusPoints: 150
   _daysToComplete: 20
-  _unfinishedPrefab: {fileID: 0}
-  _finishedPrefab: {fileID: 0}
+  _secnePosition: 0
+  _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 5e544ffd47affc441afac3e8eeead89f, type: 2}
   _BridgePartsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 4aef60133fb045f44b4d7a8c20d1e8d1, type: 2}
   _isEnabledFromGameStart: 0
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

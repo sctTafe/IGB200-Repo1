@@ -10,27 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: 6 - Bridge Roadway Mid
+  m_Name: 5 - Bridge Roadway Mid
   m_EditorClassIdentifier: 
-  _missionUID: 6
+  _missionUID: 5
   _missionName: Suspend Deck (Center)
   _missionShortBrief: Suspending the Center of the Deck
-  _missionDescription: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-    enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-    quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
-    quaerat voluptatem.'
+  _missionDescription: In the construction of the bridge's middle deck, its imperative
+    to ensure a seamless connection. Your mission is to oversee this critical phase,
+    where precision and alignment are paramount for the structural integrity. However,
+    an unexpected issue has arisen - the <color=yellow>scaffolding supporting the
+    deck segments</color=yellow> has become unstable and is moving free. Your problem-solving
+    skills will be essential in resolving this. Rally your team, secure the scaffolding.
+    The success of the entire project hinges on your efforts.
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 5
+  _missionDifficultyRating: 4
   _completionBonusPoints: 150
   _daysToComplete: 25
-  _unfinishedPrefab: {fileID: 0}
-  _finishedPrefab: {fileID: 0}
+  _secnePosition: 0
+  _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 9344f19e81cc8944b8f6b7d41d446b27, type: 2}
   _BridgePartsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 6608c1eb5d8bdc749a1b83bc72fb6192, type: 2}
   _isEnabledFromGameStart: 0
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

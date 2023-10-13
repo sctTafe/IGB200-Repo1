@@ -18,17 +18,21 @@ public class Missions_Basic_SO : ScriptableObject
     [SerializeField] public int _missionDifficultyRating;
     [SerializeField] public int _completionBonusPoints;
     [SerializeField] public int _daysToComplete;
-    
-     
-    [SerializeField] public GameObject _unfinishedPrefab;
-    [SerializeField] public GameObject _finishedPrefab;
+   
+    [Header("Battle Settings")]
+    [SerializeField] public int _secnePosition;
+    [SerializeField] public EnemyTypes[] _enemies;
 
+    [Header("Mission Success Outcomes")]
     // - Missions & Interaction Objects Enabled On Mission Completion -
     [SerializeField] public Missions_Basic_SO[] _MissionsEnabledOnCompletion_Array;
     [SerializeField] public BridgeParts_SO[] _BridgePartsEnabledOnCompletion_Array;
 
     // - Other - 
+    [Header("Other Settings")]
     [SerializeField] public bool _isEnabledFromGameStart = false;
+    [SerializeField] public GameObject _unfinishedPrefab;
+    [SerializeField] public GameObject _finishedPrefab;
 
     // - Basic Internal Stats - 
     private bool _isEnabled = false;

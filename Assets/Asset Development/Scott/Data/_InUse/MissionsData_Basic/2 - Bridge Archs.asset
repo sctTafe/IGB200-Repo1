@@ -15,20 +15,21 @@ MonoBehaviour:
   _missionUID: 1
   _missionName: Build The Arches
   _missionShortBrief: Building the Arches
-  _missionDescription: "At this early stage of the bridge's development, we must
-    work together to successfully construct\r\nthe bridge's arches, allowing for
-    greater support of the various later stages of development. One problem, \r                                                               
-    workers on site have been faced with a nasty <color=yellow>burst pipe</color=yellow>
-    that seems to have a mind of its own! \r\n\nYour job is to construct your best
-    team for the job and get us back on track! "
+  _missionDescription: 'At this early stage of the bridge''s development, we must
+    work together to successfully construct the bridge''s arches, allowing for greater
+    support of the various later stages of development. One problem, workers on site
+    have been faced with a nasty <color=yellow>burst pipe</color=yellow> that seems
+    to have a mind of its own! '
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 2
+  _missionDifficultyRating: 1
   _completionBonusPoints: 150
   _daysToComplete: 10
-  _unfinishedPrefab: {fileID: 0}
-  _finishedPrefab: {fileID: 0}
+  _secnePosition: 0
+  _enemies: 01000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 28344c6e4bd65304486d30b179547bc0, type: 2}
   _BridgePartsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 04da8a61b5e67c14a9bc26c0c69cc2b9, type: 2}
   _isEnabledFromGameStart: 1
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

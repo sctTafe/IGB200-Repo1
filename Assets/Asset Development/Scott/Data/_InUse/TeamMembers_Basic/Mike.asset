@@ -15,11 +15,10 @@ MonoBehaviour:
   _name: Mike
   _nameAndJob: Mike (Bridge Carpenter)
   _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -916160410, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Introducing Mike, our <color=yellow>Bridge Carpenter</color=yellow>. Starting
     as an <color=yellow>apprentice</color=yellow>, he embarked on his journey as
     a <color=yellow>construction labourer</color=yellow>, learning the ropes on various
     job sites. Mike's fascination with large structures makes this area a perfect
     fit, and after years of experience, he now expertly constructs and maintains
     safe, reliable bridge structures.
-  _teamMemberClass: 4
+  _teamMemberClass: 3

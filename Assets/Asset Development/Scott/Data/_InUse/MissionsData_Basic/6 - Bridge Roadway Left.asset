@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
+  m_Name: 6 - Bridge Roadway Left
+  m_EditorClassIdentifier: 
+  _missionUID: 6
+  _missionName: Suspend Deck (Left)
+  _missionShortBrief: Suspending the Left Side of the Deck
+  _missionDescription: The left side of the bridge deck needs to be suspended in
+    a way that ensures proper alignment and support. Your mission is to coordinate
+    the suspension process effectively, though a particular issue has arisen that
+    needs your attention, a  <color=yellow>massive cinderblock</color=yellow> has
+    unexpectedly fallen onto the deck, making suspension difficult.  You must remove
+    it and ensure the left side hangs securely. The success of this task is vital
+    for the overall stability of the bridge. Gather your team and get on it!!
+  _missionPic: {fileID: 0}
+  _missionDifficultyRating: 5
+  _completionBonusPoints: 150
+  _daysToComplete: 25
+  _secnePosition: 0
+  _enemies: 03000000
+  _MissionsEnabledOnCompletion_Array: []
+  _BridgePartsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: f9727789d5fd1c74dbb37d0d00f26ecf, type: 2}
+  _isEnabledFromGameStart: 0
+  _unfinishedPrefab: {fileID: 0}
+  _finishedPrefab: {fileID: 0}

@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class MissionSelection_Mng : MonoBehaviour
 {
-    public UnityEvent _OnHandleStartMissionBtn;
-    private UnityEvent _OnHandleStartDebbugingMission; // depreciated, all related functionality needs removing
+    
+
 
     [Header("Debugging & Test Options")]
     public bool _isDebugging = false;
@@ -32,14 +32,7 @@ public class MissionSelection_Mng : MonoBehaviour
     }
     public void fn_StartMission()
     {
-        DataTransfer_PersistentSingletonMng dataTransMng = DataTransfer_PersistentSingletonMng.Instance;
-        dataTransMng.fn_LoadMissionTeam();
-        dataTransMng.fn_LoadIn_MissionData(_currentBound_MissionDataHolder._MissionSO);
-        
-        if (_isTestBattleModeOn)
-            _OnHandleStartDebbugingMission?.Invoke();
-        else
-            _OnHandleStartMissionBtn?.Invoke();
+        DataTransfer_PersistentSingletonMng.Instance.fn_LoadMissionDataAndTransfer(_currentBound_MissionDataHolder._MissionSO);
     }
 
     public void fn_BindMissionDataHolder(MissionDataHolder newMissionDataHolder)

@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 
 /// DOSE: 
 ///     Class for transfering team Member data to battle scene.
-///     When 'fn_LoadMissionTeam' is called, TeanMember_SelectionGroupHolder_Mng is contacted, 
+///     When 'LoadMissionTeamData' is called, TeanMember_SelectionGroupHolder_Mng is contacted, 
 ///     '_selectedMissionTeam' & its members are retrived, then a holder class is instanciated and added to the  
 /// DEPENDENCY: 
 ///     Calls on 'TeanMember_SelectionGroupHolder_Mng' to get Mission Team
@@ -16,6 +18,7 @@ using UnityEngine;
 
 public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 {
+    public string _BattleScene;
 
     #region Singelton Setup
     private static DataTransfer_PersistentSingletonMng _instance;
@@ -59,13 +62,16 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     #region Public Functions
     #region - Pass Data To Missiom - 
 
-    #region fn_LoadMissionTeam 
-    /// <summary>
-    /// 'fn_LoadMissionTeam' - Instantiates the team member game objects and populates their data sets
-    /// </summary>
-    public void fn_LoadMissionTeam()
+    #region Start Mission
+    public void fn_LoadMissionDataAndTransfer(Missions_Basic_SO missionSO)
     {
-        if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: fn_LoadMissionTeam - Called"); }
+        LoadMissionData(missionSO);
+        LoadMissionTeamData();
+        ChangeToBattleScene();
+    }
+    private void LoadMissionTeamData()
+    {
+        if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: LoadMissionTeamData - Called"); }
         ConnectToSelectionGroupHolder();
 
         if (_isUsingStaticDataModeOn)
@@ -104,24 +110,25 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
 
     }
-    #endregion
-
-
-    // Set the Mission ID value in 'BattleTransferData_PersistentSingleton'
-    public void fn_LoadIn_MissionData(Missions_Basic_SO missionSO)
+    private void LoadMissionData(Missions_Basic_SO missionSO)
     {
         //BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID; // depreciated, all related functionality needs removing 
         
         StaticData.fn_ClearData();
-        // - mission UID -
+        // - Override Test Mode
+        StaticData.isBattleGameManagerInTestModeOverride = true;
+        // - Mission UID -
         StaticData.currentMissionID = missionSO._missionUID;
-        // - mission enemy type - 
+        // - Mission enemy type - 
         if (missionSO._enemies != null && missionSO._enemies.Length > 0)
             StaticData.enemyType = missionSO._enemies[0];
-        // - mission setting position 
+        // - Mission setting position 
         StaticData.battlePosition = missionSO._battlePosition;
     }
-
+    private void ChangeToBattleScene() {
+        SceneManager.LoadScene(_BattleScene);
+    }
+    #endregion
     #endregion END: - Pass Data To Missiom - 
 
     #region - Pull Data From Missiom - 

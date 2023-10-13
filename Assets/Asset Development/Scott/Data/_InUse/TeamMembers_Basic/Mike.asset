@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
   m_Name: Mike
   m_EditorClassIdentifier: 
-  _name: Mike
-  _nameAndJob: Mike (Bridge Carpenter)
+  _name: Jedda
+  _nameAndJob: Jedda (Construction Equipment Mechanic)
   _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _bio: Introducing Mike, our <color=yellow>Bridge Carpenter</color=yellow>. Starting
-    as an <color=yellow>apprentice</color=yellow>, he embarked on his journey as
-    a <color=yellow>construction labourer</color=yellow>, learning the ropes on various
-    job sites. Mike's fascination with large structures makes this area a perfect
-    fit, and after years of experience, he now expertly constructs and maintains
-    safe, reliable bridge structures.
-  _teamMemberClass: 3
+  _bio: Introducing Jedda, our <color=yellow>Construction Equipment Mechanic</color=yellow>.
+    Starting as an <color=yellow>apprentice</color=yellow>, they embarked on their
+    journey as a <color=yellow>construction labourer</color=yellow>, learning the
+    ropes on various job sites. Jedda's fascination with large structures makes this
+    area a perfect fit, and after years of experience, they now expertly maintain
+    and operate the machinery needed to create them.
+  _teamMemberClass: 4

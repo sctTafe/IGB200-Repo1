@@ -26,7 +26,7 @@ MonoBehaviour:
   _missionDifficultyRating: 3
   _completionBonusPoints: 150
   _daysToComplete: 25
-  _battlePosition: 3
+  _battlePosition: 2
   _enemies: 02000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 2a79c34479b278c4296a50ebbcd2146d, type: 2}

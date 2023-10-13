@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4289798036506791257}
   - component: {fileID: 541833127466391054}
   m_Layer: 5
-  m_Name: TeamSlider
+  m_Name: TeamMemberSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 2457369208595265034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.4162499, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2809054236816369810}
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.799988, y: 5.600067}
-  m_SizeDelta: {x: 77.60431, y: 20}
+  m_AnchoredPosition: {x: 155, y: -10}
+  m_SizeDelta: {x: 180, y: 33.0818}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541833127466391054
 MonoBehaviour:
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1103639027, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -1103639027, guid: acf77ae62e61d7849a43400b56d2c1c0, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 15
 --- !u!1 &9139328672036904597
 GameObject:
   m_ObjectHideFlags: 0

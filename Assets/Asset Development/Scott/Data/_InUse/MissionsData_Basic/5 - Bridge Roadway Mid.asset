@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
   m_Name: 5 - Bridge Roadway Mid
   m_EditorClassIdentifier: 
-  _missionUID: 5
+  _missionUID: 4
   _missionName: Suspend Deck (Center)
   _missionShortBrief: Suspending the Center of the Deck
   _missionDescription: In the construction of the bridge's middle deck, its imperative

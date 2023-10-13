@@ -13,6 +13,7 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 public class BattleSystem : MonoBehaviour
 {
     public bool debugMode = false;
+    public bool isDebuggingToConsole = false;
     [Header("Characters")]
     private GameObject playerPrefab;
     public GameObject enemyPrefab;
@@ -86,7 +87,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (StaticData.enemyType == EnemyTypes.error)
         {
-            Debug.Log("error");
+            Debug.LogError("error");
         }
         else if (StaticData.enemyType == EnemyTypes.Water)
         {
@@ -160,14 +161,14 @@ public class BattleSystem : MonoBehaviour
             if (playerUnit.type == enemyUnit.type)
             {
                 damage = playerUnit.specialDamage;
-                Debug.Log("special attack! very effective");
+                if(isDebuggingToConsole) Debug.Log("special attack! very effective");
                 dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                     ". " + " It is super successful!";
             }
             else
             {
                 damage = 1;
-                Debug.Log("not very effective");
+                if (isDebuggingToConsole) Debug.Log("not very effective");
                 dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                     ". " + " It is not very effective!";
             }
@@ -175,13 +176,13 @@ public class BattleSystem : MonoBehaviour
         else
         {
             damage = playerUnit.damage;
-            Debug.Log("normal");
+            if (isDebuggingToConsole) Debug.Log("normal");
             dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                 ". " + " It is somewhat successful!";
         }
-        
+
         //energy depleted
-        Debug.Log("take damage");
+        if (isDebuggingToConsole) Debug.Log("take damage");
         playerUnit.TakeDamage(10);
         playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
 
@@ -221,8 +222,8 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = enemyUnit.unitName + " attacks!";
-        
-        Debug.Log("enemy's turn and it has attacked");
+
+        if (isDebuggingToConsole) Debug.Log("enemy's turn and it has attacked");
 
         yield return new WaitForSeconds(1f);
         
@@ -256,12 +257,12 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = enemyUnit.unitName + " attacks " + tempPlayer.unitName + "!";
         if(tempPlayer.weakness == enemyUnit.type) 
         {
-            Debug.Log("weakened");
+            if (isDebuggingToConsole) Debug.Log("weakened");
             extraDamage = 5;
         }
         tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
         playerHUD.SetHP(tempPlayer.currentHP, i);
-        Debug.Log("attacked index: " + i);
+        if (isDebuggingToConsole) Debug.Log("attacked index: " + i);
     }
 
     IEnumerator EndBattle()
@@ -352,7 +353,7 @@ public class BattleSystem : MonoBehaviour
             if (playerUnit.type.ToString() == role._classType.ToString())
             {
                 role.moraleCount += 5;
-                Debug.Log("morale: " + role.moraleCount);
+                if (isDebuggingToConsole) Debug.Log("morale: " + role.moraleCount);
             }
         }
     }

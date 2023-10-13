@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
   m_Name: 3 - Bridge Struts
   m_EditorClassIdentifier: 
-  _missionUID: 3
+  _missionUID: 2
   _missionName: Connect Bridge Struts
   _missionShortBrief: Connecting Bridge to Struts
   _missionDescription: "Your mission is to ensure that the connection of the newly

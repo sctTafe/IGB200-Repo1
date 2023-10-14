@@ -6630,6 +6630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baef50a0e947d1b41974a48d59445462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _StartScene: 
 --- !u!4 &304584818
 Transform:
   m_ObjectHideFlags: 0
@@ -7040,7 +7041,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -27841,38 +27842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a17f87fc85a6a49a21f9b3af3d2fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _OnHandleStartMissionBtn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 304584817}
-        m_TargetAssemblyTypeName: ScottBarley.IGB200.V1.UI_SceneSwitch, Assembly-CSharp
-        m_MethodName: fn_ChangeToScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BattleSceneTutorial
-          m_BoolArgument: 0
-        m_CallState: 2
-  _OnHandleStartDebbugingMission:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 304584817}
-        m_TargetAssemblyTypeName: ScottBarley.IGB200.V1.UI_SceneSwitch, Assembly-CSharp
-        m_MethodName: fn_ChangeToScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BtlTestScene_SCOTSDEVSCENE_DO_NOT_EDIT
-          m_BoolArgument: 0
-        m_CallState: 2
   _isDebugging: 0
-  _isTestBattleModeOn: 0
   _MissionBrife_UI: {fileID: 1329550145}
   _MissionTeamSelection_UI: {fileID: 1329550144}
 --- !u!1001 &1329724095
@@ -38382,6 +38352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569236ce0d7ea184fae0a9032dc2d577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BattleScene: BattleSceneTutorial
   _isUsingStaticDataModeOn: 1
   _Prefab: {fileID: 1269415954}
 --- !u!1 &1823768915
@@ -42163,7 +42134,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -0.0000061989, y: -0.0004}
-  m_SizeDelta: {x: 623.72, y: 210}
+  m_SizeDelta: {x: 623.72, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2096201136
 MonoBehaviour:
@@ -46031,7 +46002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &6211948004849838909
 GameObject:
   m_ObjectHideFlags: 0
@@ -46070,10 +46041,10 @@ RectTransform:
   m_Father: {fileID: 2096201134}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 155, y: -110}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6286116195558532898
 RectTransform:
@@ -46127,10 +46098,10 @@ RectTransform:
   m_Father: {fileID: 1232916447906026677}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -58}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6382569509180135469
 CanvasRenderer:
@@ -47559,7 +47530,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1329550146}
         m_TargetAssemblyTypeName: MissionSelection_Mng, Assembly-CSharp
-        m_MethodName: fn_HandleStartMissionBtn
+        m_MethodName: fn_TryStartMission
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

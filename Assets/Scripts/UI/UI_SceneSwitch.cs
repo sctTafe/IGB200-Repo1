@@ -11,6 +11,7 @@ namespace ScottBarley.IGB200.V1
 {
     public class UI_SceneSwitch : MonoBehaviour
     {
+        public string _StartScene;
 
         // Normal Change Scene
         public void fn_ChangeToScene(string sceneToChange)
@@ -18,6 +19,14 @@ namespace ScottBarley.IGB200.V1
             SceneManager.LoadScene(sceneToChange);
         }
 
+        public void fn_ChangeSceneTo_StartScene()
+        {
+            if (_StartScene != null)
+                SceneManager.LoadScene(_StartScene);
+            else
+                Debug.LogError("Error, No Start Scene Set!");
+
+        }
 
         // Async Change Scene
         public void fn_LoadSceneAsync(string sceneToChange)

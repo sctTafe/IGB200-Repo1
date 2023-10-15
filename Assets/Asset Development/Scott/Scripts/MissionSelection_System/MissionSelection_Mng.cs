@@ -9,7 +9,8 @@ public class MissionSelection_Mng : MonoBehaviour
     [Header("Debugging & Test Options")]
     public bool _isDebugging = false;
 
-    private bool _isTestBattleModeOn = false; // depreciated, all related functionality needs removing
+    [Header("Battle Scene To Use")]
+    public bool _isUsingTutorialScene = false;
 
     [Header("UI Output Dependencies")]
     [SerializeField] private MissionBrife_UI _MissionBrife_UI;
@@ -32,7 +33,10 @@ public class MissionSelection_Mng : MonoBehaviour
     }
     public void fn_StartMission()
     {
-        DataTransfer_PersistentSingletonMng.Instance.fn_LoadMissionDataAndTransfer(_currentBound_MissionDataHolder._MissionSO);
+        if (_isUsingTutorialScene)
+            DataTransfer_PersistentSingletonMng.Instance.fn_LoadMissionDataAndTransfer(_currentBound_MissionDataHolder._MissionSO, true);
+        else
+            DataTransfer_PersistentSingletonMng.Instance.fn_LoadMissionDataAndTransfer(_currentBound_MissionDataHolder._MissionSO);
     }
 
     public void fn_BindMissionDataHolder(MissionDataHolder newMissionDataHolder)

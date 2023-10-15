@@ -27843,6 +27843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDebugging: 0
+  _isUsingTutorialScene: 1
   _MissionBrife_UI: {fileID: 1329550145}
   _MissionTeamSelection_UI: {fileID: 1329550144}
 --- !u!1001 &1329724095
@@ -38352,7 +38353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569236ce0d7ea184fae0a9032dc2d577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BattleScene: BattleSceneTutorial
+  _BattleScene: Battle 1
+  _TutorialBattleScene: BattleSceneTutorial
   _isUsingStaticDataModeOn: 1
   _Prefab: {fileID: 1269415954}
 --- !u!1 &1823768915

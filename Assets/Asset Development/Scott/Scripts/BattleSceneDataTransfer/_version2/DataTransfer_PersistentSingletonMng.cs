@@ -19,6 +19,7 @@ using UnityEngine.SceneManagement;
 public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 {
     public string _BattleScene;
+    public string _TutorialBattleScene;
 
     #region Singelton Setup
     private static DataTransfer_PersistentSingletonMng _instance;
@@ -63,11 +64,16 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     #region - Pass Data To Missiom - 
 
     #region Start Mission
-    public void fn_LoadMissionDataAndTransfer(Missions_Basic_SO missionSO)
+    public void fn_LoadMissionDataAndTransfer(Missions_Basic_SO missionSO, bool isUsingTutorialScene = false)
     {
         LoadMissionData(missionSO);
         LoadMissionTeamData();
-        ChangeToBattleScene();
+
+        if (isUsingTutorialScene)
+            ChangeToBattleScene(_TutorialBattleScene);
+        else
+            ChangeToBattleScene(_BattleScene);
+
     }
     private void LoadMissionTeamData()
     {
@@ -125,8 +131,8 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         // - Mission setting position 
         StaticData.battlePosition = missionSO._battlePosition;
     }
-    private void ChangeToBattleScene() {
-        SceneManager.LoadScene(_BattleScene);
+    private void ChangeToBattleScene(string scene) {
+        SceneManager.LoadScene(scene);
     }
     #endregion
     #endregion END: - Pass Data To Missiom - 

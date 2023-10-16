@@ -189,16 +189,17 @@ public class BattleSystem : MonoBehaviour
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.index);
-
+        
+        //attack animation called
         playerAnimator.SetBool("IsAttacking", true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         
         playerAnimator.SetBool("IsAttacking", false);
         
         dialogueText.text = "Wow that was tiring!";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         //Check if the enemy is dead
         //Change state based on what happened
@@ -212,8 +213,11 @@ public class BattleSystem : MonoBehaviour
         {
             //enemy turn            
             state = BattleState.ENEMYTURN;
+            
+            //enemy animation called
             enemyAnimator.SetBool("IsAttacking", true);
             particleEffect.SetActive(true);
+            
             StartCoroutine(EnemyTurn());
         }     
 
@@ -225,7 +229,7 @@ public class BattleSystem : MonoBehaviour
 
         if (isDebuggingToConsole) Debug.Log("enemy's turn and it has attacked");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         
         AttackAPlayer();
 
@@ -233,7 +237,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         
-        enemyAnimator.SetBool("IsAttacking", false);
+        enemyAnimator.SetBool("IsAttacking", false); //animation turned off
         particleEffect.SetActive(false);
 
         if(allDead)
@@ -278,42 +282,15 @@ public class BattleSystem : MonoBehaviour
             StaticData.isBattleWon = false;
         }
 
-        //UpdateTeamInformation();
         if (debugMode)                                                      // SCOTT EDIT - so the list remains to be pulled from in the Progress Scene & cleared there
         {
             StaticData.team.Clear(); //reset the team list
         }
-
-        /*StaticData.battleNum++; //for changing out the enemy, update level - HAILEY EDIT
-        Debug.Log(StaticData.battleNum);
-        if (StaticData.battleNum == 4)
-        {
-            Debug.Log("no more battles left");
-            StaticData.battleNum = 0;
-        }*/
         
         yield return new WaitForSeconds(2f);
 
         _OnBattleEnd?.Invoke(); // Invoke Event                             // SCOTT EDIT - So that functions can be called for integrating to two scene
         SceneManager.LoadScene(scene);
-    }
-
-    void UpdateTeamInformation()
-    {
-        bool condition = StaticData.team.Count == players.characters.Count;
-        if (condition)
-        {
-            for (int i = 0; i < players.characters.Count; i++)
-            {
-                StaticData.team[i]._currentEnergy = players.characters[i].GetComponent<Unit>().currentHP;
-                StaticData.team[i]._numDeaths = players.characters[i].GetComponent<Unit>().numDeaths;
-                StaticData.team[i].moraleCount++;
-                if (StaticData.team[i].moraleCount >= 2)
-                {
-                    StaticData.team[i].isExhausted = true;
-                }
-            }
-        }
     }
 
     void PlayerTurn()
@@ -327,16 +304,18 @@ public class BattleSystem : MonoBehaviour
         playerAnimator = FindAnimator();
 
         dialogueText.text = "You feel renewed strength!";
+        
+        //healing animation called
         playerAnimator.SetBool("IsHealing", true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         
         playerAnimator.SetBool("IsHealing", false);
 
         DepleteMorale();
 
         dialogueText.text = "Woah that was tiring";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         
         //begin enemy turn
         state = BattleState.ENEMYTURN;

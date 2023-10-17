@@ -51,6 +51,15 @@ public class TeamMember_Data
                 _currentEnergy = _maxEnergy;
         }
     }
+    public void fn_AddMorale(float amount)
+    {
+        if (amount > 0)
+        {
+            _currentMorale += amount;
+            if (_currentMorale > _maxMorale)
+                _currentMorale = _maxMorale;
+        }
+    }
 }
 public enum TeamMemberClassType
 {

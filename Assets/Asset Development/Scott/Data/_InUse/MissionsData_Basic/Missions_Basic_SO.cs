@@ -45,5 +45,7 @@ public class Missions_Basic_SO : ScriptableObject
         _OnStateChange_isEnabled?.Invoke(enabled);
     }
 
+    
+
 
 }

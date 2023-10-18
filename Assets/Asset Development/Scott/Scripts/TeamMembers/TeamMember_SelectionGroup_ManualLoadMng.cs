@@ -12,6 +12,7 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
     [SerializeReference] private bool _isManuleLoadingEnabled;
 
     public TeamMemberAssetsData_SO _TypeIconDataSO;
+    public TeamMemberAssetsData_Faces_SO _FaceIconDataSO;
 
     public TeamMember_Basic_SO[] _StartingTeamMembers;
     public TeamMember_Basic_SO[] _PurchasableTeamMembers;
@@ -49,7 +50,7 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
                 _TeanMemberSelectionGroupHolderMng.fn_LoadingInto_AvailableTeamMemberPool(new TeamMember_Data { 
                     _name = teamMemberBasicSO._name,
                     _nameAndJob = teamMemberBasicSO._nameAndJob,
-                    _profileSprite = teamMemberBasicSO._profilePic,
+                    _profileSprite = _FaceIconDataSO.fn_GetProfilePicSprite(teamMemberBasicSO._profilePicGroupOverride,teamMemberBasicSO._hairTypeOverride),
                     _classType = teamMemberBasicSO._teamMemberClass,
                     _toolSprite = _TypeIconDataSO.fn_GetIconSprite(teamMemberBasicSO._teamMemberClass),
                     _bio = teamMemberBasicSO._bio,
@@ -63,7 +64,7 @@ public class TeamMember_SelectionGroup_ManualLoadMng : MonoBehaviour
                 _TeanMemberSelectionGroupHolderMng.fn_LoadingInto_PurchasableTeamMemberPool(new TeamMember_Data {
                     _name = teamMemberBasicSO._name,
                     _nameAndJob = teamMemberBasicSO._nameAndJob,
-                    _profileSprite = teamMemberBasicSO._profilePic,
+                    _profileSprite = _FaceIconDataSO.fn_GetProfilePicSprite(teamMemberBasicSO._profilePicGroupOverride, teamMemberBasicSO._hairTypeOverride),
                     _toolSprite = _TypeIconDataSO.fn_GetIconSprite(teamMemberBasicSO._teamMemberClass),
                     _bio = teamMemberBasicSO._bio,
                     _classType = teamMemberBasicSO._teamMemberClass

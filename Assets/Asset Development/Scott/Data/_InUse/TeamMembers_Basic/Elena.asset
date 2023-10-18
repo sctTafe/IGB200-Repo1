@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 'Elena '
   _nameAndJob: Elena (Traffic Signal Electrician)
-  _profilePic: {fileID: 1055536921, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -916160410, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Upon graduating from high school, Elena decided to take a break for a few
     years and travel, eventually returning to study her <color=yellow>Certificate
     III in Electrotechnology</color=yellow> at <color=yellow>TAFE</color=yellow>.
@@ -23,3 +21,5 @@ MonoBehaviour:
     and knowledgeable technician we see today. She excels in installing, maintaining,
     and repairing traffic signal systems, ensuring things flow smoothly.
   _teamMemberClass: 2
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

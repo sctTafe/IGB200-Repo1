@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Emily
   _nameAndJob: Emily (Finish Carpenter)
-  _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: 681629934, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Meet Emily, our <color=yellow>FinishCarpenter</color=yellow>. Starting as
     a general carpenter's apprentice after enrolling in her <color=yellow>Certificate
     III in Carpentry</color=yellow>, she mastered foundational skills. After graduating,
@@ -23,3 +21,5 @@ MonoBehaviour:
     much she enjoyed the fine details of the craft. Her dedication to craftsmanship
     shines through in every project.
   _teamMemberClass: 3
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Hamed
   _nameAndJob: Hamed (Heavy Equipment Operator)
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _bio: "Hamed is a <color=yellow>Heavy Equipment Operator</color=yellow>, someone
     who specialises in manoeuvring motorized heavy equipment to ensure the accurate
     removal and placement of materials. Hamed worked their way to the their current
     position after joining as a labourer and  gaining hands-on experience while getting
     certified to drive and operate several <color=yellow> classes of machinery (\u2018tickets\u2019)</color=yellow>."
   _teamMemberClass: 4
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 'Jamie '
   _nameAndJob: Jamie (Quality Control Foreman)
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Jamie began his career as a <color=yellow>Quality Control Technician</color=yellow>
     after showing exceptional skill through his four years of labouring experience.
     He meticulously inspected construction materials and workmanship, gaining experience
@@ -23,3 +21,5 @@ MonoBehaviour:
     today playing a pivotal role in maintaining the high standards of our construction
     projects, ensuring exceptional quality in every detail.
   _teamMemberClass: 5
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

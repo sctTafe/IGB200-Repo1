@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Mike
   _nameAndJob: Mike (Bridge Carpenter)
-  _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -916160410, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Introducing Mike, our Bridge Carpenter. Starting as an apprentice, he embarked
     on his journey as a construction labourer, learning the ropes on various job
     sites. <i><b>Mike's fascination</b></i> with large structures<color=yellow>makes
     this area a perfect fit  </color=yellow>, and after years of experience, he now
     expertly constructs and maintains safe, reliable bridge structures.
   _teamMemberClass: 4
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

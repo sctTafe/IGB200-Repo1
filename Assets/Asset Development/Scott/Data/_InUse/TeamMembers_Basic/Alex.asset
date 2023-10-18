@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Alex
   _nameAndJob: Alex (Industrial Plumber)
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Alex's career in <color=yellow>plumbing</color=yellow> came about after she
     chose to enrol in a <color=yellow>Certificate III in Plumbing at TAFE</color=yellow>.
     Though she wasn't sure what area she wanted to specialise in, she quickly took
@@ -24,3 +22,5 @@ MonoBehaviour:
     of Industrial Plumber, now excelling in setting up and maintaining plumbing for
     industrial infrastructure projects.
   _teamMemberClass: 1
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

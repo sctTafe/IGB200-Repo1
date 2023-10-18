@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 'Brian '
   _nameAndJob: Brian (Construction Electrician)
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -663992460, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Brian's career journey began after graduating from a <color=yellow>Certificate
     III in Electrotechnology</color=yellow> straight out of high school. Starting
     as an apprentice in the area, he gained hands-on experience in electrical work,
@@ -23,3 +21,5 @@ MonoBehaviour:
     Motivated to excel, Brian specialised in construction electrician roles, mastering
     temporary electrical systems on construction sites.
   _teamMemberClass: 2
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

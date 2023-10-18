@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ba10eeb9d677b4499baf50b586fbf6, type: 3}
+  m_Name: TeamMemberAssetsData_Faces_SO
+  m_EditorClassIdentifier: 
+  _TypeIcon:
+  - _profilePic: {fileID: -1268456140, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 1
+    _hairType: 1
+  - _profilePic: {fileID: -2131104087, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 1
+    _hairType: 1
+  - _profilePic: {fileID: -1308900121, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 2
+    _hairType: 1
+  - _profilePic: {fileID: 429304547, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 2
+    _hairType: 1
+  - _profilePic: {fileID: -1397720432, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 3
+    _hairType: 1
+  - _profilePic: {fileID: -1235703027, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 1
+    _hairType: 2
+  - _profilePic: {fileID: -1063907819, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 1
+    _hairType: 2
+  - _profilePic: {fileID: -1769916371, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 2
+    _hairType: 2
+  - _profilePic: {fileID: -1781437800, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 2
+    _hairType: 2
+  - _profilePic: {fileID: 1465986455, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 3
+    _hairType: 2
+  - _profilePic: {fileID: -1945057954, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 1
+    _hairType: 3
+  - _profilePic: {fileID: -968765338, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 1
+    _hairType: 3
+  - _profilePic: {fileID: 500089108, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 2
+    _hairType: 3
+  - _profilePic: {fileID: 500089108, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 2
+    _hairType: 3
+  - _profilePic: {fileID: 1797185007, guid: 124d95470e023df4581b148b1ab7fbdc, type: 3}
+    _group: 3
+    _hairType: 3

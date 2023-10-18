@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Jane Smith 1
   m_EditorClassIdentifier: 
   _name: Jane Smith
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: 751152706, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
+  _nameAndJob: 
   _bio: (water) Jane Smith is a dynamic force in the construction industry, breaking
     barriers with every brick laid. With a passion for building, she brings innovation
     and determination to her work. Jane's commitment to quality and safety is reshaping
     the skyline, proving that women can excel in every facet of construction.
   _teamMemberClass: 1
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

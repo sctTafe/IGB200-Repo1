@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Sarah
   _nameAndJob: Sarah (Safety Foreman)
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: 816120719, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Meet Sarah, our <color=yellow>Safety Foreman</color=yellow>. Sarah's career
     journey started as a <color=yellow>safety officer</color=yellow> after she landed
     a job as a labourer on-site upon enrolling in an apprenticeship. She then pursued
@@ -25,3 +23,5 @@ MonoBehaviour:
     ensures that every aspect of our construction projects adheres to the highest
     safety standards.
   _teamMemberClass: 5
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

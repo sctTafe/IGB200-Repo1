@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Jenny Heavylift 1
   m_EditorClassIdentifier: 
   _name: Jenny Heavylift
-  _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: 681629934, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
+  _nameAndJob: 
   _bio: (Planning) Jenny Heavylift is a bridge surveyor with a keen eye for detail
     and a passion for engineering. She meticulously examines structures, ensuring
     they stand the test of time. Jenny's expertise in assessing bridges' integrity
     and safety is vital to keeping communities connected and secure, making her an
     indispensable professional.
   _teamMemberClass: 3
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Jedda
   _nameAndJob: Jedda (Construction Equipment Mechanic)
-  _profilePic: {fileID: 1428986474, guid: 202769742c8b1124193f3f94e012a300, type: 3}
   _bio: Introducing Jedda, our <color=yellow>Construction Equipment Mechanic</color=yellow>.
     Starting as an <color=yellow>apprentice</color=yellow>, they embarked on their
     journey as a <color=yellow>construction labourer</color=yellow>, learning the
@@ -22,3 +21,5 @@ MonoBehaviour:
     area a perfect fit, and after years of experience, they now expertly maintain
     and operate the machinery needed to create them.
   _teamMemberClass: 4
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

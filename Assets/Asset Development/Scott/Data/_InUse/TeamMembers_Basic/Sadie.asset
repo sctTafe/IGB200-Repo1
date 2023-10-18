@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Sadie
   _nameAndJob: Sadie (Formwork Carpenter)
-  _profilePic: {fileID: 128294578, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: 751152706, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
   _bio: Sadie is a <color=yellow>Formwork Carpenter</color=yellow>, someone who specialises
     in constructing temporary forms used to mould and shape concrete during a project's
     construction. She's always been a hard worker, and after obtaining her <color=yellow>Certificate
@@ -23,3 +21,5 @@ MonoBehaviour:
     continued to gain experience in formwork on-site, eventually becoming the skilled
     worker she is today.
   _teamMemberClass: 3
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

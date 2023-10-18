@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Tina Turnsaw 1
   m_EditorClassIdentifier: 
   _name: Teena Turnsaw
-  _profilePic: {fileID: 1055536921, guid: 202769742c8b1124193f3f94e012a300, type: 3}
-  _toolPic: {fileID: -916160410, guid: 3052c446f6ca33340b766b9029bbb467, type: 3}
+  _nameAndJob: 
   _bio: (practical) Teena Turnsaw ..... bio.... bio.... bio...
   _teamMemberClass: 4
+  _hairTypeOverride: 1
+  _profilePicGroupOverride: 1

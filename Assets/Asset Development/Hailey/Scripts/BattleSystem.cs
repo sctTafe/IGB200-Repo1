@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DigitalRuby.SoundManagerNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -14,20 +15,13 @@ public class BattleSystem : MonoBehaviour
 {
     public bool debugMode = false;
     public bool isDebuggingToConsole = false;
+    
     [Header("Characters")]
-    private GameObject playerPrefab;
     public GameObject enemyPrefab;
+    private GameObject playerPrefab;
 
     public List<GameObject> enemies;
-    public Transform[] battlePos;
-    public GameObject bridge;
     
-    //Enemy indexes
-    private int LEAKY_PIPE = 0;
-    private int LIVE_WIRE = 1;
-    private int CINDER_BLOCK = 2;
-    private int SCAFFOLDING = 3;
-
     public Unit playerUnit;
     public Unit enemyUnit;
 
@@ -35,11 +29,30 @@ public class BattleSystem : MonoBehaviour
     
     public CharacterSelection players;
     [FormerlySerializedAs("playersGO")] public List<GameObject> clones = new List<GameObject>();
+    
+    //Enemy and audio indices
+    private int LEAKY_PIPE = 0;
+    private int LIVE_WIRE = 1;
+    private int CINDER_BLOCK = 2;
+    private int SCAFFOLDING = 3;
+    private int ENEMY_ATTACK = 0;
+
+    private int FAILED_ATTACK = 4;
+    private int PLAYER_ATTACK = 5;
+    private int PLAYER_DAMAGE = 6;
+    private int PLAYER_HEAL = 7;
+    private int PLAYER_SLEEP = 8;
+    private int SUCCESS_ATTACK = 9;
+
+    [Header("Audio")]
+    public BattleAudioManager BAM;
 
     [Header("BattleHUD")]
+    public Transform[] battlePos;
+    public GameObject bridge;
+    
     public Transform[] playerBattleStations;
     public Transform enemyBattleStation;
-    //public Transform[] enemyBattleStations;
     
     public TMP_Text dialogueText;
 
@@ -92,18 +105,22 @@ public class BattleSystem : MonoBehaviour
         else if (StaticData.enemyType == EnemyTypes.Water)
         {
             enemyPrefab = enemies[LEAKY_PIPE];
+            ENEMY_ATTACK = LEAKY_PIPE;
         }
         else if (StaticData.enemyType == EnemyTypes.Electric)
         {
             enemyPrefab = enemies[LIVE_WIRE];
+            ENEMY_ATTACK = LIVE_WIRE;
         }
         else if (StaticData.enemyType == EnemyTypes.Practical)
         {
             enemyPrefab = enemies[CINDER_BLOCK];
+            ENEMY_ATTACK = CINDER_BLOCK;
         }
         else if (StaticData.enemyType == EnemyTypes.Planning)
         {
             enemyPrefab = enemies[SCAFFOLDING];
+            ENEMY_ATTACK = SCAFFOLDING;
         }
         
         
@@ -164,6 +181,7 @@ public class BattleSystem : MonoBehaviour
                 if(isDebuggingToConsole) Debug.Log("special attack! very effective");
                 dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                     ". " + " It is super successful!";
+                BAM.PlaySound(SUCCESS_ATTACK);
             }
             else
             {
@@ -171,6 +189,7 @@ public class BattleSystem : MonoBehaviour
                 if (isDebuggingToConsole) Debug.Log("not very effective");
                 dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                     ". " + " It is not very effective!";
+                BAM.PlaySound(FAILED_ATTACK);
             }
         }
         else
@@ -179,6 +198,7 @@ public class BattleSystem : MonoBehaviour
             if (isDebuggingToConsole) Debug.Log("normal");
             dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                 ". " + " It is somewhat successful!";
+            BAM.PlaySound(PLAYER_ATTACK);
         }
 
         //energy depleted
@@ -198,6 +218,8 @@ public class BattleSystem : MonoBehaviour
         playerAnimator.SetBool("IsAttacking", false);
         
         dialogueText.text = "Wow that was tiring!";
+        BAM.PlaySound(PLAYER_HEAL);
+        Debug.Log("tiring sound played");
 
         yield return new WaitForSeconds(2f);
 
@@ -228,12 +250,15 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = enemyUnit.unitName + " attacks!";
 
         if (isDebuggingToConsole) Debug.Log("enemy's turn and it has attacked");
+        BAM.PlaySound(ENEMY_ATTACK);
 
         yield return new WaitForSeconds(2f);
         
         AttackAPlayer();
 
         bool allDead = players.AllDead();
+        
+        BAM.PlaySound(PLAYER_DAMAGE);
 
         yield return new WaitForSeconds(3f);
         
@@ -305,6 +330,8 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = "You feel renewed strength!";
         
+        BAM.PlaySound(SUCCESS_ATTACK);
+        
         //healing animation called
         playerAnimator.SetBool("IsHealing", true);
 
@@ -360,6 +387,7 @@ public class BattleSystem : MonoBehaviour
         if(playerUnit.currentHP == 0)
         {
             dialogueText.text = "The " + playerUnit.unitName +" exhausted. Choose another role";
+            BAM.PlaySound(PLAYER_HEAL);
             return;
         }
         //Change button colour 
@@ -377,6 +405,7 @@ public class BattleSystem : MonoBehaviour
         if(playerUnit.currentHP == 0)
         {
             dialogueText.text = "The " + playerUnit.unitName + " exhausted. Choose another role";
+            BAM.PlaySound(PLAYER_HEAL);
             return;
         }
         //change button colour 
@@ -395,6 +424,7 @@ public class BattleSystem : MonoBehaviour
         if(playerUnit.currentHP == 0)
         {
             dialogueText.text = "The " + playerUnit.unitName + " exhausted. Choose another role";
+            BAM.PlaySound(PLAYER_HEAL);
             return;
         }
         //Change button colour 

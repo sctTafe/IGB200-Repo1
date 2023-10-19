@@ -50,10 +50,8 @@ public class Unit : MonoBehaviour
             return false;
     }
 
-    public void Heal(int amount)
+    public void Heal()
     {
-        currentHP += amount;
-        if(currentHP > maxHP)
-            currentHP = maxHP;
+        currentHP = maxHP;
     }
 }

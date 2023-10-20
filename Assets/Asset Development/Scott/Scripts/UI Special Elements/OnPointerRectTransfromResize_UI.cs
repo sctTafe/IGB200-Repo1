@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
+[RequireComponent(typeof(RectTransform))]
 public class OnPointerRectTransfromResize_UI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private RectTransform _buttonTrans;

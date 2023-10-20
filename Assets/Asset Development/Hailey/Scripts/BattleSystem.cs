@@ -77,6 +77,8 @@ public class BattleSystem : MonoBehaviour
     [Header("Events")] 
     public UnityEvent _OnBattleEnd;
 
+    public bool fleeing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -231,6 +233,12 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.WON;
             StartCoroutine(EndBattle());
         }
+        else if (fleeing)
+        {
+            //End the battle
+            state = BattleState.LOST;
+            StartCoroutine(EndBattle());
+        }
         else
         {
             //enemy turn            
@@ -265,7 +273,7 @@ public class BattleSystem : MonoBehaviour
         enemyAnimator.SetBool("IsAttacking", false); //animation turned off
         particleEffect.SetActive(false);
 
-        if(allDead)
+        if(allDead || fleeing)
         {
             state = BattleState.LOST;
             StartCoroutine(EndBattle());

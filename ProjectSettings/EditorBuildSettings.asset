@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Verison3/ProgressionScene.unity
     guid: baf61d780546a5a4dacf90a83150fd46
+  - enabled: 1
+    path: Assets/Scenes/Verison3/WinScene.unity
+    guid: d1ecdcebf27bb2a48b036573b98a8ee7
   m_configObjects: {}

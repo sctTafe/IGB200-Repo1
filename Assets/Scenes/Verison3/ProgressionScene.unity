@@ -1277,6 +1277,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d000d41e20a0c4aba882421f57cecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &47953815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47953816}
+  - component: {fileID: 47953817}
+  m_Layer: 0
+  m_Name: '[WinTrigger]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &47953816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47953815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424849163}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &47953817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47953815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c22860ecdec37642a09eeef01195971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnBridgeIsComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  _OnSwitchSceneEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 304584817}
+        m_TargetAssemblyTypeName: ScottBarley.IGB200.V1.UI_SceneSwitch, Assembly-CSharp
+        m_MethodName: fn_ChangeToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WinScene
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timeToWiatBeforeFinishing: 2
 --- !u!1 &48186973
 GameObject:
   m_ObjectHideFlags: 0
@@ -12906,11 +12969,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1903101886}
   - {fileID: 304584818}
   - {fileID: 1749851987}
   - {fileID: 508926507}
   - {fileID: 4595135294068141757}
   - {fileID: 150872878}
+  - {fileID: 47953816}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18719,9 +18784,9 @@ GameObject:
   - component: {fileID: 668022457}
   - component: {fileID: 668022459}
   - component: {fileID: 668022460}
+  - component: {fileID: 668022462}
   - component: {fileID: 668022456}
   - component: {fileID: 668022461}
-  - component: {fileID: 668022462}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -18794,7 +18859,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 668022457}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903101887}
+        m_TargetAssemblyTypeName: DayCounter_Mng, Assembly-CSharp
+        m_MethodName: fn_TryRestDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &668022457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49848,6 +49925,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1898189397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1903101885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903101886}
+  - component: {fileID: 1903101887}
+  m_Layer: 0
+  m_Name: '[DayCounter_Mng]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1903101886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903101885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424849163}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1903101887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903101885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d007903772d99344ebd442b48a7d513b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skipDayCost: 2
 --- !u!1001 &1903310827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55243,6 +55365,7 @@ GameObject:
   - component: {fileID: 8429394753838956021}
   - component: {fileID: 8429394753838956025}
   - component: {fileID: 8429394753838956023}
+  - component: {fileID: 8429394753838956026}
   m_Layer: 0
   m_Name: Road_L
   m_TagString: Untagged
@@ -60430,6 +60553,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localBridgePartsDataHolder: {fileID: 0}
+--- !u!114 &8429394753838956026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638916233568929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01d1b0ac8e176a42af8dea3ad770f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WinTriggerV2: {fileID: 47953817}
 --- !u!224 &8429526698039066876
 RectTransform:
   m_ObjectHideFlags: 0

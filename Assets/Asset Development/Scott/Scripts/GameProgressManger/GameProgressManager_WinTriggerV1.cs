@@ -34,4 +34,12 @@ public class GameProgressManager_WinTriggerV1 : MonoBehaviour
         }
     }
 
+
+
+    IEnumerator Wait_CR()
+    {
+        yield return new WaitForSeconds(2f);
+    }
+
+
 }

@@ -379,10 +379,10 @@ RectTransform:
   m_Father: {fileID: 351083131}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277.7445, y: -831.83563}
-  m_SizeDelta: {x: 555.489, y: 132.4622}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 132.4622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &16883098
 PrefabInstance:
@@ -6294,10 +6294,10 @@ RectTransform:
   m_Father: {fileID: 351083131}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277.7445, y: -327.8657}
-  m_SizeDelta: {x: 555.489, y: 472.3716}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 472.3716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189379305
 MonoBehaviour:
@@ -6319,12 +6319,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Employee facilities are essential are vital for ensuring the well-being,
-    safety, and supporting productivity. \r\n\nThese facilities are designed to provide
-    a<color=yellow> comfortable and safe environment for workers to take a break,
-    eat, and recharge during their workday</color=yellow>, providing your workers
-    with; shelter and shade, breakrooms, restrooms, water stations, seating and reset
-    areas and first aid stations.\r\n"
+  m_text: "Employee rest facilities are essential for ensuring well-being, safety,
+    and supporting productivity. \r\n\nThese facilities are designed to provide a<color=yellow>
+    comfortable and safe environment for workers to take a break, eat, and recharge
+    during their workday</color=yellow>, providing your workers with; shelter and
+    shade, breakrooms, restrooms, water stations, seating and rest areas and first
+    aid stations.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c803fa024e38c444b884aedede9aff35, type: 2}
   m_sharedMaterial: {fileID: 8876612547116725344, guid: c803fa024e38c444b884aedede9aff35,
@@ -8334,10 +8334,10 @@ RectTransform:
   m_Father: {fileID: 351083131}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277.7445, y: -602.81256}
-  m_SizeDelta: {x: 555.489, y: 77.5221}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 77.5221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254703092
 MonoBehaviour:
@@ -12628,10 +12628,10 @@ RectTransform:
   m_Father: {fileID: 351083131}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277.7445, y: -45.83995}
-  m_SizeDelta: {x: 555.489, y: 91.6799}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 91.6799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415503519
 MonoBehaviour:
@@ -12653,7 +12653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Facilities:'
+  m_text: 'Rest Facilities:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c803fa024e38c444b884aedede9aff35, type: 2}
   m_sharedMaterial: {fileID: 8876612547116725344, guid: c803fa024e38c444b884aedede9aff35,
@@ -17307,7 +17307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' R&R Facilities Occupants'
+  m_text: Break Facilities Occupants
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c803fa024e38c444b884aedede9aff35, type: 2}
   m_sharedMaterial: {fileID: 8876612547116725344, guid: c803fa024e38c444b884aedede9aff35,
@@ -17923,7 +17923,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.049987793, y: 0}
-  m_SizeDelta: {x: 0, y: 180}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &641102600
 MonoBehaviour:
@@ -22432,10 +22432,10 @@ RectTransform:
   m_Father: {fileID: 351083131}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277.7445, y: -703.58905}
-  m_SizeDelta: {x: 555.489, y: 124.0309}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 124.0309}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &816283721
 MonoBehaviour:
@@ -22457,7 +22457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Assign workers recover their morale as the project days pass, <color=yellow>helping
+  m_text: 'Assigned workers recover their morale as the project days pass, <color=yellow>helping
     them perform at their best!</color=yellow>
 
 '
@@ -26217,7 +26217,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -27931,7 +27931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1006178521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32526,7 +32526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' Employee R&R Facilities'
+  m_text: Breakroom Facilities
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c803fa024e38c444b884aedede9aff35, type: 2}
   m_sharedMaterial: {fileID: 8876612547116725344, guid: c803fa024e38c444b884aedede9aff35,
@@ -42381,10 +42381,10 @@ RectTransform:
   m_Father: {fileID: 641102599}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115, y: -95}
-  m_SizeDelta: {x: 220, y: 170}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623357126
 MonoBehaviour:
@@ -44032,10 +44032,10 @@ RectTransform:
   m_Father: {fileID: 1049608737}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -58}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688723364
 MonoBehaviour:
@@ -48010,7 +48010,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ThisProgressionSelectionItemData:
-    _name: R&R Facilities
+    _name: Breakroom
     _isPurchased: 0
     _isVisable: 0
     _upgradeCost: 10

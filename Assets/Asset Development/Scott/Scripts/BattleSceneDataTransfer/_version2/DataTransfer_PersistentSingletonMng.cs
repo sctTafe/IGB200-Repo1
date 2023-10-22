@@ -87,6 +87,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values) 
             {
                 TeamMemberTransfer_Data tMTD = Instantiate(_Prefab, this.transform);
+                tMTD._teamMemberName = item._name;
                 tMTD._uID = item._uID;
                 tMTD._classType = item._classType;
                 tMTD._maxEnergy = item._maxEnergy;
@@ -102,6 +103,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             if (_TeamMemberGroupsHolderMng != null) {
                 foreach (var item in _TeamMemberGroupsHolderMng._selectedMissionTeam._teamMembersGroup.Values) {
                     TeamMemberTransfer_Data tMTD = Instantiate(_Prefab, this.transform);
+                    tMTD._teamMemberName = item._name;
                     tMTD._uID = item._uID;
                     tMTD._classType = item._classType;
                     tMTD._maxEnergy = item._maxEnergy;

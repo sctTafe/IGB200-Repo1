@@ -24,6 +24,7 @@ public class BattleHUD : MonoBehaviour
 
     public void SetHUD()
     {
+        // - Enemy -
         if (isEnemyHUD)
         {
             for(int i=0; i < sliderLocations.Length; i++)
@@ -39,10 +40,12 @@ public class BattleHUD : MonoBehaviour
                 hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
                 hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
                 names[i].text = characters[i].GetComponent<Unit>().unitName;
+                
             }
 
             return;
         }
+        // - Team Members - 
         else
         {
             for(int i=0; i < characters.Count; i++)
@@ -58,6 +61,7 @@ public class BattleHUD : MonoBehaviour
                 hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
                 hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
                 names[i].text = characters[i].GetComponent<Unit>().unitName;
+                names[i].text = characters[i].GetComponent<Unit>()._teamMemberName;     //SCOTT EDIT
             }
         }
          

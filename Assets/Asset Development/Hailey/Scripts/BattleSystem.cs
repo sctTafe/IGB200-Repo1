@@ -155,7 +155,7 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = "A wild " + enemyUnit.unitName + " approaches.";
 
-        playerHUD.SetHUD();
+        playerHUD.SetHUD();    
         playerHUD.SetButtons(playerUnit);
         enemyHUD.SetHUD();
     }
@@ -440,11 +440,7 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack(true));
     }
 
-    public void fn_OverrideDebugMode()
-    {
-        debugMode = false;
-    }
-
+    public void fn_OverrideDebugMode() => debugMode = false;
     public void fn_LoadNextScene() => SceneManager.LoadScene(scene);
 
 }

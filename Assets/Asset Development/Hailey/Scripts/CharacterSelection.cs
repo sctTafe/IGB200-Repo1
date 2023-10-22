@@ -18,7 +18,8 @@ public class CharacterSelection : MonoBehaviour
 
     void Start()
     {
-        selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+        //selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+        selectionText.text = characters[selectedCharacter].GetComponent<Unit>()._teamMemberName + " is in play";        //SCOT EDIT
     }  
 
     void Update()

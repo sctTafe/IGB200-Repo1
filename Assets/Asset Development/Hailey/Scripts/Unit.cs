@@ -15,6 +15,7 @@ public enum UnitType
 
 public class Unit : MonoBehaviour
 {
+    public string _teamMemberName;
     public string unitName;
     [FormerlySerializedAs("unitLevel")] public int index;
     public int level;

@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: c8e35398ca9715c4dbdb0f22b30f3868
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qut-2-logo-png-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 851
+        width: 701
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca80f8f21c63196448195f4e04d5005b
+      internalID: 769177977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qut-2-logo-png-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 851
+        width: 2148
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8825d5307f252e4c89b093776c2f53e
+      internalID: -361882391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      qut-2-logo-png-transparent_0: 769177977
+      qut-2-logo-png-transparent_1: -361882391
+      qut-2-logo-png-transparent_10: 960942322
+      qut-2-logo-png-transparent_11: -1785793857
+      qut-2-logo-png-transparent_12: -629165962
+      qut-2-logo-png-transparent_13: -1782114464
+      qut-2-logo-png-transparent_14: 2009902346
+      qut-2-logo-png-transparent_15: -653586845
+      qut-2-logo-png-transparent_16: 1453124450
+      qut-2-logo-png-transparent_17: 1452371203
+      qut-2-logo-png-transparent_18: 377619103
+      qut-2-logo-png-transparent_19: -1587365462
+      qut-2-logo-png-transparent_2: 1039478359
+      qut-2-logo-png-transparent_20: 166923298
+      qut-2-logo-png-transparent_21: 748756320
+      qut-2-logo-png-transparent_22: 1401507132
+      qut-2-logo-png-transparent_23: -1512713423
+      qut-2-logo-png-transparent_24: -1781136525
+      qut-2-logo-png-transparent_25: 638696858
+      qut-2-logo-png-transparent_26: 269986356
+      qut-2-logo-png-transparent_27: 1570561508
+      qut-2-logo-png-transparent_28: -1047974486
+      qut-2-logo-png-transparent_29: 778401423
+      qut-2-logo-png-transparent_3: 223299477
+      qut-2-logo-png-transparent_30: -1268905287
+      qut-2-logo-png-transparent_31: 1884495633
+      qut-2-logo-png-transparent_32: -922863557
+      qut-2-logo-png-transparent_33: -476397539
+      qut-2-logo-png-transparent_34: -2143600054
+      qut-2-logo-png-transparent_35: -1998821108
+      qut-2-logo-png-transparent_4: 1846260902
+      qut-2-logo-png-transparent_5: -1825865285
+      qut-2-logo-png-transparent_6: 1672220232
+      qut-2-logo-png-transparent_7: 746568845
+      qut-2-logo-png-transparent_8: -1657953727
+      qut-2-logo-png-transparent_9: 1469439734
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

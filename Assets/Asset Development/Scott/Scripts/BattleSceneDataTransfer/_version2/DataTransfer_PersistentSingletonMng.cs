@@ -53,13 +53,10 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     private bool _isDebuggingOn = true;
     private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberGroupsHolderMng;
 
-
-
     void Awake()
     {
         SingeltonSetup();
     }
-
 
     #region Public Functions
     #region - Pass Data To Missiom - 
@@ -76,6 +73,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             ChangeToBattleScene(_BattleScene);
 
     }
+
     private void LoadMissionTeamData()
     {
         if (_isDebuggingOn) { Debug.Log("DataTransfer_Mng: LoadMissionTeamData - Called"); }
@@ -116,9 +114,8 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
                 }
             }
         }
-
-
     }
+
     private void LoadMissionData(Missions_Basic_SO missionSO)
     {
         //BattleTransferData_PersistentSingleton.Instance._currentMissionID = missionID; // depreciated, all related functionality needs removing 
@@ -134,9 +131,11 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         // - Mission setting position 
         StaticData.battlePosition = missionSO._battlePosition;
     }
+
     private void ChangeToBattleScene(string scene) {
         SceneManager.LoadScene(scene);
     }
+
     #endregion
     #endregion END: - Pass Data To Missiom - 
 

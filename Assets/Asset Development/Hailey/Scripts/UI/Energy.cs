@@ -19,19 +19,19 @@ public class Energy : MonoBehaviour
     {
         if (hpSlider.value >= maxHP * 0.75)
         {
-            GetComponent<SpriteRenderer>().sprite = icons[0];
+            GetComponent<Image>().sprite = icons[0];
         }
         else if (hpSlider.value >= maxHP * 0.5 && hpSlider.value < maxHP * 0.75)
         {
-            GetComponent<SpriteRenderer>().sprite = icons[1];
+            GetComponent<Image>().sprite = icons[1];
         }
         else if (hpSlider.value >= maxHP * 0.25 && hpSlider.value < maxHP * 0.5)
         {
-            GetComponent<SpriteRenderer>().sprite = icons[2];
+            GetComponent<Image>().sprite = icons[2];
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = icons[3];
+            GetComponent<Image>().sprite = icons[3];
         }
     }
 }

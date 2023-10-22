@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534274516326112450}
-  m_LocalRotation: {x: -0, y: -0.9663035, z: -0, w: 0.25740528}
-  m_LocalPosition: {x: -0.12, y: 0.24, z: -0.14}
-  m_LocalScale: {x: 1.9016001, y: 1.9016005, z: 1.9016006}
+  m_LocalRotation: {x: 0.000000008614734, y: -0.9663036, z: 0.000000031293894, w: 0.2574053}
+  m_LocalPosition: {x: -0.12000003, y: 0.23999983, z: -0.14000005}
+  m_LocalScale: {x: 1.9015998, y: 1.9016005, z: 1.9016002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6974697050981792114}
@@ -4887,6 +4887,52 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &6181930889245072448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940262132889475982}
+  - component: {fileID: 1900994035292547728}
+  m_Layer: 0
+  m_Name: PE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940262132889475982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181930889245072448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6974697050981792114}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900994035292547728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181930889245072448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460e2f92e1bccc5458489616955ec7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1534274516326112450}
+  activate: 0
 --- !u!1 &6994579144079665197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +4966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 940262132889475982}
   - {fileID: 5741813736252942974}
   - {fileID: 4845239909307576529}
   m_Father: {fileID: 0}
@@ -5010,6 +5057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _teamMemberName: 
   unitName: the Leaky Pipe
   index: 0
   level: 0

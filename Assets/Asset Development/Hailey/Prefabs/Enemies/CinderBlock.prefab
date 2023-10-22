@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _teamMemberName: 
   unitName: Cinder Block
   index: 0
   level: 0
@@ -166,6 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6411415644997129792}
+  - component: {fileID: 2547727158505019836}
   m_Layer: 0
   m_Name: ParticleEffect
   m_TagString: Untagged
@@ -188,6 +190,20 @@ Transform:
   m_Father: {fileID: 6974697050981792114}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2547727158505019836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396142438540870308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460e2f92e1bccc5458489616955ec7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
+  activate: 0
 --- !u!1001 &3792734432260664300
 PrefabInstance:
   m_ObjectHideFlags: 0

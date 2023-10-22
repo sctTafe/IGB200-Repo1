@@ -123,8 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _teamMemberName: Manager
   unitName: Manager
-  unitLevel: 1
+  index: 1
+  level: 0
   type: 5
   weakness: 3
   damage: 5

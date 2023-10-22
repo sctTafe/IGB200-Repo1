@@ -64,6 +64,7 @@ public class BattleSystem : MonoBehaviour
 
     public bool hasActed = false;
     public bool isHealing = false;
+    private int attackIndex = 0;
 
     public string scene;
     
@@ -175,6 +176,8 @@ public class BattleSystem : MonoBehaviour
         playerAnimator = FindAnimator();
         
         int damage;
+        string newText;
+        int playdmg = 0;
         if (isSpecial)
         {
             if (playerUnit.type == enemyUnit.type)
@@ -193,6 +196,11 @@ public class BattleSystem : MonoBehaviour
                                     ". " + " It is not very effective!";
                 BAM.PlaySound(FAILED_ATTACK);
             }
+
+            playdmg = 10;
+            newText = "Wow that was tiring!";
+            BAM.PlaySound(PLAYER_HEAL);
+            Debug.Log("tiring sound played");
         }
         else
         {
@@ -201,11 +209,12 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                 ". " + " It is somewhat successful!";
             BAM.PlaySound(PLAYER_ATTACK);
+            newText = dialogueText.text;
         }
 
         //energy depleted
         if (isDebuggingToConsole) Debug.Log("take damage");
-        playerUnit.TakeDamage(10);
+        playerUnit.TakeDamage(playdmg);
         playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
 
         //Damage enemy
@@ -219,9 +228,7 @@ public class BattleSystem : MonoBehaviour
         
         playerAnimator.SetBool("IsAttacking", false);
         
-        dialogueText.text = "Wow that was tiring!";
-        BAM.PlaySound(PLAYER_HEAL);
-        Debug.Log("tiring sound played");
+        dialogueText.text = newText;
 
         yield return new WaitForSeconds(2f);
 
@@ -246,7 +253,7 @@ public class BattleSystem : MonoBehaviour
             
             //enemy animation called
             enemyAnimator.SetBool("IsAttacking", true);
-            particleEffect.SetActive(true);
+            particleEffect.GetComponent<ActivateParticleEffect>().activate = true;
             
             StartCoroutine(EnemyTurn());
         }     
@@ -255,7 +262,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        dialogueText.text = enemyUnit.unitName + " attacks!";
+        dialogueText.text = "It's " + enemyUnit.unitName + "'s turn!";
 
         if (isDebuggingToConsole) Debug.Log("enemy's turn and it has attacked");
         BAM.PlaySound(ENEMY_ATTACK);
@@ -271,7 +278,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(3f);
         
         enemyAnimator.SetBool("IsAttacking", false); //animation turned off
-        particleEffect.SetActive(false);
+        particleEffect.GetComponent<ActivateParticleEffect>().activate = false;
 
         if(allDead || fleeing)
         {
@@ -287,11 +294,34 @@ public class BattleSystem : MonoBehaviour
 
     void AttackAPlayer()
     {
+        //decide which player to attack
         var rnd = new System.Random();
+        int j = rnd.Next(0, 1);
+        Unit tempPlayer;
+        int i;
+        if (j < 0.5)
+        {
+            tempPlayer = players.characters[attackIndex].GetComponent<Unit>();
+            attackIndex++;
+            if (attackIndex == players.characters.Count)
+            {
+                attackIndex = 0;
+            }
+
+            i = attackIndex;
+            Debug.Log("choosen");
+        }
+        else
+        {
+            var rnd2 = new System.Random();
+            i = rnd2.Next(0, players.characters.Count - 1);
+            tempPlayer = players.characters[i].GetComponent<Unit>();
+            Debug.Log("random");
+        }
+        
+        dialogueText.text = enemyUnit.unitName + " hurts " + tempPlayer.unitName + "!";
+        
         int extraDamage = 0;
-        int i = rnd.Next(0, players.characters.Count - 1);
-        Unit tempPlayer = players.characters[i].GetComponent<Unit>();
-        dialogueText.text = enemyUnit.unitName + " attacks " + tempPlayer.unitName + "!";
         if(tempPlayer.weakness == enemyUnit.type) 
         {
             if (isDebuggingToConsole) Debug.Log("weakened");
@@ -355,7 +385,7 @@ public class BattleSystem : MonoBehaviour
         //begin enemy turn
         state = BattleState.ENEMYTURN;
         enemyAnimator.SetBool("IsAttacking", true);
-        particleEffect.SetActive(true);
+        particleEffect.GetComponent<ActivateParticleEffect>().activate = true;
         StartCoroutine(EnemyTurn());
     }
 

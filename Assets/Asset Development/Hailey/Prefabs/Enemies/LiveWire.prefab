@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e2f92e1bccc5458489616955ec7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 6017280633404785343}
+  activate: 0
 --- !u!1 &6994579144079665197
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c55fa382a98c647bd6be2784ae7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _teamMemberName: 
   unitName: Live Wire
   index: 0
   level: 0
@@ -294,6 +297,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d518a941c5dafb247835df2313104718, type: 3}
+--- !u!1 &6017280633404785343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5579829163516832037, guid: d518a941c5dafb247835df2313104718,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228760464318737306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8740884382225868721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7468087337452440619, guid: d518a941c5dafb247835df2313104718,

@@ -16773,7 +16773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7175780257572519444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17153,7 +17153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7920040480006331196
 MonoBehaviour:
   m_ObjectHideFlags: 0

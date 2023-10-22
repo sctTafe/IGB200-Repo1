@@ -111,6 +111,24 @@ public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehavi
         _purchasableTeamMemberPool.fn_TryAddTeamMember(teamMemberData);
     }
 
+    public void fn_ClearMissionTeam()
+    {
+        if (_selectedMissionTeam._teamMembersGroup.Count > 0) {
+            Stack<TeamMember_Data> _toClearStack = new();
+            foreach (var teamMembers in _selectedMissionTeam._teamMembersGroup.Values) {
+                _toClearStack.Push(teamMembers);
+            }
+
+            int count = _toClearStack.Count;
+            for (int i = 0; i < count; i++) {
+                TeamMember_Data teamMember = _toClearStack.Pop();
+                _avalibleTeamMemberPool.fn_TryAddTeamMember(teamMember);
+                _selectedMissionTeam.fn_TryRemoveTeamMember(teamMember);
+            }
+        }
+    }
+
+
 
 
     private void Debuging_CreateTestPool(TeamMember_SelectionGroup_Data tGD, int numberToCreate = 1) {

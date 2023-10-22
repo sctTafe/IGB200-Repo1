@@ -54,6 +54,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberGroupsHolderMng;
 
 
+
     void Awake()
     {
         SingeltonSetup();
@@ -151,6 +152,10 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         ReintegrateTeamMemberData();
         UpdateProjectPoints();
         UpdateDaysPassed();
+
+
+        ConnectToSelectionGroupHolder();
+        _TeamMemberGroupsHolderMng.fn_ClearMissionTeam();
     }
 
     private void UpdateMissionObjects()
@@ -275,7 +280,9 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
 
     private void ConnectToSelectionGroupHolder()
     {
-        _TeamMemberGroupsHolderMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+        //_TeamMemberGroupsHolderMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+        if (_TeamMemberGroupsHolderMng == null)
+            _TeamMemberGroupsHolderMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
     }
     #endregion

@@ -20,12 +20,14 @@ public class BattleDataTransferSupportScript : MonoBehaviour
     // - Primary Functions - 
     public void fn_FinishBattle()
     {
-        if (_isTesting_DepleteEnergyAndMorale)
+        if (StaticData.isBattleGameManagerInTestModeOverride)
         {
-            fn_DepleteTeamMemberStarts();
-        }
+            if (_isTesting_DepleteEnergyAndMorale) {
+                fn_DepleteTeamMemberStarts();
+            }
 
-        DataTransfer_PersistentSingletonMng.Instance.fn_HandleMissionFinished();
+            DataTransfer_PersistentSingletonMng.Instance.fn_HandleMissionFinished();
+        }
     }
 
     // - Testing Functions - 

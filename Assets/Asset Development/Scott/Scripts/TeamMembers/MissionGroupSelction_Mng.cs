@@ -23,11 +23,11 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     private TeamMember_SelectionGroup_Data _selectedMissionTeam;
 
     // external dependency
-    private TeanMember_SelectionGroupHolder_PersistentSingletonMng TeamMemberGroupsMng;
+    private TeanMember_SelectionGroupHolder_PersistentSingletonMng _TeamMemberGroupsMng;
 
     #region Unity Native Functions
     //private void Awake() {
-    //    TeamMemberGroupsMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+    //    _TeamMemberGroupsMng ??= TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
     //}
     void Start() {
         // Disable Mission UI Panel Root
@@ -47,15 +47,15 @@ public class MissionGroupSelction_Mng : MonoBehaviour
     #region Primary Trigger Functions
     public void fn_OpenTeamMemberSelectionWindow() {
         BindToTeamMemberElementMngs();
-        ClearMissionTeam();
+        _TeamMemberGroupsMng.fn_ClearMissionTeam();
         _TeamMemberMissionSelection_root.SetActive(true);
     }
     private void BindToTeamMemberElementMngs() {
-        if (TeamMemberGroupsMng == null)
-            TeamMemberGroupsMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
+        if (_TeamMemberGroupsMng == null)
+            _TeamMemberGroupsMng = TeanMember_SelectionGroupHolder_PersistentSingletonMng.Instance;
 
-        _avaliblePool_UIEMng.fn_Bind(TeamMemberGroupsMng._avalibleTeamMemberPool);
-        _selectedTeam_UIEMng.fn_Bind(TeamMemberGroupsMng._selectedMissionTeam);
+        _avaliblePool_UIEMng.fn_Bind(_TeamMemberGroupsMng._avalibleTeamMemberPool);
+        _selectedTeam_UIEMng.fn_Bind(_TeamMemberGroupsMng._selectedMissionTeam);
         _SelectedBigInfo_UIEMng.fn_Bind(_currentBigInfo_groupData);
 
         // Bind the two pool display elements to the event
@@ -66,24 +66,9 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         _avaliblePool_UIEMng._OnPrimaryActionBtn += Handle_AddToSelectedTeam;
         _selectedTeam_UIEMng._OnPrimaryActionBtn += Handle_AddToSelectedTeam;
     }
-    private void ClearMissionTeam()
-    {
-        if (TeamMemberGroupsMng._selectedMissionTeam._teamMembersGroup.Count > 0)
-        {
-            Stack<TeamMember_Data> _toClearStack = new();
-            foreach (var teamMembers in TeamMemberGroupsMng._selectedMissionTeam._teamMembersGroup.Values) {
-                _toClearStack.Push(teamMembers);
-            }
+    
+    public void fn_ClearMissionTeam() => _TeamMemberGroupsMng.fn_ClearMissionTeam();
 
-            int count = _toClearStack.Count;
-            for (int i = 0; i < count; i++)
-            {
-                TeamMember_Data teamMember = _toClearStack.Pop();
-                TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryAddTeamMember(teamMember);
-                TeamMemberGroupsMng._selectedMissionTeam.fn_TryRemoveTeamMember(teamMember);
-            }
-        }
-    }
     #endregion
 
 
@@ -101,16 +86,16 @@ public class MissionGroupSelction_Mng : MonoBehaviour
         //Request is to add to selected pool
         if (tMSGD._groupType == SelectionGroupType.Available) //check if current teamMember Group is part of the 'Avalible Pool' i.e. trying to add it to the 'Mission pool' group
         {
-            if (TeamMemberGroupsMng._selectedMissionTeam.fn_TryAddTeamMember(tMD)) // try add to group, if i can be added to the group, remove it from the 'Avalible Pool'
+            if (_TeamMemberGroupsMng._selectedMissionTeam.fn_TryAddTeamMember(tMD)) // try add to group, if i can be added to the group, remove it from the 'Avalible Pool'
             {
-                itworked = TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
+                itworked = _TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryRemoveTeamMember(tMD);
             }           
         }
         if (tMSGD._groupType == SelectionGroupType.Mission) {
 
-            if (TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD))
+            if (_TeamMemberGroupsMng._avalibleTeamMemberPool.fn_TryAddTeamMember(tMD))
             {
-                itworked = TeamMemberGroupsMng._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
+                itworked = _TeamMemberGroupsMng._selectedMissionTeam.fn_TryRemoveTeamMember(tMD);
             }         
         }
         if(isDebuggingOn) Debug.Log("MissionGroupSelection_Mng: Handle_AddToSelectedTeam: Worked: " + itworked + ", request sent by: " + tMD._name);

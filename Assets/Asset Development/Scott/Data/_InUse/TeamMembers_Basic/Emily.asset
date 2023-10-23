@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Emily
   m_EditorClassIdentifier: 
   _name: Emily
-  _nameAndJob: Emily (Finish Carpenter)
+  _nameAndJob: Emily (Carpenter)
   _bio: Meet Emily, our <color=yellow>FinishCarpenter</color=yellow>. Starting as
     a general carpenter's apprentice after enrolling in her <color=yellow>Certificate
     III in Carpentry</color=yellow>, she mastered foundational skills. After graduating,

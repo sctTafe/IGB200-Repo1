@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StartingTeam_Sarah
   m_EditorClassIdentifier: 
   _name: Sarah
-  _nameAndJob: Sarah (Safety Foreman)
+  _nameAndJob: Sarah (Foreman)
   _bio: Meet Sarah, our <color=yellow>Safety Foreman</color=yellow>. Sarah's career
     journey started as a <color=yellow>safety officer</color=yellow> after she landed
     a job as a labourer on-site upon enrolling in an apprenticeship. She then pursued

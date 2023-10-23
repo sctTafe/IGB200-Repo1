@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: David
   m_EditorClassIdentifier: 
   _name: David
-  _nameAndJob: David (Construction Foreman)
+  _nameAndJob: David (Foreman)
   _bio: This is David, our <color=yellow>Construction Foreman</color=yellow>. David's
     career began as a construction labourer after he completed his <color=yellow>Certificate
     II in Civil Construction</color=yellow> through <color=yellow>TAFE</color=yellow>.

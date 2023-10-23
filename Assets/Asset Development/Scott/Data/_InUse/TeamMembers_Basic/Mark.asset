@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mark
   m_EditorClassIdentifier: 
   _name: 'Mark '
-  _nameAndJob: Mark (Instrumentation Electrician)
+  _nameAndJob: Mark (Electrician)
   _bio: Mark embarked on his career journey after completing his <color=yellow>Certificate
     III in Electrotechnology</color=yellow>, specialising in Instrumentation and
     Control from <color=yellow>TAFE</color=yellow>. He started as an electrician,

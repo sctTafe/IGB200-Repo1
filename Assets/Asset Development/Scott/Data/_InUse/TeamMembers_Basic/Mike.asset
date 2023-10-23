@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mike
   m_EditorClassIdentifier: 
   _name: Jedda
-  _nameAndJob: Jedda (Construction Equipment Mechanic)
+  _nameAndJob: Jedda (Mechanic)
   _bio: Introducing Jedda, our <color=yellow>Construction Equipment Mechanic</color=yellow>.
     Starting as an <color=yellow>apprentice</color=yellow>, they embarked on their
     journey as a <color=yellow>construction labourer</color=yellow>, learning the

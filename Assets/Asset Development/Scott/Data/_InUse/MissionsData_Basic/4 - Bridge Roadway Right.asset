@@ -20,8 +20,8 @@ MonoBehaviour:
     goes smoothly. However, there's a problem \u2013 the <color=yellow> electrical
     wires</color=yellow> for the right side suspension are frayed and damaged and
     we need your team's expertise to repair or replace them to ensure the deck hangs
-    securely. As you work on this task, stay vigilant for any potential complications.
-    Let's go!"
+    securely, an <color=yellow> Electrician</color=yellow> might be use? As you work
+    on this task, stay vigilant for any potential complications. Let's go!"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 3
   _completionBonusPoints: 150

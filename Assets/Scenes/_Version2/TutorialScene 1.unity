@@ -267,11 +267,9 @@ MonoBehaviour:
     - Use the arrows at the bottom of the screen to select which team member you
       attack with, remember, team members with disciplines that match the problem
       you face do more damage!
-    - Each team member has two attack options, one standard attack, and one that
-      relates to their area of expertise! Remember to use the right attack for the
-      job.
+    - Each team member has two ability options, one standard, and one that relates
+      to their area of expertise! Try them out to see what they can do!
     - Let's get fixing!
-    - Great job, I think you're ready to move on to the bridge itself!
   startButton: {fileID: 13048134}
 --- !u!114 &13048137
 MonoBehaviour:

@@ -15,11 +15,12 @@ MonoBehaviour:
   _missionUID: 1
   _missionName: Build The Arches
   _missionShortBrief: Building the Arches
-  _missionDescription: 'At this early stage of the bridge''s development, we must
-    work together to successfully construct the bridge''s arches, allowing for greater
+  _missionDescription: At this early stage of the bridge's development, we must work
+    together to successfully construct the bridge's arches, allowing for greater
     support of the various later stages of development. One problem, workers on site
     have been faced with a nasty <color=yellow>burst pipe</color=yellow> that seems
-    to have a mind of its own! '
+    to have a mind of its own! Seems like we may need a <color=yellow>Plumber</color=yellow>
+    on deck!
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 1
   _completionBonusPoints: 150

@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Verison3/ProScene_Tutorial.unity
     guid: 2ab6bb640190b514c8e4049fd6ba8357
   - enabled: 1
-    path: Assets/Scenes/Verison3/TutorialScene 1.unity
+    path: Assets/Scenes/_Version2/TutorialScene 1.unity
     guid: 9a4671a9684963644b2737d61a1ae084
   - enabled: 1
     path: Assets/Scenes/Verison3/BattleSceneTutorial.unity

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -618,10 +618,14 @@ MonoBehaviour:
   dialogue:
     name: Amanda (AWIC CEO)
     sentences:
+    - Welcome to the construction zone, here, we will teach you the basics of combat
+      and how to construct this bridge the right way!
     - Hmm, seems like we have a burst pipe to deal with
     - Use the arrows at the bottom of the screen to select which team member you
       attack with, remember, team members with disciplines that match the problem
       you face do more damage!
+    - Each team member has two ability options, one standard, and one that relates
+      to their area of expertise! Try them out to see what they can do!
     - Let's get fixing!
   startButton: {fileID: 0}
 --- !u!114 &77428712
@@ -9816,6 +9820,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1906892061}
   menuScene: Menu v3
+  proScene: 
+  BS: {fileID: 0}
 --- !u!114 &1281504342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15040,17 +15046,18 @@ MonoBehaviour:
   - {fileID: 6994579144079665197, guid: 65c8a2e551e9c024fb6df910550d5806, type: 3}
   - {fileID: 6994579144079665197, guid: c91feda2b2231e14e9bd9047708c55bb, type: 3}
   - {fileID: 6994579144079665197, guid: 24f3f77c5f2a65d468f056a0752a1fd1, type: 3}
+  playerUnit: {fileID: 0}
+  enemyUnit: {fileID: 0}
+  enemyGO: {fileID: 0}
+  players: {fileID: 1140921857}
+  clones: []
+  BAM: {fileID: 0}
   battlePos:
   - {fileID: 1743173899}
   - {fileID: 1455336656}
   - {fileID: 2067240258}
   - {fileID: 1474258354}
   bridge: {fileID: 0}
-  playerUnit: {fileID: 0}
-  enemyUnit: {fileID: 0}
-  enemyGO: {fileID: 0}
-  players: {fileID: 1140921857}
-  clones: []
   playerBattleStations:
   - {fileID: 1786364873}
   - {fileID: 1549741338}
@@ -15081,6 +15088,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  fleeing: 0
 --- !u!4 &1955290729
 Transform:
   m_ObjectHideFlags: 0

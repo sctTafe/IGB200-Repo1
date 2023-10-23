@@ -20,7 +20,8 @@ MonoBehaviour:
     the suspension process effectively, though a particular issue has arisen that
     needs your attention, a  <color=yellow>massive cinderblock</color=yellow> has
     unexpectedly fallen onto the deck, making suspension difficult.  You must remove
-    it and ensure the left side hangs securely. The success of this task is vital
+    it and ensure the left side hangs securely, with the help of a <color=yellow>Machine
+    Operator</color=yellow>, this should be doable. The success of this task is vital
     for the overall stability of the bridge. Gather your team and get on it!!
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 5

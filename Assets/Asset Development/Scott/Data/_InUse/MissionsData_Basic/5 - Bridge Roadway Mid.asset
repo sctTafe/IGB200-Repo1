@@ -19,9 +19,10 @@ MonoBehaviour:
     to ensure a seamless connection. Your mission is to oversee this critical phase,
     where precision and alignment are paramount for the structural integrity. However,
     an unexpected issue has arisen - the <color=yellow>scaffolding supporting the
-    deck segments</color=yellow> has become unstable and is moving free. Your problem-solving
-    skills will be essential in resolving this. Rally your team, secure the scaffolding.
-    The success of the entire project hinges on your efforts.
+    deck segments</color=yellow> has become unstable and is moving freely. Your problem-solving
+    skills will be essential in resolving this. Rally your team, secure the scaffolding,
+    maybe with the help of a <color=yellow>Carpenter</color=yellow>?. The success
+    of the entire project hinges on your efforts.
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 4
   _completionBonusPoints: 150

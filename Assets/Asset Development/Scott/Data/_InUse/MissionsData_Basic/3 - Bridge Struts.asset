@@ -19,9 +19,10 @@ MonoBehaviour:
     constructed bridge arches to the support struts goes smoothly, as this step is
     crucial in ensuring the stability and strength of the bridge. However, there's
     a problem \u2013 the <color=yellow>scaffolding</color=yellow> supporting the
-    arches is unstable and simply not behaving correctly. Be prepared for any unexpected
-    challenges that may arise during the process. Rally your team to get this problem
-    sorted out, we're relying on you!"
+    arches is unstable and simply not behaving correctly, may need a <color=yellow>Carpenter</color=yellow>
+    to help us out. Be prepared for any unexpected challenges that may arise during
+    the process. Rally your team to get this problem sorted out, we're relying on
+    you!"
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 2
   _completionBonusPoints: 150

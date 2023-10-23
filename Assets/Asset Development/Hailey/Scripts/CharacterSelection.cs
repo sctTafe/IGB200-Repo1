@@ -54,7 +54,7 @@ public class CharacterSelection : MonoBehaviour
             playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
         
             //Update text
-            selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+            selectionText.text = characters[selectedCharacter].GetComponent<Unit>()._teamMemberName + " is in play";
         }
     }
 
@@ -75,7 +75,7 @@ public class CharacterSelection : MonoBehaviour
             playerHUD.SetButtons(characters[selectedCharacter].GetComponent<Unit>());
         
             //Update text
-            selectionText.text = characters[selectedCharacter].GetComponent<Unit>().unitName + " is in play";
+            selectionText.text = characters[selectedCharacter].GetComponent<Unit>()._teamMemberName + " is in play";
         }
     }
 

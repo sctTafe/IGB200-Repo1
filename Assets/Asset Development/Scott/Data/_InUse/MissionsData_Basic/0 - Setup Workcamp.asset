@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: 1 - Setup Workcamp
+  m_Name: 0 - Setup Workcamp
   m_EditorClassIdentifier: 
-  _missionUID: 1
+  _missionUID: 0
   _missionName: 'Setup Worksite '
-  _missionShortBrife: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. '
+  _missionShortBrief: 
   _missionDescription: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
     inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
@@ -28,10 +25,14 @@ MonoBehaviour:
     quaerat voluptatem.'
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 1
-  _completionBonusPoints: 150
+  _completionBonusPoints: 20
   _daysToComplete: 5
+  _battlePosition: 0
+  _enemies: 01000000
+  _MissionsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: f3204f9f92fedbf49963e2081408c758, type: 2}
+  _BridgePartsEnabledOnCompletion_Array:
+  - {fileID: 11400000, guid: 17d7644d3c5ad4e45b4aa97ef8a3df2e, type: 2}
+  _isEnabledFromGameStart: 1
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}
-  _MissionsEnabledOnCompletion_Array: []
-  _BridgePartsEnabledOnCompletion_Array: []
-  _isEnabledFromGameStart: 0

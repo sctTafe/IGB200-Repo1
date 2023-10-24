@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: 3 - Bridge Struts
+  m_Name: 2 - Bridge Struts
   m_EditorClassIdentifier: 
   _missionUID: 2
   _missionName: Connect Bridge Struts
@@ -27,7 +27,7 @@ MonoBehaviour:
   _missionDifficultyRating: 2
   _completionBonusPoints: 150
   _daysToComplete: 20
-  _battlePosition: 1
+  _battlePosition: 0
   _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 5e544ffd47affc441afac3e8eeead89f, type: 2}

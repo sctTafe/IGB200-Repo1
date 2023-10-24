@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: 2 - Bridge Archs
+  m_Name: 1 - Bridge Archs
   m_EditorClassIdentifier: 
   _missionUID: 1
   _missionName: Build The Arches
@@ -31,6 +31,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28344c6e4bd65304486d30b179547bc0, type: 2}
   _BridgePartsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 04da8a61b5e67c14a9bc26c0c69cc2b9, type: 2}
-  _isEnabledFromGameStart: 1
+  _isEnabledFromGameStart: 0
   _unfinishedPrefab: {fileID: 0}
   _finishedPrefab: {fileID: 0}

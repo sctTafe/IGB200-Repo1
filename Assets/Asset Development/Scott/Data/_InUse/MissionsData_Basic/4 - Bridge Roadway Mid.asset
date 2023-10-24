@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 274cd13d5fe877749aada1c7e739012c, type: 3}
-  m_Name: 5 - Bridge Roadway Mid
+  m_Name: 4 - Bridge Roadway Mid
   m_EditorClassIdentifier: 
   _missionUID: 4
   _missionName: Suspend Deck (Center)
@@ -27,7 +27,7 @@ MonoBehaviour:
   _missionDifficultyRating: 4
   _completionBonusPoints: 150
   _daysToComplete: 25
-  _battlePosition: 3
+  _battlePosition: 2
   _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: 9344f19e81cc8944b8f6b7d41d446b27, type: 2}

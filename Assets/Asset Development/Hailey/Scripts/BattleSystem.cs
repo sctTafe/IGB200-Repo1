@@ -190,14 +190,15 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
+                // - Team Member - 
                 damage = 1;
                 if (isDebuggingToConsole) Debug.Log("not very effective");
-                dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
+                dialogueText.text = playerUnit._teamMemberName + " attempted to fix " + enemyUnit._teamMemberName +
                                     ". " + " It is not very effective!";
                 BAM.PlaySound(FAILED_ATTACK);
             }
 
-            playdmg = 10;
+            playdmg = 10;           // Energy drain from Team Member
             newText = "Wow that was tiring!";
             BAM.PlaySound(PLAYER_HEAL);
             Debug.Log("tiring sound played");

@@ -119,6 +119,12 @@ public class BattleHUD : MonoBehaviour
     {
         hpSliders[index].value = hp;
     }
+
+    public void fn_UpdateEnergy(int index)
+    {
+        hpSliders[index].value = characters[index].GetComponent<Unit>().currentHP;
+    }
+
     public void fn_UpdateMoraleUI(int index) {
         morales[index].fn_SetLevel_Pct(characters[index].GetComponent<Unit>().fn_GetRemainingMoralePct());
     }

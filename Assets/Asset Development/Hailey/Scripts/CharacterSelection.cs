@@ -41,6 +41,15 @@ public class CharacterSelection : MonoBehaviour
         }
     }
 
+    public void fn_Initialize()
+    {
+        selected[0].SetActive(true);
+        //Update Battle System and HUD
+        battleSystem.playerUnit = characters[0].GetComponent<Unit>();
+        playerHUD.SetButtons(characters[0].GetComponent<Unit>());
+        //Update text
+        selectionText.text = characters[0].GetComponent<Unit>()._teamMemberName + " is in play";
+    }
     public void NextCharacter()
     {
         if (!battleSystem.isHealing)

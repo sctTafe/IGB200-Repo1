@@ -159,6 +159,7 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHUD();    
         playerHUD.SetButtons(playerUnit);
         enemyHUD.SetHUD();
+        players.fn_Initialize(); // DOSE: Update the current selection to the loaded in [0] index character
     }
 
     //player and enemy spawn into battle
@@ -228,7 +229,8 @@ public class BattleSystem : MonoBehaviour
         // - Energy cost of using the attack -
         // Depleted Energy & Update Team Member HUD
         playerUnit.TakeDamage(atkEnergyDrainCost);
-        playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
+        //playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
+        playerHUD.fn_UpdateEnergy(playerUnit.index);
 
         //Damage enemy
         bool isDead = enemyUnit.TakeDamage(damage);
@@ -344,7 +346,9 @@ public class BattleSystem : MonoBehaviour
         }
 
         tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
-        playerHUD.SetHP(tempPlayer.currentHP, i);
+        //playerHUD.SetHP(tempPlayer.currentHP, i);
+        playerHUD.fn_UpdateEnergy(i);
+
         if (isDebuggingToConsole) Debug.Log("attacked index: " + i);
     }
 

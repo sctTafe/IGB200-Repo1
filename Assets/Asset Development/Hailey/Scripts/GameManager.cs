@@ -24,35 +24,42 @@ public class GameManager : MonoBehaviour
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
         #endregion
-
-
-
+    }
+    void Start()
+    {
         //Get Team from the progress scene through the StaticData class
         team = StaticData.team;
-        
+
         //clear previous battleTeam
         battleTeam.Clear();
 
         //Based on the team member's class types, construct the battle team
-        for(int i = 0; i < team.Count; i++)
-        {
+        for (var i = 0; i < team.Count; i++) {
             Debug.Log("type: " + team[i]._classType.ToString());
-            
+
             // DOSE: Cycles through the classType Prefabs
-            for(int j = 0; j < prefab.Count; j++)
-            {
+            for (var j = 0; j < prefab.Count; j++) {
                 //DOSE: Match Class type in staticData team, to class type of Prefabs (by string)
-                if(team[i]._classType.ToString() == prefab[j].GetComponent<Unit>().type.ToString())
-                {
-                    GameObject teamMember = Instantiate(prefab[j]);             // SCOTT EDIT
+                if (team[i]._classType.ToString() == prefab[j].GetComponent<Unit>().type.ToString()) {
+                    var teamMember = Instantiate(prefab[j]);             // SCOTT EDIT
                     //battleTeam.Add(prefab[j]);
-                    battleTeam.Add(teamMember);                 
-                    battleTeam[battleTeam.Count - 1].GetComponent<Unit>()._teamMemberName = (string)team[i]._teamMemberName;
-                    battleTeam[battleTeam.Count - 1].GetComponent<Unit>().maxHP = (int)team[i]._maxEnergy;
-                    battleTeam[battleTeam.Count - 1].GetComponent<Unit>().currentHP = (int)team[i]._currentEnergy;
-                    battleTeam[battleTeam.Count - 1].GetComponent<Unit>().index = i;
+                    battleTeam.Add(teamMember);
+                    var teamMemberData = battleTeam[battleTeam.Count - 1].GetComponent<Unit>();
+
+                    teamMemberData.index = i;
+                    teamMemberData._teamMemberName = (string)team[i]._teamMemberName;
+
+                    teamMemberData.maxHP = (int)team[i]._maxEnergy;
+                    teamMemberData.currentHP = (int)team[i]._currentEnergy;
+
+                    teamMemberData.maxMorale = (int)team[i]._maxMorale;
+                    teamMemberData.currentMorale = (int)team[i]._currentMorale;
+
                 }
             }
         }
     }
+
+
+
 }

@@ -22,7 +22,7 @@ public class BattleSystem : MonoBehaviour
 
     public List<GameObject> enemies;
     
-    public Unit playerUnit;
+    public Unit playerUnit;                     //NOTE: IS: The currently selected Team Member; SET IN: 'CharacterSelection' System
     public Unit enemyUnit;
 
     public GameObject enemyGO;
@@ -174,48 +174,60 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack(bool isSpecial)
     {
         playerAnimator = FindAnimator();
-        
-        int damage;
+
         string newText;
-        int playdmg = 0;
+        int damage = 0;
+        int atkEnergyDrainCost = 0;
+        
         if (isSpecial)
         {
             if (playerUnit.type == enemyUnit.type)
             {
-                damage = playerUnit.specialDamage;
-                if(isDebuggingToConsole) Debug.Log("special attack! very effective");
+                if (isDebuggingToConsole) Debug.Log("PlayerAttack: special attack! very effective"); 
+
+                damage = playerUnit.fn_GetDamage(true);
                 dialogueText.text = playerUnit._teamMemberName + " attempted to fix " + enemyUnit.unitName +
                                     ". " + " It is super successful!";
                 BAM.PlaySound(SUCCESS_ATTACK);
+
+                atkEnergyDrainCost = playerUnit.fn_GetEnergy_PctOfTotal(5f);
+                newText = "Wow that was easy!";
             }
             else
             {
                 // - Team Member - 
-                damage = 1;
-                if (isDebuggingToConsole) Debug.Log("not very effective");
+                damage = Mathf.RoundToInt(playerUnit.fn_GetDamage() / 4f);                          // NOTE: does 1/4 of base damage
+                if (isDebuggingToConsole) Debug.Log("PlayerAttack: atk not very effective");
                 dialogueText.text = playerUnit._teamMemberName + " attempted to fix " + enemyUnit._teamMemberName +
                                     ". " + " It is not very effective!";
                 BAM.PlaySound(FAILED_ATTACK);
+
+                atkEnergyDrainCost = playerUnit.fn_GetEnergy_PctOfTotal(20f);
+                newText = "That was very tiring!";
             }
 
-            playdmg = 10;           // Energy drain from Team Member
-            newText = "Wow that was tiring!";
+                      // Energy drain from Team Member
+            
             BAM.PlaySound(PLAYER_HEAL);
-            Debug.Log("tiring sound played");
+
+            if (isDebuggingToConsole) Debug.Log("PlayerAttack: tiring sound played");
         }
         else
         {
-            damage = playerUnit.damage;
-            if (isDebuggingToConsole) Debug.Log("normal");
+            if (isDebuggingToConsole) Debug.Log("PlayerAttack: Normal Atk");
+
+            damage = playerUnit.fn_GetDamage();
             dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
                                 ". " + " It is somewhat successful!";
             BAM.PlaySound(PLAYER_ATTACK);
-            newText = dialogueText.text;
+
+            atkEnergyDrainCost = playerUnit.fn_GetEnergy_PctOfTotal(10f);
+            newText = "That was hard work!";
         }
 
-        //energy depleted
-        if (isDebuggingToConsole) Debug.Log("take damage");
-        playerUnit.TakeDamage(playdmg);
+        // - Energy cost of using the attack -
+        // Depleted Energy & Update Team Member HUD
+        playerUnit.TakeDamage(atkEnergyDrainCost);
         playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
 
         //Damage enemy
@@ -300,34 +312,37 @@ public class BattleSystem : MonoBehaviour
         int j = rnd.Next(0, 2);                                                         // SCOTT EDIT - edited to adjust for MAX exclusivity 
         Unit tempPlayer;
         int i;
+
+        // - 'Rnd Next Target' Vs 'Rnd Target' 50/50 chance -
         if (j > 0)
         {
-            tempPlayer = players.characters[attackIndex].GetComponent<Unit>();
+            // - Next Target Loop -
             attackIndex++;
             if (attackIndex == players.characters.Count)
-            {
                 attackIndex = 0;
-            }
+            // - END:Next Target Loop -
 
             i = attackIndex;
-            Debug.Log("choosen");
+            if (isDebuggingToConsole) Debug.Log("AttackPlayer: Chosen Nxt Target");
         }
         else
         {
             var rnd2 = new System.Random();
             i = rnd2.Next(0, players.characters.Count);                                 // SCOTT EDIT - edited to adjust for MAX exclusivity 
-            tempPlayer = players.characters[i].GetComponent<Unit>();
-            Debug.Log("random");
+            if (isDebuggingToConsole) Debug.Log("AttackPlayer: Chosen Rnd Target");
         }
+
+        tempPlayer = players.characters[i].GetComponent<Unit>();
+        dialogueText.text = "Dealing with the " + enemyUnit.unitName + " fatigued " + tempPlayer._teamMemberName + "!";
         
-        dialogueText.text = enemyUnit.unitName + " hurts " + tempPlayer.unitName + "!";
-        
+        // - Bonus Dmg -
         int extraDamage = 0;
         if(tempPlayer.weakness == enemyUnit.type) 
         {
             if (isDebuggingToConsole) Debug.Log("weakened");
             extraDamage = 5;
         }
+
         tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
         playerHUD.SetHP(tempPlayer.currentHP, i);
         if (isDebuggingToConsole) Debug.Log("attacked index: " + i);
@@ -392,9 +407,13 @@ public class BattleSystem : MonoBehaviour
 
     private void DepleteMorale()
     {
+
+
+
         for (int i = 0; i < StaticData.team.Count; i++)
         {
             TeamMemberTransfer_Data role = StaticData.team[i];
+
             if (playerUnit.type.ToString() == role._classType.ToString())
             {
                 role.moraleCount += 5;

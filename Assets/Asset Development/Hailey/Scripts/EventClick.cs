@@ -30,8 +30,12 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerClickHandl
         {
             Debug.Log("heal");
             battleSystem.isHealing = !battleSystem.isHealing;
-            unit.Heal();
+
+            unit.fn_Heal(true);
+
             battleSystem.playerHUD.SetHP(unit.currentHP, unit.index);
+            battleSystem.playerHUD.fn_UpdateMoraleUI(unit.index);
+
             Debug.Log("unit index " + unit.index);
             StartCoroutine(battleSystem.PlayerHeal());
         }

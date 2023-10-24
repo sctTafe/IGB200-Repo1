@@ -473,6 +473,7 @@ MonoBehaviour:
     type: 3}
   namePrefab: {fileID: 1037053866403675849, guid: dfd1336ed9f154841af795cd68b2b958,
     type: 3}
+  moraleGauagePrefab: {fileID: 0}
   sliderLocations:
   - {fileID: 1033669884}
   - {fileID: 730817187}
@@ -481,6 +482,7 @@ MonoBehaviour:
   hpSliders: []
   names: []
   characters: []
+  morales: []
   specialAttackButtons:
   - {fileID: 2111743511}
   - {fileID: 1056622598}
@@ -7777,6 +7779,7 @@ MonoBehaviour:
     type: 3}
   namePrefab: {fileID: 1037053866403675849, guid: dfd1336ed9f154841af795cd68b2b958,
     type: 3}
+  moraleGauagePrefab: {fileID: 0}
   sliderLocations:
   - {fileID: 0}
   - {fileID: 0}
@@ -7785,6 +7788,7 @@ MonoBehaviour:
   hpSliders: []
   names: []
   characters: []
+  morales: []
   specialAttackButtons:
   - {fileID: 0}
   - {fileID: 0}
@@ -8817,6 +8821,8 @@ MonoBehaviour:
     type: 3}
   namePrefab: {fileID: 1037053866403675849, guid: dfd1336ed9f154841af795cd68b2b958,
     type: 3}
+  moraleGauagePrefab: {fileID: 4659635100664697360, guid: dd51ed1fccdb9264f8267189438cd658,
+    type: 3}
   sliderLocations:
   - {fileID: 586527073}
   - {fileID: 199804394}
@@ -8825,6 +8831,7 @@ MonoBehaviour:
   hpSliders: []
   names: []
   characters: []
+  morales: []
   specialAttackButtons:
   - {fileID: 1414904513}
   - {fileID: 557963426}
@@ -13657,11 +13664,14 @@ MonoBehaviour:
     type: 3}
   namePrefab: {fileID: 3843153769655166446, guid: 8ea348f60fdbc0a48a6d5522fb9fd09d,
     type: 3}
+  moraleGauagePrefab: {fileID: 4659635100664697360, guid: dd51ed1fccdb9264f8267189438cd658,
+    type: 3}
   sliderLocations:
   - {fileID: 2087261712}
   hpSliders: []
   names: []
   characters: []
+  morales: []
   specialAttackButtons: []
   icons: []
   iconSprites: []
@@ -14689,7 +14699,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5887025569493415447, guid: 9fb1eadd88e58ef4d860b97dc69e8bb4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9fb1eadd88e58ef4d860b97dc69e8bb4, type: 3}
 --- !u!1 &96876465703128130
 GameObject:

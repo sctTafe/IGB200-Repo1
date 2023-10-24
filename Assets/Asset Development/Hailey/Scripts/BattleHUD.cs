@@ -9,12 +9,14 @@ public class BattleHUD : MonoBehaviour
 {
     public Slider sliderPrefab;
     public TMP_Text namePrefab;
+    public GameObject moraleGauagePrefab;
 
     public Transform[] sliderLocations;
     public List<Slider> hpSliders;
     public List<TMP_Text> names;
     public List<GameObject> characters;
-    
+    public List<IconGauge_UI> morales;                                                                                  //SCOTT EDIT
+        
     public GameObject[] specialAttackButtons;
 
     public GameObject[] icons;
@@ -32,18 +34,18 @@ public class BattleHUD : MonoBehaviour
                 //add slider and name
                 Slider newSlider = Instantiate(sliderPrefab, sliderLocations[i]);
                 TMP_Text newName = Instantiate(namePrefab, sliderLocations[i]);
-            
+             
+
                 hpSliders.Add(newSlider);
                 names.Add(newName);
-            
+                
                 //Set hp and name values
                 hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
                 hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
                 names[i].text = characters[i].GetComponent<Unit>().unitName;
-                
             }
-
             return;
+
         }
         // - Team Members - 
         else
@@ -53,23 +55,26 @@ public class BattleHUD : MonoBehaviour
                 //add slider and name
                 Slider newSlider = Instantiate(sliderPrefab, sliderLocations[i]);
                 TMP_Text newName = Instantiate(namePrefab, sliderLocations[i]);
-            
+                IconGauge_UI ig = Instantiate(moraleGauagePrefab, sliderLocations[i]).GetComponent<IconGauge_UI>();         //SCOTT EDIT
+
                 hpSliders.Add(newSlider);
                 names.Add(newName);
-            
+                morales.Add(ig);                                                                                            //SCOTT EDIT     
+
                 //Set hp and name values
                 hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
                 hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
-                names[i].text = characters[i].GetComponent<Unit>().unitName;
-                names[i].text = characters[i].GetComponent<Unit>()._teamMemberName;     //SCOTT EDIT
+                //names[i].text = characters[i].GetComponent<Unit>().unitName;
+                names[i].text = characters[i].GetComponent<Unit>()._teamMemberName;                                         //SCOTT EDIT
+                morales[i].fn_SetLevel_Pct(characters[i].GetComponent<Unit>().fn_GetRemainingMoralePct());                  //SCOTT EDIT
             }
         }
          
-        /*for(int i = 0; i < hpSliders.Count; i++)
+        /*for(int index = 0; index < hpSliders.Count; index++)
         {
-            hpSliders[i].maxValue = characters[i].GetComponent<Unit>().maxHP;
-            hpSliders[i].value = characters[i].GetComponent<Unit>().currentHP;
-            names[i].text = characters[i].GetComponent<Unit>().unitName;
+            hpSliders[index].maxValue = characters[index].GetComponent<Unit>().maxHP;
+            hpSliders[index].value = characters[index].GetComponent<Unit>().currentHP;
+            names[index].text = characters[index].GetComponent<Unit>().unitName;
         }*/
 
         for (int i = 0; i < characters.Count; i++)
@@ -113,6 +118,9 @@ public class BattleHUD : MonoBehaviour
     public void SetHP(int hp, int index)
     {
         hpSliders[index].value = hp;
+    }
+    public void fn_UpdateMoraleUI(int index) {
+        morales[index].fn_SetLevel_Pct(characters[index].GetComponent<Unit>().fn_GetRemainingMoralePct());
     }
 
     public void SetButtons(Unit player)

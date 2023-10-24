@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -27,6 +28,9 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+    public int maxMorale;
+    public int currentMorale;
+
     public int specialDamage;
 
     public bool isHealer;
@@ -51,8 +55,55 @@ public class Unit : MonoBehaviour
             return false;
     }
 
-    public void Heal()
+    public void fn_Heal(bool isMoraleDepleting = false)
     {
-        currentHP = maxHP;
+        if (isMoraleDepleting)
+        {
+            currentHP = maxHP;
+            fn_ReduceMorale(25);
+        }
+        else
+        {
+            currentHP = maxHP;
+        }
     }
+
+    public int fn_GetDamage(bool isSpecial = false)
+    {
+        if (isSpecial)
+        {
+            return specialDamage;
+        }
+        else
+        {
+            return damage;
+        }
+    }
+
+    public int fn_GetEnergy_PctOfTotal(float pct)
+    {
+        return Mathf.RoundToInt(maxHP * (pct/100));
+    }
+
+    public float fn_GetRemainingMoralePct()
+    {
+        return ((currentMorale * 1f) / (maxMorale * 1f));
+    }
+
+    public void fn_ReduceMorale(float pct)
+    {
+        currentMorale -= Mathf.RoundToInt(maxMorale*1f *(pct/100));
+
+        if (currentMorale < 0)
+            currentMorale = 0;
+    }
+    public void fn_ReduceMorale(int amount) 
+    {
+        if (amount > 0)
+            currentMorale -= amount;
+
+        if (currentMorale<0)
+            currentMorale = 0;
+    }
+
 }

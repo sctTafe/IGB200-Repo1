@@ -184,7 +184,7 @@ public class BattleSystem : MonoBehaviour
             {
                 damage = playerUnit.specialDamage;
                 if(isDebuggingToConsole) Debug.Log("special attack! very effective");
-                dialogueText.text = playerUnit.unitName + " attempted to fix " + enemyUnit.unitName +
+                dialogueText.text = playerUnit._teamMemberName + " attempted to fix " + enemyUnit.unitName +
                                     ". " + " It is super successful!";
                 BAM.PlaySound(SUCCESS_ATTACK);
             }
@@ -297,10 +297,10 @@ public class BattleSystem : MonoBehaviour
     {
         //decide which player to attack
         var rnd = new System.Random();
-        int j = rnd.Next(0, 1);
+        int j = rnd.Next(0, 2);                                                         // SCOTT EDIT - edited to adjust for MAX exclusivity 
         Unit tempPlayer;
         int i;
-        if (j < 0.5)
+        if (j > 0)
         {
             tempPlayer = players.characters[attackIndex].GetComponent<Unit>();
             attackIndex++;
@@ -315,7 +315,7 @@ public class BattleSystem : MonoBehaviour
         else
         {
             var rnd2 = new System.Random();
-            i = rnd2.Next(0, players.characters.Count - 1);
+            i = rnd2.Next(0, players.characters.Count);                                 // SCOTT EDIT - edited to adjust for MAX exclusivity 
             tempPlayer = players.characters[i].GetComponent<Unit>();
             Debug.Log("random");
         }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     void Awake() 
     {
+        #region Singleton Setup
         //Check if instance already exists
         if (instance == null)
 
@@ -22,7 +23,10 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
-        
+        #endregion
+
+
+
         //Get Team from the progress scene through the StaticData class
         team = StaticData.team;
         
@@ -37,10 +41,12 @@ public class GameManager : MonoBehaviour
             // DOSE: Cycles through the classType Prefabs
             for(int j = 0; j < prefab.Count; j++)
             {
-                //DOSE: Match Class type to class type (by string)
+                //DOSE: Match Class type in staticData team, to class type of Prefabs (by string)
                 if(team[i]._classType.ToString() == prefab[j].GetComponent<Unit>().type.ToString())
                 {
-                    battleTeam.Add(prefab[j]);
+                    GameObject teamMember = Instantiate(prefab[j]);             // SCOTT EDIT
+                    //battleTeam.Add(prefab[j]);
+                    battleTeam.Add(teamMember);                 
                     battleTeam[battleTeam.Count - 1].GetComponent<Unit>()._teamMemberName = (string)team[i]._teamMemberName;
                     battleTeam[battleTeam.Count - 1].GetComponent<Unit>().maxHP = (int)team[i]._maxEnergy;
                     battleTeam[battleTeam.Count - 1].GetComponent<Unit>().currentHP = (int)team[i]._currentEnergy;

@@ -29627,7 +29627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &985611529
 Transform:
   m_ObjectHideFlags: 0
@@ -31139,7 +31139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1039267522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34567,7 +34567,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 6eabfa3cd2bb11b42a2bfd735e85fa5b, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 73ace3a126e061a41acd90f4a16abd71, type: 2}
 --- !u!4 &1146444167
 Transform:
   m_ObjectHideFlags: 0

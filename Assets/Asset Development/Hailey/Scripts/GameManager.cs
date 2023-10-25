@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+///
+/// DOSE:
+///     This script creates the Team Member 'Straw Men' at the very beginning of the battle, which are then copied and loaded into the 'CharacterSelection' System
+/// DEPENDENCIES:
+///     StaticData - Where it pulls the data from
+///     Prefab List - Filled in the inspector with prefabs for the different classes 
+/// 
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     //Singleton Setup
-    public static GameManager instance = null;
+    public static GameManager Instance = null;
     public List<TeamMemberTransfer_Data> team;
     public List<GameObject> battleTeam;
     public List<GameObject> prefab;
@@ -13,15 +21,15 @@ public class GameManager : MonoBehaviour
     void Awake() 
     {
         #region Singleton Setup
-        //Check if instance already exists
-        if (instance == null)
+        //Check if Instance already exists
+        if (Instance == null)
 
-            //if not, set instance to this
-            instance = this;
+            //if not, set Instance to this
+            Instance = this;
 
-        //If instance already exists and it's not this:
-        else if (instance != this)
-            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+        //If Instance already exists and it's not this:
+        else if (Instance != this)
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one Instance of a GameManager.
             Destroy(gameObject);
         #endregion
     }

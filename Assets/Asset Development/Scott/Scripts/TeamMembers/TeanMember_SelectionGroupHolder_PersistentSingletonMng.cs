@@ -36,7 +36,7 @@ public class TeanMember_SelectionGroupHolder_PersistentSingletonMng : MonoBehavi
         {
             if (_instance == null)
             {
-                Debug.LogError("TeanMember_SelectionGroupHolder_Mng instance is not found.");
+                Debug.LogError("TeanMember_SelectionGroupHolder_Mng Instance is not found.");
             }
             return _instance;
         }

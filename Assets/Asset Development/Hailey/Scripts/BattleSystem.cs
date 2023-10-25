@@ -87,7 +87,7 @@ public class BattleSystem : MonoBehaviour
         
         if (!debugMode)
         { 
-            players.characters = GameManager.instance.battleTeam; 
+            players.characters = GameManager.Instance.battleTeam; 
             SetBattleState();
         }
 
@@ -108,25 +108,27 @@ public class BattleSystem : MonoBehaviour
         else if (StaticData.enemyType == EnemyTypes.Water)
         {
             enemyPrefab = enemies[LEAKY_PIPE];
-            ENEMY_ATTACK = LEAKY_PIPE;
+            ENEMY_ATTACK = LEAKY_PIPE;              //Set Atk VFX
         }
         else if (StaticData.enemyType == EnemyTypes.Electric)
         {
             enemyPrefab = enemies[LIVE_WIRE];
-            ENEMY_ATTACK = LIVE_WIRE;
+            ENEMY_ATTACK = LIVE_WIRE;               //Set Atk VFX
         }
         else if (StaticData.enemyType == EnemyTypes.Practical)
         {
             enemyPrefab = enemies[CINDER_BLOCK];
-            ENEMY_ATTACK = CINDER_BLOCK;
+            ENEMY_ATTACK = CINDER_BLOCK;            //Set Atk VFX
         }
         else if (StaticData.enemyType == EnemyTypes.Planning)
         {
             enemyPrefab = enemies[SCAFFOLDING];
-            ENEMY_ATTACK = SCAFFOLDING;
+            ENEMY_ATTACK = SCAFFOLDING;             //Set Atk VFX
         }
+
+        Unit enemyData = enemyPrefab.GetComponent<Unit>();
         
-        
+
         if (bridge != null)
         {
             bridge.transform.position = battlePos[StaticData.battlePosition].position;
@@ -228,12 +230,12 @@ public class BattleSystem : MonoBehaviour
 
         // - Energy cost of using the attack -
         // Depleted Energy & Update Team Member HUD
-        playerUnit.TakeDamage(atkEnergyDrainCost);
+        playerUnit.fn_ReduceEnergy(atkEnergyDrainCost);
         //playerHUD.SetHP(playerUnit.currentHP, playerUnit.index);
         playerHUD.fn_UpdateEnergy(playerUnit.index);
 
         //Damage enemy
-        bool isDead = enemyUnit.TakeDamage(damage);
+        bool isDead = enemyUnit.fn_ReduceEnergy(damage);
         enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit.index);
         
         //attack animation called
@@ -345,7 +347,7 @@ public class BattleSystem : MonoBehaviour
             extraDamage = 5;
         }
 
-        tempPlayer.TakeDamage(enemyUnit.damage + extraDamage);
+        tempPlayer.fn_ReduceEnergy(enemyUnit.damage + extraDamage);
         //playerHUD.SetHP(tempPlayer.currentHP, i);
         playerHUD.fn_UpdateEnergy(i);
 

@@ -18,7 +18,7 @@ public class MouseSelectionInformation_Mng : MonoBehaviour
     public static MouseSelectionInformation_Mng Instance {
         get {
             if (_instance == null) {
-                Debug.LogError("ProgressionSelection_Mng instance is not found.");
+                Debug.LogError("ProgressionSelection_Mng Instance is not found.");
             }
             return _instance;
         }

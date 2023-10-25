@@ -13859,7 +13859,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _isTesting_DepleteEnergyAndMorale: 1
+  _CharacterSelection: {fileID: 1140921857}
+  _isTesting_DepleteEnergyAndMorale: 0
 --- !u!4 &2094932158
 Transform:
   m_ObjectHideFlags: 0

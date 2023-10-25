@@ -5,7 +5,24 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public List<GameObject> characters;
+    #region Singelton Setup
+    public static CharacterSelection Instance = null;
+   
+    private void SingeltonSetup() {
+        //Check if Instance already exists
+        if (Instance == null)
+
+            //if not, set Instance to this
+            Instance = this;
+
+        //If Instance already exists and it's not this:
+        else if (Instance != this)
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one Instance of a GameManager.
+            Destroy(gameObject);
+    }
+    #endregion
+
+    public List<GameObject> characters;   // IMPORTANT NOTE: THIS IS THE ACTIVE DATA FOR THE IN-PLAY TEAM MEMBERS!!!
     public int selectedCharacter = 0;
     public GameObject[] selected;
 
@@ -15,6 +32,11 @@ public class CharacterSelection : MonoBehaviour
     public GameObject[] sleepy;
 
     public TMP_Text selectionText;
+
+    void Awake()
+    {
+        SingeltonSetup();
+    }
 
     void Start()
     {
@@ -98,4 +120,21 @@ public class CharacterSelection : MonoBehaviour
         }
         return true;
     }
+
+    public void fn_TransferTeamMembersDataBackToStaticData()
+    {
+        List<TeamMemberTransfer_Data> team = StaticData.team;
+        Unit currentUnit_j;
+
+        for (var i = 0; i < team.Count; i++) {
+            for (int j = 0; j < characters.Count; j++) {
+                currentUnit_j = characters[j].GetComponent<Unit>();
+                if (currentUnit_j._teamMemberName == team[i]._teamMemberName) {
+                    team[i]._currentEnergy = currentUnit_j.currentHP;
+                    team[i]._currentMorale = currentUnit_j.currentMorale;
+                }
+            }
+        }
+    }
+
 }

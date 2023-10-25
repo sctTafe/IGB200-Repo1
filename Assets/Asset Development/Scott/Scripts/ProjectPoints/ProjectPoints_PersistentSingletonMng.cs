@@ -14,7 +14,7 @@ public class ProjectPoints_PersistentSingletonMng : MonoBehaviour
     public static ProjectPoints_PersistentSingletonMng Instance {
         get {
             if (_instance == null) {
-                Debug.LogError("ProjectPoints_Mng instance is not found.");
+                Debug.LogError("ProjectPoints_Mng Instance is not found.");
             }
             return _instance;
         }

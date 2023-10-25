@@ -20,14 +20,34 @@ public class BattleDataTransferSupportScript : MonoBehaviour
     // - Primary Functions - 
     public void fn_FinishBattle()
     {
-        if (StaticData.isBattleGameManagerInTestModeOverride)
+        // Return if in Test Mode
+        if (!StaticData.isBattleGameManagerInTestModeOverride)
+            return;
+        
+        // React To Battle Been Lost
+        if (!StaticData.isBattleWon)
         {
-            if (_isTesting_DepleteEnergyAndMorale) {
-                fn_DepleteTeamMemberStarts();
+            foreach (var teamMembers in CharacterSelection.Instance.characters)
+            {
+                Unit teamMemberData = teamMembers.GetComponent<Unit>();
+                // Reduce Energy
+                teamMemberData.fn_ReduceEnergy(Mathf.RoundToInt(teamMemberData.maxHP * Random.Range(0.1f, 0.2f))); //(10:20)%
+                // Reduce Morale
+                teamMemberData.fn_ReduceMorale(Mathf.RoundToInt(teamMemberData.maxMorale * Random.Range(0.05f, 0.1f))); //(5:10)%
             }
-
-            DataTransfer_PersistentSingletonMng.Instance.fn_HandleMissionFinished();
         }
+
+        // - GameManager Data Transfer -
+        CharacterSelection.Instance.fn_TransferTeamMembersDataBackToStaticData();
+
+
+
+        if (_isTesting_DepleteEnergyAndMorale) {
+            fn_DepleteTeamMemberStarts();
+        }
+
+        DataTransfer_PersistentSingletonMng.Instance.fn_HandleMissionFinished();
+        
     }
 
     // - Testing Functions - 

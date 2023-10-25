@@ -29,7 +29,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
         {
             if (_instance == null)
             {
-                Debug.LogError("DayCounter_Mng instance is not found.");
+                Debug.LogError("DayCounter_Mng Instance is not found.");
             }
             return _instance;
         }

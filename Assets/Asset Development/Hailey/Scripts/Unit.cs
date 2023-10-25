@@ -41,14 +41,17 @@ public class Unit : MonoBehaviour
     public Color color;
 
     //apply damage to unit
-    public bool TakeDamage(int dmg)
+    public bool fn_ReduceEnergy(int dmgAmount)
     {
-        currentHP -= dmg;
+        currentHP -= dmgAmount;
 
         if (currentHP <= 0)
         {
-            numDeaths++;
             currentHP = 0;
+
+            fn_ReduceMorale(15);
+            numDeaths++;
+            Debug.Log("Energy Burn Out - Morale Decreased & num of 'Deaths' Increased");
             return true;
         }
         else

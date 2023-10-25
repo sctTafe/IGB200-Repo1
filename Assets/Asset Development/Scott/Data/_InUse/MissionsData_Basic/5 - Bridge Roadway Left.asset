@@ -24,9 +24,11 @@ MonoBehaviour:
     Operator</color=yellow>, this should be doable. The success of this task is vital
     for the overall stability of the bridge. Gather your team and get on it!!
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 5
+  _missionDifficultyRating: 6
   _completionBonusPoints: 150
   _daysToComplete: 25
+  _enemyHealth: 250
+  _enemyDamage: 15
   _battlePosition: 3
   _enemies: 03000000
   _MissionsEnabledOnCompletion_Array: []

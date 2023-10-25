@@ -18,7 +18,11 @@ public class Missions_Basic_SO : ScriptableObject
     [SerializeField] public int _missionDifficultyRating;
     [SerializeField] public int _completionBonusPoints;
     [SerializeField] public int _daysToComplete;
-   
+
+    [Header("Enemy Settings")]
+    [SerializeField] public int _enemyHealth;
+    [SerializeField] public int _enemyDamage;
+
     [Header("Battle Settings")]
     [SerializeField] public int _battlePosition;
     [SerializeField] public EnemyTypes[] _enemies;

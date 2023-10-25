@@ -22,8 +22,10 @@ MonoBehaviour:
   _missionDifficultyRating: 1
   _completionBonusPoints: 20
   _daysToComplete: 5
+  _enemyHealth: 40
+  _enemyDamage: 5
   _battlePosition: 0
-  _enemies: 01000000
+  _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:
   - {fileID: 11400000, guid: f3204f9f92fedbf49963e2081408c758, type: 2}
   _BridgePartsEnabledOnCompletion_Array:

@@ -18,6 +18,11 @@ public class StaticData : MonoBehaviour
     public static bool isBattleWon = false;
     public static int additionalProjectPointsEarned;                //NOTE: not used currently 
 
+    // - Mission/Enemy Difficulty -
+    public static int _enemyHP = 100;
+    public static int _enemyDmg = 10;
+    
+
     public static void fn_ClearData()
     {
         team.Clear();

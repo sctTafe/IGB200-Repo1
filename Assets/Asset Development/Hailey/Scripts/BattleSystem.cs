@@ -101,6 +101,7 @@ public class BattleSystem : MonoBehaviour
 
     void SetBattleState()
     {
+
         if (StaticData.enemyType == EnemyTypes.error)
         {
             Debug.LogError("error");
@@ -127,7 +128,9 @@ public class BattleSystem : MonoBehaviour
         }
 
         Unit enemyData = enemyPrefab.GetComponent<Unit>();
-        
+        enemyData.maxHP = StaticData._enemyHP;
+        enemyData.currentHP = StaticData._enemyHP;
+        enemyData.damage = StaticData._enemyDmg;
 
         if (bridge != null)
         {

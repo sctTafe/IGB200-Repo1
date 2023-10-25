@@ -24,9 +24,11 @@ MonoBehaviour:
     maybe with the help of a <color=yellow>Carpenter</color=yellow>?. The success
     of the entire project hinges on your efforts.
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 4
+  _missionDifficultyRating: 5
   _completionBonusPoints: 150
   _daysToComplete: 25
+  _enemyHealth: 200
+  _enemyDamage: 15
   _battlePosition: 2
   _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:

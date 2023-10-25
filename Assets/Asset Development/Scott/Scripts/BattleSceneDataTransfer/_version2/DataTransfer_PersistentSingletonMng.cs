@@ -59,9 +59,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     }
 
     #region Public Functions
-    #region - Pass Data To Missiom - 
-
-    #region Start Mission
+    #region - Pass Data To Missiom -
     public void fn_LoadMissionDataAndTransfer(Missions_Basic_SO missionSO, bool isUsingTutorialScene = false)
     {
         LoadMissionData(missionSO);
@@ -130,13 +128,14 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
             StaticData.enemyType = missionSO._enemies[0];
         // - Mission setting position 
         StaticData.battlePosition = missionSO._battlePosition;
+        // - Mission Enemy -
+        StaticData._enemyDmg = missionSO._enemyDamage;
+        StaticData._enemyHP = missionSO._enemyHealth;
     }
 
     private void ChangeToBattleScene(string scene) {
         SceneManager.LoadScene(scene);
     }
-
-    #endregion
     #endregion END: - Pass Data To Missiom - 
 
     #region - Pull Data From Missiom - 

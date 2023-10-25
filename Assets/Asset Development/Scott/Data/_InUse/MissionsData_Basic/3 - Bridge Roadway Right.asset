@@ -23,9 +23,11 @@ MonoBehaviour:
     securely, an <color=yellow> Electrician</color=yellow> might be use? As you work
     on this task, stay vigilant for any potential complications. Let's go!"
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 3
+  _missionDifficultyRating: 4
   _completionBonusPoints: 150
   _daysToComplete: 25
+  _enemyHealth: 180
+  _enemyDamage: 10
   _battlePosition: 1
   _enemies: 02000000
   _MissionsEnabledOnCompletion_Array:

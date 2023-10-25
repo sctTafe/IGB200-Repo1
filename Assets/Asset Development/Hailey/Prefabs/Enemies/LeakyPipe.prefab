@@ -5058,7 +5058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teamMemberName: 
-  unitName: the Leaky Pipe
+  unitName: Leaky Pipe
   index: 0
   level: 0
   type: 1
@@ -5066,6 +5066,8 @@ MonoBehaviour:
   damage: 5
   maxHP: 30
   currentHP: 30
+  maxMorale: 0
+  currentMorale: 0
   specialDamage: 0
   isHealer: 0
   isSleeping: 0

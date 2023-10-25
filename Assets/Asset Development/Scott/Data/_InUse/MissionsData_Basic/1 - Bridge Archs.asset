@@ -22,9 +22,11 @@ MonoBehaviour:
     to have a mind of its own! Seems like we may need a <color=yellow>Plumber</color=yellow>
     on deck!
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 1
+  _missionDifficultyRating: 2
   _completionBonusPoints: 150
   _daysToComplete: 10
+  _enemyHealth: 80
+  _enemyDamage: 10
   _battlePosition: 0
   _enemies: 01000000
   _MissionsEnabledOnCompletion_Array:

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ed93b8a57b3a34b94d85e4726afd89, type: 3}
-  m_Name: Emily
+  m_Name: StartingTeam_Emily
   m_EditorClassIdentifier: 
   _name: Emily
   _nameAndJob: Emily (Carpenter)

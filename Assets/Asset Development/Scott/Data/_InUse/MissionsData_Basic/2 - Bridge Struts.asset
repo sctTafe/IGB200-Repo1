@@ -24,9 +24,11 @@ MonoBehaviour:
     the process. Rally your team to get this problem sorted out, we're relying on
     you!"
   _missionPic: {fileID: 0}
-  _missionDifficultyRating: 2
+  _missionDifficultyRating: 3
   _completionBonusPoints: 150
   _daysToComplete: 20
+  _enemyHealth: 120
+  _enemyDamage: 10
   _battlePosition: 0
   _enemies: 04000000
   _MissionsEnabledOnCompletion_Array:

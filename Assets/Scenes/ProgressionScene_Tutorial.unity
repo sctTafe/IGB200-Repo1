@@ -410,17 +410,19 @@ MonoBehaviour:
     sentences:
     - 'Hi! Welcome to AWIC''s Building Bridges, glad to finally have you on board,
       are you ready to get started? '
-    - Great! ill teach you the ropes and help get you going on your bridge management
-      journey!
-    - Before a mission, you will select up to four team members for battle, make
-      sure you read the mission brief, as they offer great insight into which team
-      members will be most effective for the given issue.
+    - Great! I'm Amanda, the CEO of Awesome Women in Construction. I'll teach you
+      the ropes and help get you going on your bridge management journey!
+    - 'We have been tasked to build this new green bridge in the Brisbane CBD. Of
+      course, there are bound to be some obstacles along the way. Luckily, we have
+      you do help us! '
+    - Before you address each issue, you will select up to four team members to help.
+      Make sure to read the mission brief, as they offer great insight into which
+      team members will be the most effective for the given problem.
     - "For example, if the mission brief mentioned a burst pipe, you should make
       sure that you have a plumber on your team, match your team\u2019s disciplines
       with the problems mentioned in the brief!"
-    - 'Click on and select the bridge''s arches to view the mission''s brief, and
-      once you accept the mission, you can then also view and assign up to four team
-      members for battle! '
+    - 'Click on and select the worksite in the bottom right hand corner to view 
+      your first task! '
     - Lets get started!
   startButton: {fileID: 0}
 --- !u!114 &7994912
@@ -36259,12 +36261,12 @@ PrefabInstance:
     - target: {fileID: 1644153333101962691, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1400
+      value: 1696.0452
       objectReference: {fileID: 0}
     - target: {fileID: 1644153333101962691, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 614.9958
       objectReference: {fileID: 0}
     - target: {fileID: 1644153333101962691, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
@@ -36304,12 +36306,12 @@ PrefabInstance:
     - target: {fileID: 1644153333101962691, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -7.9634
       objectReference: {fileID: 0}
     - target: {fileID: 1644153333101962691, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199
+      value: -146.8799
       objectReference: {fileID: 0}
     - target: {fileID: 1644153333101962691, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
@@ -36326,10 +36328,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1886200229781982414, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1939274227, guid: 202769742c8b1124193f3f94e012a300,
+        type: 3}
+    - target: {fileID: 1886200229781982414, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886200229781982414, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886200229781982414, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886200229781982414, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3853097125129697751, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
       propertyPath: m_Name
       value: '{Tutorial_DialogueAnimator}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853097125129697751, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6905470430316614211, guid: 5b42615caafb7304794a75ce3a888177,
         type: 3}
@@ -36340,6 +36373,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396644349906900303, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396644349906900303, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -162
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400934998922182189, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 45.60515
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400934998922182189, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 55.377747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400934998922182189, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -19.545074
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400934998922182189, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 329.00854
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153554176512547816, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153554176512547816, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154292669351846269, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1515.1825
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154292669351846269, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 322.9113
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154292669351846269, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 131.67163
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154292669351846269, guid: 5b42615caafb7304794a75ce3a888177,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -115
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

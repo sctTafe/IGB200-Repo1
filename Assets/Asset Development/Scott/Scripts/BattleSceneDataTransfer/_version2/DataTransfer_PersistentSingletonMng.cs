@@ -47,7 +47,7 @@ public class DataTransfer_PersistentSingletonMng : MonoBehaviour
     }
     #endregion
 
-    public bool _isUsingStaticDataModeOn = true;
+    private bool _isUsingStaticDataModeOn = true; // Needs Updating and Removing - StaticData Mode is the only way the game works
     public TeamMemberTransfer_Data _Prefab;
 
     private bool _isDebuggingOn = true;

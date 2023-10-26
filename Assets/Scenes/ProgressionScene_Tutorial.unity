@@ -52077,8 +52077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569236ce0d7ea184fae0a9032dc2d577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BattleScene: Battle 1
-  _TutorialBattleScene: BattleSceneTutorial
+  _BattleScene: 
+  _TutorialBattleScene: BattleScene_Tutorial
   _Prefab: {fileID: 1269415954}
 --- !u!1 &1823768915
 GameObject:

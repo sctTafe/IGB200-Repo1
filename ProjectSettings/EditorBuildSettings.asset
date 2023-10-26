@@ -6,21 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Verison3/Menu v3.unity
+    path: Assets/Scenes/Menu v3.unity
     guid: 8f25ed4b12be9f94a9f649cc8b6aef4f
   - enabled: 1
-    path: Assets/Scenes/Verison3/ProgressionScene_Tutorial.unity
+    path: Assets/Scenes/ProgressionScene_Tutorial.unity
     guid: 94cadb8bdf5984841b8717fa4dc41480
   - enabled: 1
-    path: Assets/Scenes/Verison3/BattleScene_Tutorial.unity
+    path: Assets/Scenes/BattleScene_Tutorial.unity
     guid: d1d37e4c712aa1746ac2d0b2a35882e2
   - enabled: 1
-    path: Assets/Scenes/Verison3/ProgressionScene.unity
+    path: Assets/Scenes/ProgressionScene.unity
     guid: baf61d780546a5a4dacf90a83150fd46
   - enabled: 1
-    path: Assets/Scenes/Verison3/BattleScene.unity
+    path: Assets/Scenes/BattleScene.unity
     guid: 8171b8b1e6378a94685696e160ed4923
   - enabled: 1
-    path: Assets/Scenes/Verison3/WinScene.unity
+    path: Assets/Scenes/WinScene.unity
     guid: d1ecdcebf27bb2a48b036573b98a8ee7
   m_configObjects: {}

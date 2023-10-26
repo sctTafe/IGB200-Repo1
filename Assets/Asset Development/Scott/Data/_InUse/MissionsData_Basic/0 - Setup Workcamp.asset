@@ -20,7 +20,7 @@ MonoBehaviour:
     workin!
   _missionPic: {fileID: 0}
   _missionDifficultyRating: 1
-  _completionBonusPoints: 60
+  _completionBonusPoints: 80
   _daysToComplete: 5
   _enemyHealth: 40
   _enemyDamage: 5

@@ -132,6 +132,8 @@ MonoBehaviour:
   damage: 10
   maxHP: 75
   currentHP: 75
+  maxMorale: 0
+  currentMorale: 0
   specialDamage: 0
   isHealer: 0
   isSleeping: 0
@@ -235,22 +237,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000029504295
+      value: -0.24992096
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000003546475
+      value: -0.0000034245033
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000037737944
+      value: 0.00000092286865
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0.96826625
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}
@@ -265,7 +267,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -151.054
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 05437526bc5b18e4887d16a1d58eb98a,
         type: 3}

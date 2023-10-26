@@ -492,6 +492,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dizzy_DamageParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 6492324887635050288, guid: d0dba2b7942e1a04db6beec796f8d50e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

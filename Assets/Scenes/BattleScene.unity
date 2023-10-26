@@ -12804,7 +12804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugMode: 1
   isDebuggingToConsole: 0
-  enemyPrefab: {fileID: 6994579144079665197, guid: 8701f822972aa1d4bb8116de1c14884d,
+  enemyPrefab: {fileID: 6994579144079665197, guid: c91feda2b2231e14e9bd9047708c55bb,
     type: 3}
   enemies:
   - {fileID: 6994579144079665197, guid: 8701f822972aa1d4bb8116de1c14884d, type: 3}

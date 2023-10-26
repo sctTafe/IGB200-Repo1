@@ -132,6 +132,8 @@ MonoBehaviour:
   damage: 5
   maxHP: 25
   currentHP: 20
+  maxMorale: 100
+  currentMorale: 100
   specialDamage: 10
   isHealer: 0
   isSleeping: 0
